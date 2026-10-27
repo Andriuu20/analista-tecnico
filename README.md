@@ -1,7 +1,8 @@
 # 📈 Analista técnico
 
-App web personal en español. Eliges un mercado (EUR/USD, USD/JPY, BTC…) y el tamaño de vela, y te dice
-**si comprar, vender o esperar**, **a qué plazo** y **con qué confianza**. La confianza se basa en cómo le
+App web personal en español, pensada para el móvil. Eliges un mercado (EUR/USD, USD/JPY, BTC…) o
+«Buscar en todos», pulsas **Analizar** y te dice **si comprar, vender o esperar**, **durante cuántos minutos u
+horas** y **con qué confianza**. Analiza sola velas de 5 min, 15 min y 1 h y se queda con la mejor oportunidad. La confianza se basa en cómo le
 ha ido a cada estrategia en el histórico de ese mercado y en las señales reales que ya ha dado.
 
 - **Estrategias**: medias móviles (EMA 9/21), RSI, MACD, soportes y resistencias, retrocesos de Fibonacci
@@ -15,7 +16,8 @@ ha ido a cada estrategia en el histórico de ese mercado y en las señales reale
 1. Sube esta carpeta a un repositorio de GitHub (puede ser privado).
 2. Entra en <https://share.streamlit.io> con tu cuenta de GitHub.
 3. Pulsa **Create app**, elige el repositorio, la rama `main` y el archivo `app.py`.
-4. Abre la URL que te da en el móvil y en el ordenador. Desde el móvil puedes usar "Añadir a pantalla de inicio".
+4. Abre la URL en el móvil. En iPhone (Safari): botón **Compartir → Añadir a pantalla de inicio** y tendrás
+   un icono como si fuera una app.
 
 ## Guardar el registro de forma permanente (recomendado)
 

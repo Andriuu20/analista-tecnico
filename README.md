@@ -2,7 +2,7 @@
 
 App web personal en español, pensada para el móvil. Eliges un mercado (EUR/USD, USD/JPY, BTC…) o
 «Buscar en todos», pulsas **Analizar** y te dice **si comprar, vender o esperar**, **durante cuántos minutos u
-horas** y **con qué confianza**. Analiza sola velas de 5 min, 15 min y 1 h y se queda con la mejor oportunidad. La confianza se basa en cómo le
+horas** y **con qué confianza**. Analiza sola velas de 5 min, 15 min, 1 h, 4 h y 1 día y se queda con la mejor oportunidad (o la del plazo que elijas: minutos, horas o días). La confianza se basa en cómo le
 ha ido a cada estrategia en el histórico de ese mercado y en las señales reales que ya ha dado.
 
 - **Estrategias**: medias móviles (EMA 9/21), RSI, MACD, soportes y resistencias, retrocesos de Fibonacci

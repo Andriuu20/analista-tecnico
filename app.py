@@ -14,8 +14,10 @@ ZONA = "Europe/Madrid"
 TODOS = "🔍 Buscar en todos"
 OTRO = "✏️ Otro símbolo…"
 # temporalidades que se analizan solas; cada una se confirma con la tendencia de la siguiente
-TEMPORALIDADES = ["5m", "15m", "1h"]
-SUPERIOR = {"5m": "15m", "15m": "1h", "1h": None}
+TEMPORALIDADES = ["5m", "15m", "1h", "4h", "1d"]
+SUPERIOR = {"5m": "15m", "15m": "1h", "1h": "4h", "4h": "1d", "1d": None}
+# preferencia de plazo -> (mínimo, máximo) en minutos de la operación
+PLAZOS = {"Cualquiera": (0, 10**9), "Minutos": (0, 59), "Horas": (60, 1439), "Días": (1440, 10**9)}
 MAX_VELAS = 8000
 NOMBRE_VELA = {c: e for e, (c, _) in INTERVALOS.items()}
 
@@ -68,6 +70,13 @@ def hora_local(ts, formato="%d/%m %H:%M") -> str:
     return pd.Timestamp(ts).tz_convert(ZONA).strftime(formato)
 
 
+def texto_vencimiento(vence: pd.Timestamp, duracion_min: int) -> str:
+    if pd.Timestamp(vence).tz_convert(ZONA).date() == pd.Timestamp.now(tz=ZONA).date():
+        return f"a las <b>{hora_local(vence, '%H:%M')}</b>"
+    aprox = " (aprox.)" if duracion_min >= 1440 else ""  # en forex los fines de semana no cuentan
+    return f"el <b>{hora_local(vence, '%d/%m %H:%M')}</b>{aprox}"
+
+
 # --- Registro en vivo (se comprueba solo cada vez que se abre la app) ---
 almacen = Almacen(secreto("GITHUB_TOKEN"), secreto("GIST_ID"))
 if "registro" not in st.session_state:
@@ -90,8 +99,8 @@ if resolver(registro, cargar_velas):
     guardar_registro()
 
 
-def analizar_mercado(nombre: str, cfg: dict) -> dict:
-    """Analiza las tres temporalidades y se queda con la mejor señal confirmada."""
+def analizar_mercado(nombre: str, cfg: dict, plazo: str = "Cualquiera") -> dict:
+    """Analiza todas las temporalidades y se queda con la mejor señal confirmada del plazo pedido."""
     por_tf = {}
     for codigo in TEMPORALIDADES:
         try:
@@ -116,7 +125,9 @@ def analizar_mercado(nombre: str, cfg: dict) -> dict:
     validos = [c for c, r in por_tf.items() if "error" not in r]
     if not validos:
         raise ValueError(next(iter(por_tf.values()))["error"])
-    con_senal = [c for c in validos if por_tf[c]["senal"]["direccion"]]
+    minimo, maximo = PLAZOS[plazo]
+    con_senal = [c for c in validos if por_tf[c]["senal"]["direccion"]
+                 and minimo <= por_tf[c]["senal"]["horizonte"] * MINUTOS[c] <= maximo]
     mejor = max(con_senal, key=lambda c: por_tf[c]["senal"]["confianza"]) if con_senal else None
     return {"nombre": nombre, "cfg": cfg, "por_tf": por_tf, "mejor": mejor,
             "principal": mejor or ("15m" if "15m" in validos else validos[0])}
@@ -156,7 +167,7 @@ def tarjeta(a: dict, compacta: bool = False) -> None:
             unsafe_allow_html=True,
         )
         st.markdown(f"<div style='font-size:1.15rem'>Confianza <b>{s['confianza'] * 100:.0f} %</b> · "
-                    f"Vence a las <b>{hora_local(vence, '%H:%M')}</b></div>", unsafe_allow_html=True)
+                    f"Vence {texto_vencimiento(vence, minutos * s['horizonte'])}</div>", unsafe_allow_html=True)
         if not compacta:
             st.caption(f"Precio de entrada {fmt_precio(float(df['Close'].iat[-1]))} · "
                        f"analizado con velas de {NOMBRE_VELA[a['mejor']]}")
@@ -261,6 +272,7 @@ def mis_resultados() -> None:
 # ============================ PANTALLA ============================
 st.markdown("## 📈 Analista técnico")
 nombre = st.selectbox("¿Qué mercado analizo?", [TODOS, *ACTIVOS, OTRO], index=1)
+plazo = st.segmented_control("¿Para cuánto tiempo?", list(PLAZOS), default="Cualquiera") or "Cualquiera"
 cfg = None
 if nombre == OTRO:
     escrito = st.text_input("Símbolo (Yahoo: NZDUSD=X, AAPL… · Binance: DOGEUSDT…)")
@@ -276,7 +288,7 @@ if st.button("Analizar", type="primary", width="stretch", disabled=nombre == OTR
         for i, (n, c) in enumerate(ACTIVOS.items()):
             barra.progress((i + 1) / len(ACTIVOS), f"Analizando {n}…")
             try:
-                a = analizar_mercado(n, c)
+                a = analizar_mercado(n, c, plazo)
             except Exception:
                 continue
             registrar(a)
@@ -288,7 +300,7 @@ if st.button("Analizar", type="primary", width="stretch", disabled=nombre == OTR
     else:
         try:
             with st.spinner(f"Analizando {nombre}…"):
-                a = analizar_mercado(nombre, cfg)
+                a = analizar_mercado(nombre, cfg, plazo)
             registrar(a)
             st.session_state.resultado = ("uno", a)
         except Exception as e:
@@ -317,8 +329,11 @@ if resultado:
 mis_resultados()
 with st.expander("❓ Cómo funciona"):
     st.markdown(f"""
-- Analiza el mercado con velas de **5 min, 15 min y 1 hora** y se queda con la mejor oportunidad.
-  Por eso unas veces te dirá minutos y otras horas.
+- Analiza el mercado con velas de **5 min, 15 min, 1 hora, 4 horas y 1 día** y se queda con la mejor
+  oportunidad. Por eso unas veces te dirá minutos, otras horas y otras días. Si quieres un plazo concreto,
+  elígelo en «¿Para cuánto tiempo?».
+- Los plazos largos (horas, días) suelen ser más fiables: hay menos «ruido» y los costes pesan menos, pero
+  dan menos señales.
 - Usa {len(ESTRATEGIAS)} estrategias: medias móviles, RSI, MACD, soportes y resistencias, Fibonacci y
   patrones de velas. Solo cuentan las que **han funcionado de verdad** en el histórico de ese mercado.
 - Descarta señales que van **contra la tendencia** del plazo mayor.

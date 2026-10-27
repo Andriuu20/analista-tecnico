@@ -1,0 +1,57 @@
+# 📈 Analista técnico
+
+App web personal en español. Eliges un mercado (EUR/USD, USD/JPY, BTC…) y el tamaño de vela, y te dice
+**si comprar, vender o esperar**, **a qué plazo** y **con qué confianza**. La confianza se basa en cómo le
+ha ido a cada estrategia en el histórico de ese mercado y en las señales reales que ya ha dado.
+
+- **Estrategias**: medias móviles (EMA 9/21), RSI, MACD, soportes y resistencias, retrocesos de Fibonacci
+  y patrones de velas.
+- **Backtest**: el porcentaje de acierto de cada estrategia y plazo sobre el histórico.
+- **Registro en vivo**: cada señal se guarda sola y se comprueba al vencer. Muestra si se supera el 55 %.
+- **Datos gratuitos sin registro**: Yahoo Finance (forex y oro) y Binance (cripto).
+
+## Publicarla gratis (Streamlit Community Cloud)
+
+1. Sube esta carpeta a un repositorio de GitHub (puede ser privado).
+2. Entra en <https://share.streamlit.io> con tu cuenta de GitHub.
+3. Pulsa **Create app**, elige el repositorio, la rama `main` y el archivo `app.py`.
+4. Abre la URL que te da en el móvil y en el ordenador. Desde el móvil puedes usar "Añadir a pantalla de inicio".
+
+## Guardar el registro de forma permanente (recomendado)
+
+El disco de Streamlit Cloud se borra al reiniciar la app, así que el registro se guarda en un **Gist
+secreto** de tu GitHub:
+
+1. Crea un Gist secreto en <https://gist.github.com> con un archivo llamado `registro.json` cuyo contenido
+   sea `[]`. El ID es la última parte de la URL del Gist.
+2. Crea un token en GitHub: **Settings → Developer settings → Personal access tokens → Fine-grained tokens**,
+   con el permiso de cuenta **Gists: Read and write**.
+3. En Streamlit Cloud, en tu app: **⋮ → Settings → Secrets**, pega:
+
+   ```toml
+   GITHUB_TOKEN = "github_pat_..."
+   GIST_ID = "el_id_del_gist"
+   APP_CLAVE = "una contraseña para entrar"   # opcional: protege la app
+   ```
+
+## Probarla en tu ordenador
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Sin conexión: `ANALISTA_DEMO=1 streamlit run app.py` usa datos aleatorios de prueba.
+
+## Cómo decide (resumen)
+
+1. Calcula las 6 estrategias. Solo cuentan las que dan señal en la **última vela cerrada**.
+2. Para cada estrategia elige su mejor plazo con el **70 % antiguo** del histórico. Solo la deja votar si ese
+   acierto se distingue claramente del azar.
+3. La **confianza** se mide con el **30 % reciente** (que no se usó para elegir) más los resultados reales
+   del registro. Así no se engaña eligiendo el mejor resultado a posteriori. Con datos aleatorios casi nunca
+   da señal.
+4. Si las estrategias fiables coinciden, da la señal. Si se contradicen, dice **esperar**.
+
+> Esto es una herramienta de aprendizaje, no asesoramiento financiero. No operes con dinero real hasta que
+> el Registro muestre más de un 55 % de acierto con al menos 100 señales comprobadas.

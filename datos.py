@@ -1,5 +1,6 @@
 """Descarga de velas de mercado (Yahoo Finance para forex/oro, Binance para cripto)."""
 import os
+import zlib
 
 import numpy as np
 import pandas as pd
@@ -98,9 +99,9 @@ def _binance(simbolo: str, codigo: str, velas: int = 5000) -> pd.DataFrame:
     return df.astype(float)
 
 
-def _sinteticos(codigo: str, n: int = 3000) -> pd.DataFrame:
+def _sinteticos(simbolo: str, codigo: str, n: int = 3000) -> pd.DataFrame:
     """Paseo aleatorio, solo para pruebas sin conexión (ANALISTA_DEMO=1)."""
-    rng = np.random.default_rng(7)
+    rng = np.random.default_rng(zlib.crc32(f"{simbolo}{codigo}".encode()))
     fin = pd.Timestamp.now(tz="UTC").floor(f"{MINUTOS[codigo]}min")
     idx = pd.date_range(end=fin, periods=n, freq=f"{MINUTOS[codigo]}min")
     cierre = 1.08 * np.exp(np.cumsum(rng.normal(0, 0.0008, n)))
@@ -121,7 +122,7 @@ def quitar_vela_abierta(df: pd.DataFrame, codigo: str) -> pd.DataFrame:
 def descargar(fuente: str, simbolo: str, codigo: str) -> tuple[pd.DataFrame, str]:
     """Devuelve (velas cerradas, nombre de la fuente usada)."""
     if os.environ.get("ANALISTA_DEMO") == "1":
-        return _sinteticos(codigo), "datos de prueba"
+        return _sinteticos(simbolo, codigo), "datos de prueba"
     if fuente == "binance":
         try:
             return quitar_vela_abierta(_binance(simbolo, codigo), codigo), "Binance"

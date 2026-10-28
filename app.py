@@ -9,6 +9,7 @@ from estrategias import ESTRATEGIAS, calcular
 from graficos import grafico
 from registro import Almacen, anadir, estadisticas_vivo, nueva_entrada, resolver
 from senal import UMBRAL_RENTABLE, Z_SIGNIFICATIVO, generar, texto_plazo
+from tendencia import CONTEXTOS, alinear, backtest_por_contexto, contextos, filtro, resumen, serie_tendencia
 
 ZONA = "Europe/Madrid"
 TODOS = "🔍 Buscar en todos"
@@ -60,6 +61,42 @@ def analizar(fuente: str, simbolo: str, codigo: str, coste: float):
     return df, origen, ind, senales, contexto, bt
 
 
+def juzgar(r: dict, cfg: dict, codigo: str, por_tf: dict) -> dict:
+    """Señal de una temporalidad. Las estrategias que van en contra de la tendencia del plazo mayor se
+    descartan, salvo que en este mercado el histórico muestre que eso no les ha funcionado peor."""
+    sup = por_tf.get(SUPERIOR[codigo])
+    if sup and "error" not in sup:
+        tendencia = alinear(r["df"].index, MINUTOS[codigo], sup["ind"], MINUTOS[SUPERIOR[codigo]])
+        r["tf_tendencia"] = SUPERIOR[codigo]
+    else:  # sin temporalidad superior (1 día) se usa su propia tendencia
+        tendencia = serie_tendencia(r["ind"])
+        r["tf_tendencia"] = codigo
+    senales = r["senales"]
+    ctx = contextos(senales, tendencia)
+    r["bt_ctx"] = backtest_por_contexto(r["df"]["Close"].to_numpy(), senales, ctx, cfg["coste"])
+
+    activas, descartadas = {}, []
+    for k, s in senales.items():
+        activas[k] = s
+        if s[-1] and ctx[k][-1] == -1:
+            descartar, a_contra, a_resto = filtro(r["bt_ctx"], k)
+            if descartar:
+                activas[k] = np.r_[s[:-1], 0]
+                motivo = "va en contra de la tendencia"
+                if not np.isnan(a_contra):
+                    motivo += f" y aquí eso ha funcionado peor ({a_contra:.0%} frente a {a_resto:.0%})"
+                descartadas.append({"estrategia": k, "descripcion": ESTRATEGIAS[k], "direccion": int(s[-1]),
+                                    "valida": False, "motivo": motivo})
+    senal = generar(activas, r["bt"], estadisticas_vivo(registro, cfg["simbolo"], codigo), MINUTOS[codigo])
+    senal["votos"] += descartadas
+    for v in senal["votos"]:
+        v["situacion"] = CONTEXTOS[int(ctx[v["estrategia"]][-1])]
+    if descartadas and not senal["direccion"] and len(descartadas) == len(senal["votos"]):
+        senal["motivo"] = "Las señales iban en contra de la tendencia del plazo mayor."
+    senal["contexto"] = int(np.sign(senal["direccion"] * tendencia[-1])) if senal["direccion"] else None
+    return senal
+
+
 def fmt_precio(p) -> str:
     if p is None or (isinstance(p, float) and np.isnan(p)):
         return "—"
@@ -108,19 +145,10 @@ def analizar_mercado(nombre: str, cfg: dict, plazo: str = "Cualquiera") -> dict:
         except Exception as e:
             por_tf[codigo] = {"error": str(e)}
             continue
-        senal = generar(senales, bt, estadisticas_vivo(registro, cfg["simbolo"], codigo), MINUTOS[codigo])
-        por_tf[codigo] = {"df": df, "origen": origen, "ind": ind, "contexto": contexto, "bt": bt, "senal": senal}
-
-    # confirmación: no ir contra la tendencia de la temporalidad superior
+        por_tf[codigo] = {"df": df, "origen": origen, "ind": ind, "senales": senales, "contexto": contexto, "bt": bt}
     for codigo, r in por_tf.items():
-        if "error" in r or not r["senal"]["direccion"]:
-            continue
-        sup = por_tf.get(SUPERIOR[codigo]) or r
-        tendencia = (sup if "error" not in sup else r)["contexto"]["tendencia"]
-        contraria = "Bajista" if r["senal"]["direccion"] == 1 else "Alcista"
-        if tendencia == contraria:
-            r["senal"] = {**r["senal"], "accion": "ESPERAR", "direccion": 0,
-                          "motivo": f"La señal iba contra la tendencia {tendencia.lower()} de mayor plazo."}
+        if "error" not in r:
+            r["senal"] = juzgar(r, cfg, codigo, por_tf)
 
     validos = [c for c, r in por_tf.items() if "error" not in r]
     if not validos:
@@ -204,7 +232,7 @@ def detalles(a: dict) -> None:
                 marca = "✅" if v["valida"] else "❌"
                 dice = "comprar" if v["direccion"] == 1 else "vender"
                 extra = "" if v["valida"] else f" — no cuenta: {v['motivo']}"
-                st.markdown(f"{marca} {v['descripcion']}: dice **{dice}**{extra}")
+                st.markdown(f"{marca} {v['descripcion']}: dice **{dice}**, {v['situacion']}{extra}")
         if r["senal"]["motivo"]:
             st.caption(r["senal"]["motivo"])
 
@@ -234,6 +262,15 @@ def detalles(a: dict) -> None:
         st.dataframe(tabla, width="stretch")
         st.caption(f"Velas de {NOMBRE_VELA[a['principal']]}, {len(r['df'])} velas de histórico. "
                    "🟢 ≥ 55 % y claramente mejor que el azar · 🟡 > 52 % · ⚪ azar.")
+
+        st.markdown(f"**¿Importa la tendencia?** Señales según la tendencia de las velas de "
+                    f"{NOMBRE_VELA[r['tf_tendencia']]}:")
+        res = resumen(r["bt_ctx"])
+        res["Acierto"] = res["Acierto"].map(lambda x: "—" if np.isnan(x) else f"{x * 100:.1f} %")
+        st.dataframe(res, hide_index=True, width="stretch")
+        st.caption("Media de todas las estrategias y plazos. Las señales en contra de la tendencia se "
+                   "descartan, salvo en las estrategias en las que el histórico de este mercado demuestra que "
+                   "no funcionan peor.")
 
 
 def mis_resultados() -> None:
@@ -336,7 +373,8 @@ with st.expander("❓ Cómo funciona"):
   dan menos señales.
 - Usa {len(ESTRATEGIAS)} estrategias: medias móviles, RSI, MACD, soportes y resistencias, Fibonacci y
   patrones de velas. Solo cuentan las que **han funcionado de verdad** en el histórico de ese mercado.
-- Descarta señales que van **contra la tendencia** del plazo mayor.
+- Descarta las señales que van **en contra de la tendencia** del plazo mayor, salvo que en ese mercado el
+  histórico demuestre que a esa estrategia ir contra la tendencia no le ha funcionado peor.
 - **Aprende**: cada señal se guarda y se comprueba al vencer. Si una estrategia falla en real, pierde peso.
 - **ESPERAR** es una respuesta normal: la mayor parte del tiempo no hay ventaja clara.
 - No uses dinero real hasta que «Mis resultados» muestre **más del 55 % con al menos 100 señales**.

@@ -60,6 +60,7 @@ def nueva_entrada(activo: str, cfg: dict, codigo: str, vela: pd.Timestamp, preci
         "horizonte": senal["horizonte"],
         "confianza": round(senal["confianza"], 4),
         "estrategias": senal["estrategias"],
+        "contexto": senal.get("contexto"),
         "precio_entrada": precio,
         "precio_salida": None,
         "resultado": "pendiente",

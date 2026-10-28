@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 
 from indicadores import atr, ema, macd, niveles_fibonacci, pivotes, rsi
+from tendencia import serie_tendencia
 
 ESTRATEGIAS = {
     "medias": "Cruce de medias móviles (EMA 9 / EMA 21)",
@@ -152,10 +153,4 @@ def calcular(df: pd.DataFrame):
 
 
 def _tendencia(ind: pd.DataFrame) -> str:
-    e50, e200 = ind["ema50"].iat[-1], ind["ema200"].iat[-1]
-    pendiente = ind["ema50"].iat[-1] - ind["ema50"].iat[-10]
-    if e50 > e200 and pendiente > 0:
-        return "Alcista"
-    if e50 < e200 and pendiente < 0:
-        return "Bajista"
-    return "Lateral"
+    return {1: "Alcista", -1: "Bajista", 0: "Lateral"}[int(serie_tendencia(ind)[-1])]

@@ -96,6 +96,13 @@ hay acceso a datos reales) y guarda en la rama **`resultados`** (no en `main`, p
   costes: a 30 min-4 h no se distingue del azar. La confianza estaba inflada (54 % mostrado vs 50,7 % real, igual
   en ambas mitades) → `CALIBRACION = 0.55` en `senal.py`. La esperanza histórica del plan SL/TP no predice el
   resultado. En vigilancia (no confirmado): ADX < 20 acierta menos (~45 %) y ADX ≥ 25 algo más (~55 %).
+- **Medio plazo (28/10/2026, 827 señales simuladas, 2021-2026):** acierto 53,6 % (z = 2,1, algo mejor que el
+  azar), SL/TP −0,06 R tras costes. Único patrón «✅ confirmado»: señales «sin tendencia» en el plazo mayor
+  aciertan más (58,4 % → 56,4 %); las «a favor» de la tendencia, solo 50,2 %. Encaja con que las estrategias que
+  más votan (soportes, Bollinger, estocástico) son de giro. Es 1 de ~40 grupos probados: puede ser casualidad →
+  pendiente de confirmar con el laboratorio en directo antes de cambiar el motor. ETH/USDT falla (30 %, 50 casos).
+- Las ejecuciones programadas de GitHub (cron) tardaron en arrancar el primer día; si `gh api .../actions/runs`
+  no muestra eventos «schedule», lanzar a mano: `gh api -X POST repos/Andriuu20/analista-tecnico/actions/workflows/laboratorio.yml/dispatches -f ref=main`.
 
 ## Archivos
 `app.py` (interfaz) · `datos.py` · `indicadores.py` · `estrategias.py` · `estructura.py` · `backtest.py` · `senal.py` ·

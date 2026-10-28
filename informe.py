@@ -6,7 +6,8 @@ parten en dos mitades por fecha: un patrón encontrado en la primera mitad solo 
 repite en la segunda («confirmado»). Así se evita corregir la app para que acierte el pasado y falle
 el futuro.
 
-Uso: python informe.py resultados/simulacion.csv [resultados/vivo.csv] --salida resultados/INFORME.md"""
+Uso: python informe.py resultados/simulacion.csv [resultados/simulacion_medio.csv resultados/vivo.csv …]
+     --salida resultados/INFORME.md"""
 import argparse
 import json
 from pathlib import Path
@@ -34,7 +35,8 @@ def preparar(df: pd.DataFrame) -> pd.DataFrame:
     df["fecha"] = vela
     df["franja"] = (vela.dt.hour // 4 * 4).map(lambda h: f"{h:02d}-{h + 4:02d} h")
     df["dia"] = vela.dt.dayofweek.map(dict(enumerate(["lun", "mar", "mié", "jue", "vie", "sáb", "dom"])))
-    df["plazo"] = pd.cut(df["plazo_min"], [0, 59, 119, 240], labels=["30-59 min", "1-2 h", "2-4 h"])
+    df["plazo"] = pd.cut(df["plazo_min"], [0, 59, 119, 240, 720, 1440, 2880, 7200],
+                         labels=["30-59 min", "1-2 h", "2-4 h", "4-12 h", "12-24 h", "1-2 días", "2-5 días"])
     df["fuerza_adx"] = pd.cut(df["adx"], [-1, 20, 25, 1000], labels=["lateral (<20)", "débil (20-25)", "fuerte (≥25)"])
     df["volatilidad"] = pd.cut(df["volatilidad_pct"], [-0.01, 0.2, 0.8, 1.01], labels=["baja", "normal", "alta"])
     df["confianza_tramo"] = pd.cut(df["confianza"], [0, 0.52, 0.55, 0.58, 1], labels=["<52 %", "52-55 %", "55-58 %", "≥58 %"])
@@ -145,7 +147,8 @@ def main() -> None:
                  "se repite en la segunda; los fallos sueltos son normales y no se corrigen uno a uno.\n"]
     for archivo in args.archivos:
         ruta = Path(archivo)
-        titulo = "Laboratorio en directo" if "vivo" in ruta.name else "Simulación sobre el pasado reciente"
+        plazo = " — medio plazo (más de 4 h a 5 días)" if "medio" in ruta.name else " — corto plazo (30 min a 4 h)"
+        titulo = ("Laboratorio en directo" if "vivo" in ruta.name else "Simulación sobre el pasado") + plazo
         try:
             datos = pd.read_csv(ruta)
         except (FileNotFoundError, pd.errors.EmptyDataError):  # aún no hay señales comprobadas

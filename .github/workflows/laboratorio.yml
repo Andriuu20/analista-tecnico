@@ -1,6 +1,6 @@
 # Laboratorio en directo: cada 30 minutos comprueba las señales vencidas, analiza los 14 mercados con el
-# mismo motor que la app, apunta las señales de 30 min a 4 h y actualiza el informe de errores en la rama
-# «resultados». No opera con dinero: solo apunta y comprueba.
+# mismo motor que la app, apunta las señales de corto plazo (30 min a 4 h) y de medio plazo (más de 4 h a
+# 5 días) y actualiza el informe de errores en la rama «resultados». No opera con dinero: solo apunta y comprueba.
 name: Laboratorio en directo
 
 on:
@@ -30,10 +30,14 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Comprobar señales vencidas y buscar nuevas
-        run: python laboratorio.py --carpeta resultados
+      - name: Corto plazo (30 min a 4 h)
+        run: python laboratorio.py --rango corto --carpeta resultados
+      - name: Medio plazo (más de 4 h a 5 días)
+        run: python laboratorio.py --rango medio --carpeta resultados
       - name: Actualizar el informe
-        run: python informe.py resultados/simulacion.csv resultados/vivo.csv --salida resultados/INFORME.md
+        run: >-
+          python informe.py resultados/simulacion.csv resultados/simulacion_medio.csv resultados/vivo.csv
+          resultados/vivo_medio.csv --salida resultados/INFORME.md
       - name: Guardar en la rama resultados
         working-directory: resultados
         run: |

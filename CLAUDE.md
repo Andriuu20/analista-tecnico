@@ -71,14 +71,17 @@ vencimiento. Detalles plegados debajo: ¿Por qué?, Gráfico, Backtest, Mis resu
 - **Motor compartido** (`motor.py`): `preparar`, `juzgar`, `filtrar_noticias`, `analizar_mercado`. Lo usan la app,
   la simulación y el laboratorio, para que decidan exactamente igual. No duplicar lógica de decisión en otro sitio.
 
-## Laboratorio de pruebas (corto plazo, 30 min - 4 h)
+## Laboratorio de pruebas (corto: 30 min - 4 h · medio: más de 4 h - 5 días)
 Para acumular resultados rápido y aprender de los errores sin dinero. Todo corre en **GitHub Actions** (aquí no
 hay acceso a datos reales) y guarda en la rama **`resultados`** (no en `main`, para no reiniciar Streamlit):
-- `simulacion.py` + workflow «Simulación» (botón manual y cada día): revive las últimas semanas vela a vela con
-  el motor recortado a los datos de cada momento; sin solapar operaciones; sin filtro de noticias (no hay
-  calendario histórico). Un trabajo por mercado en paralelo.
-- `laboratorio.py` + workflow «Laboratorio en directo» (cada 30 min): resuelve vencidas (binaria y SL/TP),
-  apunta señales nuevas de todas las temporalidades con plazo 30-240 min (marca cuál elegiría la app).
+- Dos rangos (`RANGOS` en `simulacion.py`): «corto» → `simulacion.csv`, `vivo.json/csv`; «medio» (el usuario
+  pidió como máximo 5 días) → `simulacion_medio.csv`, `vivo_medio.json/csv`. Cada rango usa las temporalidades
+  que pueden dar plazos dentro de él (medio: 15m, 1h, 4h, 1d).
+- `simulacion.py --rango corto|medio` + workflow «Simulación» (botón manual y cada día): revive los últimos meses
+  vela a vela con el motor recortado a los datos de cada momento; sin solapar operaciones; sin filtro de noticias
+  (no hay calendario histórico). Un trabajo por mercado y rango en paralelo.
+- `laboratorio.py --rango corto|medio` + workflow «Laboratorio en directo» (cada 30 min): resuelve vencidas
+  (binaria y SL/TP), apunta señales nuevas de todas las temporalidades del rango (marca cuál elegiría la app).
 - `informe.py` → `resultados/INFORME.md`: aciertos por mercado, temporalidad, plazo, estrategia, hora, ADX,
   volatilidad, tendencia, zona, estructura y tramo de confianza.
 - **Cómo aprender de los errores sin sobreajustar:** solo cuentan patrones de ≥ 30 casos que aparecen en la

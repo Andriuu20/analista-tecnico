@@ -6,9 +6,10 @@ Garantías:
   señales no miran al futuro (test de truncado) y el backtest con el que decide se recalcula recortado.
 - No se abre otra operación en el mismo mercado y temporalidad hasta que vence la anterior, para que
   una misma situación no cuente muchas veces.
-- Solo plazos de 30 min a 4 h. El filtro de noticias no se aplica (no hay calendario histórico).
+- Dos pruebas: «corto» (plazos de 30 min a 4 h) y «medio» (de más de 4 h a 5 días). El filtro de noticias no
+  se aplica (no hay calendario histórico).
 
-Uso: python simulacion.py [--salida resultados/simulacion.csv] [--mercados "EUR/USD,BTC/USDT"]"""
+Uso: python simulacion.py [--rango corto|medio] [--salida resultados/simulacion.csv] [--mercados "EUR/USD,BTC/USDT"]"""
 import argparse
 import json
 import sys
@@ -18,15 +19,17 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from backtest import backtest
+from backtest import HORIZONTES, backtest
 from datos import ACTIVOS, MINUTOS, descargar
 from motor import SUPERIOR, juzgar, preparar
 from plan import simular
 from tendencia import alinear, serie_tendencia
 
-PLAZO_MIN, PLAZO_MAX = 30, 240  # minutos
-TEMPORALIDADES_SIM = ["5m", "15m", "1h", "4h"]
-VELAS_SIMULADAS = {"5m": 7000, "15m": 4600, "1h": 7000, "4h": 3400}  # hasta ~3 meses (5m) - 2 años (4h)
+RANGOS = {"corto": (30, 240), "medio": (241, 7200)}  # plazo de la operación en minutos (medio: hasta 5 días)
+PLAZO_MIN, PLAZO_MAX = RANGOS["corto"]
+TEMPORALIDADES_SIM = ["5m", "15m", "1h", "4h", "1d"]
+# velas simuladas por temporalidad: ~3 meses (5m), ~1 año (15m, 1h), ~2 años (4h), ~6 años (1d)
+VELAS_SIMULADAS = {"5m": 7000, "15m": 4600, "1h": 7000, "4h": 3400, "1d": 2500}
 HISTORIA_MINIMA = 1000  # velas previas que necesita el motor para decidir
 
 
@@ -58,7 +61,13 @@ def resultado_sl_tp(df: pd.DataFrame, t: int, senal: dict, coste: float) -> tupl
     return float(res[0]), float(dur[0])
 
 
-def simular_mercado(nombre: str, cfg: dict, datos: dict, diagnostico: dict | None = None) -> list[dict]:
+def temporalidades_para(plazo: tuple[int, int]) -> list[str]:
+    """Temporalidades que pueden dar alguna operación dentro del rango de plazos."""
+    return [c for c in TEMPORALIDADES_SIM if any(plazo[0] <= h * MINUTOS[c] <= plazo[1] for h in HORIZONTES)]
+
+
+def simular_mercado(nombre: str, cfg: dict, datos: dict, diagnostico: dict | None = None,
+                    plazo: tuple[int, int] = RANGOS["corto"]) -> list[dict]:
     """Señales simuladas del mercado. Si se pasa `diagnostico`, anota cuántas velas se evaluaron y por qué se
     descartó cada posible señal (para encontrar errores sin tener que leer los registros de GitHub)."""
     diag = diagnostico if diagnostico is not None else {}
@@ -72,7 +81,7 @@ def simular_mercado(nombre: str, cfg: dict, datos: dict, diagnostico: dict | Non
         prep[codigo] = {"df": df, "ind": ind, "senales": senales}
 
     filas = []
-    for codigo in TEMPORALIDADES_SIM:
+    for codigo in temporalidades_para(plazo):
         if codigo not in prep:
             continue
         p = prep[codigo]
@@ -84,8 +93,8 @@ def simular_mercado(nombre: str, cfg: dict, datos: dict, diagnostico: dict | Non
         activa = np.any([s != 0 for s in senales.values()], axis=0)
         libre_desde = 0
         cuenta = diag.setdefault(codigo, {"velas": n, "evaluadas": 0, "con estrategia activa": 0,
-                                          "ESPERAR": 0, "fuera de 30 min-4 h": 0, "señales": 0, "motivos ESPERAR": {}})
-        for t in range(max(n - VELAS_SIMULADAS[codigo], HISTORIA_MINIMA), n - 1):
+                                          "ESPERAR": 0, "fuera de plazo": 0, "señales": 0, "motivos ESPERAR": {}})
+        for t in range(max(n - VELAS_SIMULADAS.get(codigo, 0), HISTORIA_MINIMA), n - 1):
             cuenta["evaluadas"] += 1
             if t < libre_desde or not activa[t]:
                 continue
@@ -100,8 +109,8 @@ def simular_mercado(nombre: str, cfg: dict, datos: dict, diagnostico: dict | Non
                 cuenta["motivos ESPERAR"][motivo] = cuenta["motivos ESPERAR"].get(motivo, 0) + 1
                 continue
             h = senal["horizonte"]
-            if not PLAZO_MIN <= h * minutos <= PLAZO_MAX or t + h >= n:
-                cuenta["fuera de 30 min-4 h"] += 1
+            if not plazo[0] <= h * minutos <= plazo[1] or t + h >= n:
+                cuenta["fuera de plazo"] += 1
                 continue
             cuenta["señales"] += 1
             d = senal["direccion"]
@@ -125,6 +134,7 @@ def simular_mercado(nombre: str, cfg: dict, datos: dict, diagnostico: dict | Non
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--salida", default="resultados/simulacion.csv")
+    parser.add_argument("--rango", choices=list(RANGOS), default="corto")
     parser.add_argument("--mercados", default=",".join(ACTIVOS))
     args = parser.parse_args()
 
@@ -133,14 +143,14 @@ def main() -> int:
         cfg, inicio = ACTIVOS[nombre], time.time()
         diag = diagnosticos.setdefault(nombre, {})
         datos = {}
-        for codigo in [*TEMPORALIDADES_SIM, "1d"]:
+        for codigo in TEMPORALIDADES_SIM:
             try:
                 datos[codigo], origen = descargar(cfg["fuente"], cfg["simbolo"], codigo)
                 diag[f"descarga {codigo}"] = f"{len(datos[codigo])} velas de {origen}"
             except Exception as e:
                 diag[f"descarga {codigo}"] = f"ERROR: {type(e).__name__}: {e}"
         try:
-            nuevas = simular_mercado(nombre, cfg, datos, diag)
+            nuevas = simular_mercado(nombre, cfg, datos, diag, RANGOS[args.rango])
         except Exception as e:
             diag["ERROR en la simulación"] = f"{type(e).__name__}: {e}"
             nuevas = []

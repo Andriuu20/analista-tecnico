@@ -1,6 +1,7 @@
-# Simulación sobre el pasado reciente: la app revive las últimas semanas de cada mercado y se comprueban
-# sus señales de 30 min a 4 h. Un ordenador por mercado en paralelo; al final se junta todo, se genera el
-# informe de errores y se guarda en la rama «resultados» (no en main, para no reiniciar la app).
+# Simulación sobre el pasado: la app revive los últimos meses de cada mercado y se comprueban sus señales en dos
+# pruebas: «corto» (30 min a 4 h) y «medio» (más de 4 h a 5 días). Un ordenador por mercado y prueba en paralelo;
+# al final se junta todo, se genera el informe de errores y se guarda en la rama «resultados» (no en main, para
+# no reiniciar la app).
 name: Simulación
 
 on:
@@ -18,10 +19,11 @@ concurrency:
 jobs:
   simular:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     strategy:
       fail-fast: false
       matrix:
+        rango: ["corto", "medio"]
         mercado: ["EUR/USD", "USD/JPY", "EUR/JPY", "GBP/USD", "GBP/JPY", "AUD/USD", "USD/CAD", "USD/CHF",
                   "EUR/GBP", "Oro (XAU/USD)", "BTC/USDT", "ETH/USDT", "SOL/USDT", "XRP/USDT"]
     steps:
@@ -31,8 +33,10 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Simular ${{ matrix.mercado }}
-        run: python simulacion.py --mercados "${{ matrix.mercado }}" --salida "parciales/sim_${{ strategy.job-index }}.csv"
+      - name: Simular ${{ matrix.mercado }} (${{ matrix.rango }})
+        run: >-
+          python simulacion.py --rango ${{ matrix.rango }} --mercados "${{ matrix.mercado }}"
+          --salida "parciales/${{ matrix.rango }}_${{ strategy.job-index }}.csv"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -65,15 +69,18 @@ jobs:
           python - <<'EOF'
           import glob, pandas as pd
           import json
-          partes = [pd.read_csv(f) for f in sorted(glob.glob("parciales/*.csv")) if open(f).read().strip()]
-          if partes:
-              pd.concat(partes, ignore_index=True).to_csv("resultados/simulacion.csv", index=False)
-          diagnostico = {}
-          for f in sorted(glob.glob("parciales/*.diag.json")):
-              diagnostico.update(json.load(open(f)))
-          json.dump(diagnostico, open("resultados/diagnostico_simulacion.json", "w"), ensure_ascii=False, indent=1)
+          for rango, sufijo in (("corto", ""), ("medio", "_medio")):
+              partes = [pd.read_csv(f) for f in sorted(glob.glob(f"parciales/{rango}_*.csv")) if open(f).read().strip()]
+              if partes:
+                  pd.concat(partes, ignore_index=True).to_csv(f"resultados/simulacion{sufijo}.csv", index=False)
+              diagnostico = {}
+              for f in sorted(glob.glob(f"parciales/{rango}_*.diag.json")):
+                  diagnostico.update(json.load(open(f)))
+              json.dump(diagnostico, open(f"resultados/diagnostico_simulacion{sufijo}.json", "w"),
+                        ensure_ascii=False, indent=1)
           EOF
-          python informe.py resultados/simulacion.csv resultados/vivo.csv --salida resultados/INFORME.md
+          python informe.py resultados/simulacion.csv resultados/simulacion_medio.csv resultados/vivo.csv \
+            resultados/vivo_medio.csv --salida resultados/INFORME.md
       - name: Guardar en la rama resultados
         working-directory: resultados
         run: |

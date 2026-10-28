@@ -121,6 +121,11 @@ def fmt_precio(p) -> str:
     return f"{p:,.2f}" if p >= 1000 else f"{p:.3f}" if p >= 10 else f"{p:.5f}"
 
 
+def porcentaje(x: float) -> str:
+    """Con un decimal: redondear a entero mostraba «55 %» con confianzas del 54,7 %."""
+    return f"{x * 100:.1f} %".replace(".", ",")
+
+
 def hora_local(ts, formato="%d/%m %H:%M") -> str:
     return pd.Timestamp(ts).tz_convert(ZONA).strftime(formato)
 
@@ -229,7 +234,7 @@ def tarjeta(a: dict, compacta: bool = False) -> None:
             f"<div style='font-size:1.6rem;font-weight:600;margin:.2rem 0 .6rem'>⏱️ {s['plazo']}</div>",
             unsafe_allow_html=True,
         )
-        st.markdown(f"<div style='font-size:1.15rem'>Confianza <b>{s['confianza'] * 100:.0f} %</b> · "
+        st.markdown(f"<div style='font-size:1.15rem'>Confianza <b>{porcentaje(s['confianza'])}</b> · "
                     f"Vence {texto_vencimiento(vence, minutos * s['horizonte'])}</div>", unsafe_allow_html=True)
         plan = s.get("plan")
         if plan:
@@ -265,7 +270,7 @@ def detalles(a: dict) -> None:
             s = x["senal"]
             filas.append({"Velas": NOMBRE_VELA[codigo], "Resultado": s["accion"].capitalize(),
                           "Plazo": s["plazo"] if s["direccion"] else "—",
-                          "Confianza": f"{s['confianza'] * 100:.0f} %" if s["direccion"] else "—"})
+                          "Confianza": porcentaje(s["confianza"]) if s["direccion"] else "—"})
         ctx = r["contexto"]
         if r["senal"]["direccion"]:
             a_favor, en_contra = factores(r["senal"], ctx, minutos, NOMBRE_VELA[r["tf_tendencia"]], fmt_precio,

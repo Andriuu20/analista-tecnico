@@ -26,7 +26,7 @@ from tendencia import alinear, serie_tendencia
 
 PLAZO_MIN, PLAZO_MAX = 30, 240  # minutos
 TEMPORALIDADES_SIM = ["5m", "15m", "1h", "4h"]
-VELAS_SIMULADAS = {"5m": 2500, "15m": 1500, "1h": 1000, "4h": 500}
+VELAS_SIMULADAS = {"5m": 7000, "15m": 4600, "1h": 7000, "4h": 3400}  # hasta ~3 meses (5m) - 2 años (4h)
 HISTORIA_MINIMA = 1000  # velas previas que necesita el motor para decidir
 
 

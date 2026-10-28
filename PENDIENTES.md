@@ -17,6 +17,11 @@ Estado actual: app publicada en https://tradeappnexus.streamlit.app con registro
 - Medir con el histórico si el ADX o la zona premium/discount mejoran el acierto antes de que influyan en la
   decisión (como se hizo con el filtro de tendencia).
 
+- **Laboratorio de corto plazo** (en marcha): revisar `INFORME.md` de la rama `resultados` cuando haya ≥ 100
+  señales y corregir solo patrones confirmados. Después, pasar a operaciones de más plazo.
+- Estrategias de traders que el usuario encuentre en vídeos: convertir sus reglas en reglas medibles y
+  probarlas con la simulación antes de añadirlas.
+
 ## Regla
 No usar dinero real hasta tener al menos 100 señales comprobadas con más del 55 % de acierto
 en «Mis resultados».

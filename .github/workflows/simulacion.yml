@@ -1,0 +1,78 @@
+# Simulación sobre el pasado reciente: la app revive las últimas semanas de cada mercado y se comprueban
+# sus señales de 30 min a 4 h. Un ordenador por mercado en paralelo; al final se junta todo, se genera el
+# informe de errores y se guarda en la rama «resultados» (no en main, para no reiniciar la app).
+name: Simulación
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * *"  # cada día a las 04:17 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: resultados
+  cancel-in-progress: false
+
+jobs:
+  simular:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        mercado: ["EUR/USD", "USD/JPY", "EUR/JPY", "GBP/USD", "GBP/JPY", "AUD/USD", "USD/CAD", "USD/CHF",
+                  "EUR/GBP", "Oro (XAU/USD)", "BTC/USDT", "ETH/USDT", "SOL/USDT", "XRP/USDT"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Simular ${{ matrix.mercado }}
+        run: python simulacion.py --mercados "${{ matrix.mercado }}" --salida "parciales/sim_${{ strategy.job-index }}.csv"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sim-${{ strategy.job-index }}
+          path: parciales/
+          if-no-files-found: ignore
+
+  informe:
+    needs: simular
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: resultados
+          path: resultados
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: sim-*
+          path: parciales
+          merge-multiple: true
+      - name: Juntar resultados y generar el informe
+        run: |
+          python - <<'EOF'
+          import glob, pandas as pd
+          partes = [pd.read_csv(f) for f in sorted(glob.glob("parciales/*.csv")) if open(f).read().strip()]
+          pd.concat(partes, ignore_index=True).to_csv("resultados/simulacion.csv", index=False)
+          EOF
+          python informe.py resultados/simulacion.csv resultados/vivo.csv --salida resultados/INFORME.md
+      - name: Guardar en la rama resultados
+        working-directory: resultados
+        run: |
+          git config user.name "laboratorio"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Simulación $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done

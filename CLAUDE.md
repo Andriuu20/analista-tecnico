@@ -68,10 +68,29 @@ vencimiento. Detalles plegados debajo: ¿Por qué?, Gráfico, Backtest, Mis resu
   un Gist secreto (Secrets de Streamlit `GITHUB_TOKEN` con permiso Gists RW y `GIST_ID`); sin ellos, en archivo
   local (se pierde al reiniciar). Los resultados reales se suman al cálculo de confianza («aprende»).
 - `APP_CLAVE` en Secrets (opcional) protege la app con contraseña.
+- **Motor compartido** (`motor.py`): `preparar`, `juzgar`, `filtrar_noticias`, `analizar_mercado`. Lo usan la app,
+  la simulación y el laboratorio, para que decidan exactamente igual. No duplicar lógica de decisión en otro sitio.
+
+## Laboratorio de pruebas (corto plazo, 30 min - 4 h)
+Para acumular resultados rápido y aprender de los errores sin dinero. Todo corre en **GitHub Actions** (aquí no
+hay acceso a datos reales) y guarda en la rama **`resultados`** (no en `main`, para no reiniciar Streamlit):
+- `simulacion.py` + workflow «Simulación» (botón manual y cada día): revive las últimas semanas vela a vela con
+  el motor recortado a los datos de cada momento; sin solapar operaciones; sin filtro de noticias (no hay
+  calendario histórico). Un trabajo por mercado en paralelo.
+- `laboratorio.py` + workflow «Laboratorio en directo» (cada 30 min): resuelve vencidas (binaria y SL/TP),
+  apunta señales nuevas de todas las temporalidades con plazo 30-240 min (marca cuál elegiría la app).
+- `informe.py` → `resultados/INFORME.md`: aciertos por mercado, temporalidad, plazo, estrategia, hora, ADX,
+  volatilidad, tendencia, zona, estructura y tramo de confianza.
+- **Cómo aprender de los errores sin sobreajustar:** solo cuentan patrones de ≥ 30 casos que aparecen en la
+  primera mitad (por fecha) y se repiten en la segunda («✅ confirmado»). Cualquier cambio al motor que salga de
+  ahí debe comprobarse después con datos nuevos (laboratorio en directo) antes de darlo por bueno. No corregir
+  fallos sueltos uno a uno.
+- Para leer los resultados en una sesión nueva: `git fetch origin resultados && git show origin/resultados:INFORME.md`.
 
 ## Archivos
 `app.py` (interfaz) · `datos.py` · `indicadores.py` · `estrategias.py` · `estructura.py` · `backtest.py` · `senal.py` ·
-`tendencia.py` · `plan.py` · `factores.py` · `noticias.py` · `registro.py` · `graficos.py` · `.streamlit/config.toml`
+`tendencia.py` · `plan.py` · `factores.py` · `noticias.py` · `registro.py` · `graficos.py` · `motor.py` · `simulacion.py` ·
+`laboratorio.py` · `informe.py` · `.github/workflows/` · `.streamlit/config.toml`
 (tema oscuro) · `requirements.txt` (Python 3.12 en Cloud) · `requirements-dev.txt` (pytest, solo para pruebas).
 
 ## Cómo probar

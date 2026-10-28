@@ -5,27 +5,19 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-from backtest import backtest
 from datos import ACTIVOS, INTERVALOS, MINUTOS, activo_personalizado, descargar
-from estrategias import ESTRATEGIAS, NOMBRES_CORTOS, calcular
+from estrategias import ESTRATEGIAS, NOMBRES_CORTOS
 from factores import factores
 from graficos import grafico
-from noticias import descargar_calendario, en_ventana, monedas
-from plan import COSTE_MAXIMO_R
-from plan import evaluar as evaluar_plan
+from motor import PLAZOS, TEMPORALIDADES, ZONA, hora_local, preparar
+from motor import analizar_mercado as analizar_con_motor
+from noticias import descargar_calendario
 from registro import Almacen, anadir, estadisticas_vivo, nueva_entrada, resolver
-from senal import UMBRAL_RENTABLE, Z_SIGNIFICATIVO, generar, texto_plazo
-from tendencia import CONTEXTOS, alinear, backtest_por_contexto, contextos, filtro, resumen, serie_tendencia
+from senal import UMBRAL_RENTABLE, Z_SIGNIFICATIVO, texto_plazo
+from tendencia import resumen
 
-ZONA = "Europe/Madrid"
 TODOS = "🔍 Buscar en todos"
 OTRO = "✏️ Otro símbolo…"
-# temporalidades que se analizan solas; cada una se confirma con la tendencia de la siguiente
-TEMPORALIDADES = ["5m", "15m", "1h", "4h", "1d"]
-SUPERIOR = {"5m": "15m", "15m": "1h", "1h": "4h", "4h": "1d", "1d": None}
-# preferencia de plazo -> (mínimo, máximo) en minutos de la operación
-PLAZOS = {"Cualquiera": (0, 10**9), "Minutos": (0, 59), "Horas": (60, 1439), "Días": (1440, 10**9)}
-MAX_VELAS = 8000
 NOMBRE_VELA = {c: e for e, (c, _) in INTERVALOS.items()}
 
 st.set_page_config(page_title="Analista técnico", page_icon="📈", layout="centered")
@@ -59,60 +51,13 @@ def cargar_velas(fuente: str, simbolo: str, codigo: str):
 @st.cache_data(ttl=60, show_spinner=False)
 def analizar(fuente: str, simbolo: str, codigo: str, coste: float):
     df, origen = cargar_velas(fuente, simbolo, codigo)
-    df = df.iloc[-MAX_VELAS:]
-    if len(df) < 300:
-        raise ValueError(f"solo hay {len(df)} velas; hacen falta al menos 300")
-    ind, senales, contexto = calcular(df)
-    bt = backtest(df["Close"].to_numpy(), senales, coste)
+    df, ind, senales, contexto, bt = preparar(df, coste)
     return df, origen, ind, senales, contexto, bt
 
 
 @st.cache_data(ttl=3600, show_spinner=False)
 def calendario():
     return None if os.environ.get("ANALISTA_DEMO") == "1" else descargar_calendario()
-
-
-def juzgar(r: dict, cfg: dict, codigo: str, por_tf: dict) -> dict:
-    """Señal de una temporalidad. Las estrategias que van en contra de la tendencia del plazo mayor se
-    descartan, salvo que en este mercado el histórico muestre que eso no les ha funcionado peor."""
-    sup = por_tf.get(SUPERIOR[codigo])
-    if sup and "error" not in sup:
-        tendencia = alinear(r["df"].index, MINUTOS[codigo], sup["ind"], MINUTOS[SUPERIOR[codigo]])
-        r["tf_tendencia"] = SUPERIOR[codigo]
-    else:  # sin temporalidad superior (1 día) se usa su propia tendencia
-        tendencia = serie_tendencia(r["ind"])
-        r["tf_tendencia"] = codigo
-    senales = r["senales"]
-    ctx = contextos(senales, tendencia)
-    r["bt_ctx"] = backtest_por_contexto(r["df"]["Close"].to_numpy(), senales, ctx, cfg["coste"])
-
-    activas, descartadas = {}, []
-    for k, s in senales.items():
-        activas[k] = s
-        if s[-1] and ctx[k][-1] == -1:
-            descartar, a_contra, a_resto = filtro(r["bt_ctx"], k)
-            if descartar:
-                activas[k] = np.r_[s[:-1], 0]
-                motivo = "va en contra de la tendencia"
-                if not np.isnan(a_contra):
-                    motivo += f" y aquí eso ha funcionado peor ({a_contra:.0%} frente a {a_resto:.0%})"
-                descartadas.append({"estrategia": k, "descripcion": ESTRATEGIAS[k], "direccion": int(s[-1]),
-                                    "valida": False, "motivo": motivo})
-    senal = generar(activas, r["bt"], estadisticas_vivo(registro, cfg["simbolo"], codigo), MINUTOS[codigo])
-    senal["votos"] += descartadas
-    for v in senal["votos"]:
-        v["situacion"] = CONTEXTOS[int(ctx[v["estrategia"]][-1])]
-    if descartadas and not senal["direccion"] and len(descartadas) == len(senal["votos"]):
-        senal["motivo"] = "Las señales iban en contra de la tendencia del plazo mayor."
-    if senal["direccion"]:
-        senal["plan"] = evaluar_plan(r["df"], r["ind"], senales, senal["estrategias"], senal["direccion"],
-                                     cfg["coste"])
-        if senal["plan"]["coste_r"] > COSTE_MAXIMO_R:
-            senal.update(accion="ESPERAR", direccion=0,
-                         motivo=f"El movimiento típico es demasiado pequeño: el coste de operar se comería el "
-                                f"{senal['plan']['coste_r']:.0%} del riesgo.")
-    senal["contexto"] = int(np.sign(senal["direccion"] * tendencia[-1])) if senal["direccion"] else None
-    return senal
 
 
 def fmt_precio(p) -> str:
@@ -124,10 +69,6 @@ def fmt_precio(p) -> str:
 def porcentaje(x: float) -> str:
     """Con un decimal: redondear a entero mostraba «55 %» con confianzas del 54,7 %."""
     return f"{x * 100:.1f} %".replace(".", ",")
-
-
-def hora_local(ts, formato="%d/%m %H:%M") -> str:
-    return pd.Timestamp(ts).tz_convert(ZONA).strftime(formato)
 
 
 def texto_vencimiento(vence: pd.Timestamp, duracion_min: int) -> str:
@@ -160,45 +101,13 @@ if resolver(registro, cargar_velas):
 
 
 def analizar_mercado(nombre: str, cfg: dict, plazo: str = "Cualquiera") -> dict:
-    """Analiza todas las temporalidades y se queda con la mejor señal confirmada del plazo pedido."""
-    por_tf = {}
-    for codigo in TEMPORALIDADES:
-        try:
-            df, origen, ind, senales, contexto, bt = analizar(cfg["fuente"], cfg["simbolo"], codigo, cfg["coste"])
-        except Exception as e:
-            por_tf[codigo] = {"error": str(e)}
-            continue
-        por_tf[codigo] = {"df": df, "origen": origen, "ind": ind, "senales": senales, "contexto": contexto, "bt": bt}
-    for codigo, r in por_tf.items():
-        if "error" not in r:
-            r["senal"] = juzgar(r, cfg, codigo, por_tf)
-
-    # noticias de alto impacto: en forex y oro no se opera si caen antes del vencimiento (plazos < 1 día)
-    eventos, mon = calendario(), monedas(nombre, cfg)
-    ahora = pd.Timestamp.now(tz="UTC")
-    for codigo, r in por_tf.items():
-        s = r.get("senal")
-        if not s or not s["direccion"]:
-            continue
-        vence = r["df"].index[-1] + pd.Timedelta(minutes=MINUTOS[codigo] * (s["horizonte"] + 1))
-        s["noticias"] = en_ventana(eventos, mon, ahora, vence)
-        if s["noticias"] and cfg["fuente"] != "binance" and MINUTOS[codigo] * s["horizonte"] < 1440:
-            e = s["noticias"][0]
-            r["senal"] = {**s, "accion": "ESPERAR", "direccion": 0,
-                          "motivo": f"Noticia de alto impacto antes del vencimiento ({e['moneda']}: {e['titulo']}, "
-                                    f"a las {hora_local(e['hora'], '%H:%M')}): mejor no operar."}
-
-    validos = [c for c, r in por_tf.items() if "error" not in r]
-    if not validos:
-        raise ValueError(next(iter(por_tf.values()))["error"])
-    minimo, maximo = PLAZOS[plazo]
-    con_senal = [c for c in validos if por_tf[c]["senal"]["direccion"]
-                 and minimo <= por_tf[c]["senal"]["horizonte"] * MINUTOS[c] <= maximo]
-    mejor = max(con_senal, key=lambda c: por_tf[c]["senal"]["confianza"]) if con_senal else None
-    return {"nombre": nombre, "cfg": cfg, "por_tf": por_tf, "mejor": mejor,
-            "principal": mejor or ("15m" if "15m" in validos else validos[0]),
-            "noticias": en_ventana(eventos, mon, ahora, ahora + pd.Timedelta(hours=24)),
-            "calendario_ok": eventos is not None}
+    """Analiza todas las temporalidades con el motor (motor.py) y se queda con la mejor señal."""
+    return analizar_con_motor(
+        nombre, cfg, plazo,
+        cargar=lambda codigo: analizar(cfg["fuente"], cfg["simbolo"], codigo, cfg["coste"]),
+        vivo_de=lambda codigo: estadisticas_vivo(registro, cfg["simbolo"], codigo),
+        eventos=calendario(),
+    )
 
 
 def registrar(a: dict) -> None:

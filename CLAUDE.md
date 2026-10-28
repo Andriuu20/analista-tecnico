@@ -86,6 +86,13 @@ hay acceso a datos reales) y guarda en la rama **`resultados`** (no en `main`, p
   ahí debe comprobarse después con datos nuevos (laboratorio en directo) antes de darlo por bueno. No corregir
   fallos sueltos uno a uno.
 - Para leer los resultados en una sesión nueva: `git fetch origin resultados && git show origin/resultados:INFORME.md`.
+- `resultados/diagnostico_simulacion.json`: por mercado y temporalidad, velas descargadas, veces que se activó
+  alguna estrategia y motivos de ESPERAR (sirve para depurar sin leer los registros de GitHub, que desde la
+  nube de Claude Code no son accesibles; sí lo es `gh api` sobre el repo: runs, jobs y anotaciones).
+- **Primer resultado (28/10/2026, 546 señales simuladas, ene-oct 2026):** acierto 50,7 %, SL/TP −0,14 R tras
+  costes: a 30 min-4 h no se distingue del azar. La confianza estaba inflada (54 % mostrado vs 50,7 % real, igual
+  en ambas mitades) → `CALIBRACION = 0.55` en `senal.py`. La esperanza histórica del plan SL/TP no predice el
+  resultado. En vigilancia (no confirmado): ADX < 20 acierta menos (~45 %) y ADX ≥ 25 algo más (~55 %).
 
 ## Archivos
 `app.py` (interfaz) · `datos.py` · `indicadores.py` · `estrategias.py` · `estructura.py` · `backtest.py` · `senal.py` ·

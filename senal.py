@@ -15,6 +15,11 @@ Z_SIGNIFICATIVO = 2.4  # superar el 50 % de forma significativa; calibrado con d
 # estrategias × 7 plazos: con 2,4 da señal en un 3 % de las velas aleatorias (con 6 estrategias y 2,2 era un 4 %)
 MIN_SENALES = 20  # muestras mínimas para elegir plazo y para medir la confianza
 UMBRAL_RENTABLE = 0.55  # lo que hace falta en binarias con pagos del 80-90 %
+# Calibración medida con la simulación sobre el pasado (546 señales reales de 30 min a 4 h, ene-oct 2026): la
+# confianza mostrada era 54 % de media y el acierto real 50,7 %, igual en las dos mitades. Elegir «la estrategia
+# y el plazo que mejor salían» infla la confianza; se encoge hacia el 50 % con el factor ajustado en la primera
+# mitad (mejora el error de predicción en la segunda). Revisar cuando el laboratorio tenga más resultados.
+CALIBRACION = 0.55
 
 
 def texto_plazo(minutos: int) -> str:
@@ -91,6 +96,7 @@ def generar(senales: dict, bt: pd.DataFrame, vivo: pd.DataFrame | None, minutos_
     favor = [v for v in validos if v["direccion"] == direccion]
     principal = max(favor, key=lambda v: v["estimado"])
     confianza = sum(v["estimado"] * (v["estimado"] - 0.5) for v in favor) / a_favor - en_contra
+    confianza = 0.5 + CALIBRACION * (confianza - 0.5)
     resultado.update(
         accion="COMPRAR" if direccion == 1 else "VENDER",
         direccion=direccion,

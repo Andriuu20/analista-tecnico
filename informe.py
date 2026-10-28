@@ -8,6 +8,7 @@ el futuro.
 
 Uso: python informe.py resultados/simulacion.csv [resultados/vivo.csv] --salida resultados/INFORME.md"""
 import argparse
+import json
 from pathlib import Path
 
 import numpy as np
@@ -144,10 +145,18 @@ def main() -> None:
                  "se repite en la segunda; los fallos sueltos son normales y no se corrigen uno a uno.\n"]
     for archivo in args.archivos:
         ruta = Path(archivo)
-        if not ruta.exists() or ruta.stat().st_size == 0:
-            continue
-        datos = pd.read_csv(ruta)
         titulo = "Laboratorio en directo" if "vivo" in ruta.name else "Simulación sobre el pasado reciente"
+        try:
+            datos = pd.read_csv(ruta)
+        except (FileNotFoundError, pd.errors.EmptyDataError):  # aún no hay señales comprobadas
+            datos = pd.DataFrame()
+        if datos.empty:
+            pendientes = ruta.with_suffix(".json")
+            extra = ""
+            if pendientes.exists():
+                extra = f" ({len(json.loads(pendientes.read_text()))} señales apuntadas, esperando a vencer)"
+            secciones.append(f"## {titulo}\n\nTodavía no hay señales comprobadas{extra}.\n")
+            continue
         if "acierto" in datos:
             datos = datos[datos["acierto"].notna()]
             datos["acierto"] = datos["acierto"].astype(str).str.lower().isin(["true", "1"])

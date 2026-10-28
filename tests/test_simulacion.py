@@ -45,3 +45,17 @@ def test_decide_igual_que_en_directo(monkeypatch):
         senal = juzgar(r, coste, "15m", tendencia, None)
         assert senal["direccion"] == fila["direccion"] and senal["horizonte"] == fila["horizonte"]
         assert np.isclose(senal["confianza"], fila["confianza"], atol=1e-4)
+
+
+def test_informe_con_archivos_vacios_o_inexistentes(tmp_path):
+    """El laboratorio recién empezado no tiene señales comprobadas: el informe no debe fallar."""
+    import subprocess, sys
+    from pathlib import Path
+    vacio = tmp_path / "vivo.csv"
+    pd.DataFrame([]).to_csv(vacio, index=False)
+    salida = tmp_path / "INFORME.md"
+    raiz = Path(__file__).resolve().parent.parent
+    r = subprocess.run([sys.executable, str(raiz / "informe.py"), str(tmp_path / "simulacion.csv"), str(vacio),
+                        "--salida", str(salida)], cwd=raiz, capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    assert "Todavía no hay señales comprobadas" in salida.read_text()

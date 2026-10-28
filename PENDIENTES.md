@@ -13,6 +13,9 @@ Estado actual: app publicada en https://tradeappnexus.streamlit.app con registro
 - **MetaTrader 5 / bot**: en el PC de mesa (Windows), primero en cuenta demo. MT5 tiene librería
   oficial de Python. Brokers regulados con MT5: Darwinex (CNMV), Pepperstone, IG.
 - Comprobar que la escritura en el Gist funciona con la primera señal real.
+- Registro en vivo: comprobar también si se tocó antes el SL o el TP (ya se guardan en cada señal).
+- Medir con el histórico si el ADX o la zona premium/discount mejoran el acierto antes de que influyan en la
+  decisión (como se hizo con el filtro de tendencia).
 
 ## Regla
 No usar dinero real hasta tener al menos 100 señales comprobadas con más del 55 % de acierto

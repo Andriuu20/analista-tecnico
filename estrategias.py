@@ -3,7 +3,9 @@ usando solo información disponible al cierre de esa vela."""
 import numpy as np
 import pandas as pd
 
-from indicadores import atr, ema, macd, niveles_fibonacci, pivotes, rsi
+from estructura import calcular_estructura
+from indicadores import (adx, atr, bollinger, ema, estocastico, extensiones_fibonacci, macd, niveles_fibonacci,
+                         pivotes, rsi, sma, supertrend)
 from tendencia import serie_tendencia
 
 ESTRATEGIAS = {
@@ -13,6 +15,25 @@ ESTRATEGIAS = {
     "soportes": "Rebote en soporte o rechazo en resistencia",
     "fibonacci": "Rebote en la zona 50 %-78,6 % de Fibonacci a favor del impulso",
     "velas": "Patrones de velas (envolvente, martillo, estrella fugaz)",
+    "supertrend": "Cambio de dirección del SuperTrend (10, 3)",
+    "cruce_sma": "Cruce dorado o de la muerte (SMA 50 / SMA 200)",
+    "bollinger": "Vuelta al interior de las Bandas de Bollinger (20, 2)",
+    "estocastico": "Cruce del estocástico en sobreventa (<20) o sobrecompra (>80)",
+    "divergencia": "Divergencia entre el precio y el RSI",
+    "ruptura": "Ruptura y retesteo de un techo o suelo",
+    "bos": "Ruptura de estructura a favor (BOS)",
+    "choch": "Cambio de carácter de la estructura (CHoCH)",
+    "barrida": "Barrida de liquidez (mecha más allá de un techo/suelo y cierre de vuelta)",
+    "fvg": "Reacción en un Fair Value Gap (FVG)",
+    "order_block": "Reacción en un Order Block",
+}
+
+# nombres cortos para las tablas en el móvil
+NOMBRES_CORTOS = {
+    "medias": "EMA 9/21", "rsi": "RSI", "macd": "MACD", "soportes": "Soportes/resist.", "fibonacci": "Fibonacci",
+    "velas": "Velas japonesas", "supertrend": "SuperTrend", "cruce_sma": "SMA 50/200", "bollinger": "Bollinger",
+    "estocastico": "Estocástico", "divergencia": "Divergencia RSI", "ruptura": "Ruptura+retest", "bos": "BOS",
+    "choch": "CHoCH", "barrida": "Barrida liquidez", "fvg": "FVG", "order_block": "Order Block",
 }
 
 _CALENTAMIENTO = 60  # velas iniciales sin señal mientras se estabilizan los indicadores
@@ -114,6 +135,12 @@ def calcular(df: pd.DataFrame):
     ind["rsi"] = rsi(c)
     ind["macd"], ind["macd_senal"], ind["macd_hist"] = macd(c)
     ind["atr"] = atr(df)
+    for n in (50, 100, 200):
+        ind[f"sma{n}"] = sma(c, n)
+    ind["bb_sup"], ind["bb_media"], ind["bb_inf"] = bollinger(c)
+    ind["est_k"], ind["est_d"] = estocastico(df)
+    ind["adx"], ind["di_mas"], ind["di_menos"] = adx(df)
+    ind["supertrend"], ind["st_dir"] = supertrend(df)
 
     senales = {"medias": _cruce(ind["ema9"], ind["ema21"])}
     r = ind["rsi"]
@@ -123,6 +150,22 @@ def calcular(df: pd.DataFrame):
     senales["macd"] = _cruce(ind["macd"], ind["macd_senal"])
     senales["soportes"], senales["fibonacci"], techos, suelos = _soportes_y_fibonacci(df, ind["atr"])
     senales["velas"], patron = _velas(df, ind["ema21"])
+    st_dir = ind["st_dir"].to_numpy()
+    senales["supertrend"] = np.r_[0, np.where(st_dir[1:] != st_dir[:-1], st_dir[1:], 0)]
+    senales["cruce_sma"] = _cruce(ind["sma50"], ind["sma200"])
+    senales["cruce_sma"][: 200 + 1] = 0  # sin SMA 200 completa no hay cruce real
+    previo = c.shift(1)
+    senales["bollinger"] = np.where(
+        (previo < ind["bb_inf"].shift(1)) & (c > ind["bb_inf"]), 1,
+        np.where((previo > ind["bb_sup"].shift(1)) & (c < ind["bb_sup"]), -1, 0))
+    k, d = ind["est_k"], ind["est_d"]
+    cruce_est = _cruce(k, d)
+    senales["estocastico"] = np.where(
+        (cruce_est == 1) & (d < 20), 1, np.where((cruce_est == -1) & (d > 80), -1, 0))
+    sen_est, series_est, ctx_est = calcular_estructura(df, ind["atr"], r)
+    senales.update(sen_est)
+    ind["estructura"], ind["ult_techo"], ind["ult_suelo"] = (
+        series_est["estado"], series_est["ult_techo"], series_est["ult_suelo"])
     for s in senales.values():
         s[:_CALENTAMIENTO] = 0
 
@@ -140,6 +183,10 @@ def calcular(df: pd.DataFrame):
         "rsi": r.iat[-1],
         "tendencia": _tendencia(ind),
         "fibonacci": None,
+        "estructura": ctx_est,
+        "regimen": _regimen(ind),
+        "volatilidad": _volatilidad(ind["atr"]),
+        "sobre_sma200": None if np.isnan(ind["sma200"].iat[-1]) else bool(precio > ind["sma200"].iat[-1]),
     }
     if techos and suelos:
         (ih, maximo), (il, minimo) = techos[-1], suelos[-1]
@@ -148,9 +195,28 @@ def calcular(df: pd.DataFrame):
             "alcista": alcista,
             "desde": df.index[min(ih, il)],
             "niveles": niveles_fibonacci(maximo, minimo, alcista),
+            "extensiones": extensiones_fibonacci(maximo, minimo, alcista),
         }
     return ind, senales, contexto
 
 
 def _tendencia(ind: pd.DataFrame) -> str:
     return {1: "Alcista", -1: "Bajista", 0: "Lateral"}[int(serie_tendencia(ind)[-1])]
+
+
+def _regimen(ind: pd.DataFrame) -> str:
+    """Fuerza de la tendencia según el ADX (umbrales clásicos 20 y 25)."""
+    valor = ind["adx"].iat[-1]
+    if np.isnan(valor):
+        return "Sin datos"
+    if valor < 20:
+        return "Lateral"
+    lado = "alcista" if ind["di_mas"].iat[-1] > ind["di_menos"].iat[-1] else "bajista"
+    return f"Tendencia {'fuerte' if valor >= 25 else 'débil'} {lado}"
+
+
+def _volatilidad(atr_s: pd.Series, ventana: int = 500) -> str:
+    """Volatilidad actual comparada con la de las últimas `ventana` velas (percentil del ATR)."""
+    reciente = atr_s.iloc[-ventana:]
+    percentil = (reciente < atr_s.iat[-1]).mean()
+    return "Baja" if percentil < 0.2 else "Alta" if percentil > 0.8 else "Normal"

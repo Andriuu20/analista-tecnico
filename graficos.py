@@ -32,8 +32,19 @@ def grafico(df: pd.DataFrame, ind: pd.DataFrame, contexto: dict, senal: dict, ci
         for nivel, p in fibo["niveles"].items():
             if bajo - margen <= p <= alto + margen:
                 fig.add_hline(y=p, line=dict(color=GRIS, width=1), opacity=0.5,
-                              annotation_text=f"Fibo {nivel * 100:g}%", annotation_position="left",
+                              annotation_text=f"Fibo {nivel * 100:g}%", annotation_position="top left",
                               annotation_font=dict(size=10, color=GRIS), row=1, col=1)
+    if fibo:
+        for nivel, p in fibo.get("extensiones", {}).items():
+            if bajo - margen <= p <= alto + margen:
+                fig.add_hline(y=p, line=dict(color=GRIS, width=1, dash="dash"), opacity=0.5,
+                              annotation_text=f"Ext. {nivel * 100:g}%", annotation_position="top left",
+                              annotation_font=dict(size=10, color=GRIS), row=1, col=1)
+    plan = senal.get("plan") if senal["direccion"] else None
+    if plan:
+        for p, color, texto in ((plan["sl"], ROJO, "SL"), (plan["tp"], VERDE, "TP")):
+            fig.add_hline(y=p, line=dict(color=color, width=1.5), annotation_text=texto,
+                          annotation_position="top right", annotation_font=dict(size=11, color=color), row=1, col=1)
     if senal["direccion"]:
         compra = senal["direccion"] == 1
         fig.add_trace(go.Scatter(

@@ -5,8 +5,11 @@ App web personal en español, pensada para el móvil. Eliges un mercado (EUR/USD
 horas** y **con qué confianza**. Analiza sola velas de 5 min, 15 min, 1 h, 4 h y 1 día y se queda con la mejor oportunidad (o la del plazo que elijas: minutos, horas o días). La confianza se basa en cómo le
 ha ido a cada estrategia en el histórico de ese mercado y en las señales reales que ya ha dado.
 
-- **Estrategias**: medias móviles (EMA 9/21), RSI, MACD, soportes y resistencias, retrocesos de Fibonacci
-  y patrones de velas.
+- **17 estrategias**: medias móviles (EMA y SMA), SuperTrend, RSI y divergencias, MACD, Bollinger, estocástico,
+  soportes y resistencias, ruptura y retesteo, Fibonacci, velas japonesas y estructura de mercado (BOS, CHoCH,
+  barridas de liquidez, FVG, order blocks). Detalle en `docs/AUDITORIA_MOTOR.md`.
+- **Plan de operación**: entrada, Stop Loss, Take Profit y riesgo-beneficio, con su resultado en el histórico
+  tras costes, y motivos a favor y en contra.
 - **Backtest**: el porcentaje de acierto de cada estrategia y plazo sobre el histórico.
 - **Registro en vivo**: cada señal se guarda sola y se comprueba al vencer. Muestra si se supera el 55 %.
 - **Datos gratuitos sin registro**: Yahoo Finance (forex y oro) y Binance (cripto).

@@ -39,26 +39,44 @@ vencimiento. Detalles plegados debajo: ¿Por qué?, Gráfico, Backtest, Mis resu
   acertaron menos que el resto. La confianza se mide siempre con el backtest completo: juzgar cada señal solo
   con las cifras de su situación (histórico troceado) se probó y más que duplicaba las señales falsas en datos
   aleatorios. Señales falsas en paseos aleatorios: sin filtro 3,8 %, filtro fijo 2,2 %, filtro medido 3,2 %.
-- **6 estrategias** (`estrategias.py`): cruce EMA 9/21, RSI 30/70, cruce MACD, rebote en soporte/resistencia
-  (pivotes confirmados k=5), Fibonacci 50-78,6 % a favor del impulso, patrones de velas.
+- **17 estrategias** (`estrategias.py`; auditoría completa en `docs/AUDITORIA_MOTOR.md`): cruce EMA 9/21, RSI
+  30/70, cruce MACD, rebote en soporte/resistencia (pivotes confirmados k=5), Fibonacci 50-78,6 % a favor del
+  impulso, patrones de velas, SuperTrend (10,3), cruce SMA 50/200, Bollinger (20,2), estocástico (14,3,3), y de
+  `estructura.py` (SMC, mismos pivotes): BOS, CHoCH, barrida de liquidez, ruptura+retest, FVG, order block,
+  divergencia RSI. Una sola implementación por indicador (`indicadores.py`); EMA 20 no se añade (redundante
+  con EMA 21). ADX, volatilidad (percentil ATR), SMA 200, HH/HL, máximos/mínimos iguales y premium/discount son
+  solo contexto: no cambian la decisión hasta que se demuestre con el histórico que mejoran el acierto.
 - **Backtest** (`backtest.py`): acierto tipo binaria a vencimiento (precio a favor tras N velas, N en 1-20).
 - **Anti-autoengaño** (`senal.py`), importante:
   - El plazo de cada estrategia se elige con el 70 % antiguo del histórico; la confianza se mide con el 30 %
     reciente (no usado para elegir) + resultados reales del registro, encogidos hacia el 50 % (prior 20).
-  - Para votar, el acierto antiguo debe ser significativo: z ≥ 2,2 (corregido por probar 7 plazos).
+  - Para votar, el acierto antiguo debe ser significativo: z ≥ 2,4 (calibrado con datos aleatorios para 17
+    estrategias × 7 plazos: ~3 % de velas con señal, ~1 % con confianza ≥ 55 %; test en `tests/test_azar.py`).
+    Si se añaden estrategias, recalibrar. La confianza es una media ponderada, no una suma: más estrategias
+    parecidas no la inflan.
   - Verificado: en paseos aleatorios casi nunca da señal; prueba de truncado sin fugas de futuro (0 diferencias).
   - Ojo: «Buscar en todos» se queda con la mejor de 5 temporalidades × 14 mercados, así que en datos
     aleatorios aparecen algunas señales del 55-58 %. El registro en vivo es el juez final.
+- **Plan SL/TP** (`plan.py`): entrada = cierre; SL tras el último suelo/techo confirmado + 0,1 ATR (0,5-3 ATR, si
+  no 1,5 ATR); TP = R × riesgo, R ∈ {1; 1,5; 2; 3} elegido con el 70 % antiguo; se informa del 30 % reciente
+  (operaciones, TP alcanzados, resultado medio en R tras costes, duración). Empate SL/TP en la misma vela = pérdida.
+- **No operar**: si el coste se come > 25 % del riesgo, o (forex/oro, plazos < 1 día) si hay una noticia de alto
+  impacto antes del vencimiento (`noticias.py`, calendario público de Forex Factory; si falla, se ignora).
+- **Explicación** (`factores.py`): motivos a favor / en contra; 📏 = medido, el resto orientativo. No inventar
+  probabilidades.
 - **Registro en vivo** (`registro.py`): cada COMPRAR/VENDER se guarda solo y se comprueba al vencer. Se guarda en
   un Gist secreto (Secrets de Streamlit `GITHUB_TOKEN` con permiso Gists RW y `GIST_ID`); sin ellos, en archivo
   local (se pierde al reiniciar). Los resultados reales se suman al cálculo de confianza («aprende»).
 - `APP_CLAVE` en Secrets (opcional) protege la app con contraseña.
 
 ## Archivos
-`app.py` (interfaz) · `datos.py` · `indicadores.py` · `estrategias.py` · `backtest.py` · `senal.py` · `tendencia.py` ·
-`registro.py` · `graficos.py` · `.streamlit/config.toml` (tema oscuro) · `requirements.txt` (Python 3.12 en Cloud).
+`app.py` (interfaz) · `datos.py` · `indicadores.py` · `estrategias.py` · `estructura.py` · `backtest.py` · `senal.py` ·
+`tendencia.py` · `plan.py` · `factores.py` · `noticias.py` · `registro.py` · `graficos.py` · `.streamlit/config.toml`
+(tema oscuro) · `requirements.txt` (Python 3.12 en Cloud) · `requirements-dev.txt` (pytest, solo para pruebas).
 
 ## Cómo probar
+- `python -m pytest tests` (instalar antes `pip install -r requirements.txt -r requirements-dev.txt`). Incluye la
+  prueba de truncado (nada mira al futuro) y la de señales falsas con datos aleatorios. Deben pasar antes de subir.
 - El entorno en la nube de Claude Code **bloquea Yahoo y Binance**: prueba con `ANALISTA_DEMO=1` (datos
   aleatorios, distintos por símbolo) y `streamlit.testing.v1.AppTest`, o con Playwright a 390 px de ancho.
 - La prueba con datos reales la hace el usuario en la app publicada.

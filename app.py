@@ -1,12 +1,18 @@
 """Analista técnico: eliges un mercado, pulsas Analizar y te dice comprar o vender y a qué plazo."""
+import os
+
 import numpy as np
 import pandas as pd
 import streamlit as st
 
 from backtest import backtest
 from datos import ACTIVOS, INTERVALOS, MINUTOS, activo_personalizado, descargar
-from estrategias import ESTRATEGIAS, calcular
+from estrategias import ESTRATEGIAS, NOMBRES_CORTOS, calcular
+from factores import factores
 from graficos import grafico
+from noticias import descargar_calendario, en_ventana, monedas
+from plan import COSTE_MAXIMO_R
+from plan import evaluar as evaluar_plan
 from registro import Almacen, anadir, estadisticas_vivo, nueva_entrada, resolver
 from senal import UMBRAL_RENTABLE, Z_SIGNIFICATIVO, generar, texto_plazo
 from tendencia import CONTEXTOS, alinear, backtest_por_contexto, contextos, filtro, resumen, serie_tendencia
@@ -61,6 +67,11 @@ def analizar(fuente: str, simbolo: str, codigo: str, coste: float):
     return df, origen, ind, senales, contexto, bt
 
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def calendario():
+    return None if os.environ.get("ANALISTA_DEMO") == "1" else descargar_calendario()
+
+
 def juzgar(r: dict, cfg: dict, codigo: str, por_tf: dict) -> dict:
     """Señal de una temporalidad. Las estrategias que van en contra de la tendencia del plazo mayor se
     descartan, salvo que en este mercado el histórico muestre que eso no les ha funcionado peor."""
@@ -93,6 +104,13 @@ def juzgar(r: dict, cfg: dict, codigo: str, por_tf: dict) -> dict:
         v["situacion"] = CONTEXTOS[int(ctx[v["estrategia"]][-1])]
     if descartadas and not senal["direccion"] and len(descartadas) == len(senal["votos"]):
         senal["motivo"] = "Las señales iban en contra de la tendencia del plazo mayor."
+    if senal["direccion"]:
+        senal["plan"] = evaluar_plan(r["df"], r["ind"], senales, senal["estrategias"], senal["direccion"],
+                                     cfg["coste"])
+        if senal["plan"]["coste_r"] > COSTE_MAXIMO_R:
+            senal.update(accion="ESPERAR", direccion=0,
+                         motivo=f"El movimiento típico es demasiado pequeño: el coste de operar se comería el "
+                                f"{senal['plan']['coste_r']:.0%} del riesgo.")
     senal["contexto"] = int(np.sign(senal["direccion"] * tendencia[-1])) if senal["direccion"] else None
     return senal
 
@@ -150,6 +168,21 @@ def analizar_mercado(nombre: str, cfg: dict, plazo: str = "Cualquiera") -> dict:
         if "error" not in r:
             r["senal"] = juzgar(r, cfg, codigo, por_tf)
 
+    # noticias de alto impacto: en forex y oro no se opera si caen antes del vencimiento (plazos < 1 día)
+    eventos, mon = calendario(), monedas(nombre, cfg)
+    ahora = pd.Timestamp.now(tz="UTC")
+    for codigo, r in por_tf.items():
+        s = r.get("senal")
+        if not s or not s["direccion"]:
+            continue
+        vence = r["df"].index[-1] + pd.Timedelta(minutes=MINUTOS[codigo] * (s["horizonte"] + 1))
+        s["noticias"] = en_ventana(eventos, mon, ahora, vence)
+        if s["noticias"] and cfg["fuente"] != "binance" and MINUTOS[codigo] * s["horizonte"] < 1440:
+            e = s["noticias"][0]
+            r["senal"] = {**s, "accion": "ESPERAR", "direccion": 0,
+                          "motivo": f"Noticia de alto impacto antes del vencimiento ({e['moneda']}: {e['titulo']}, "
+                                    f"a las {hora_local(e['hora'], '%H:%M')}): mejor no operar."}
+
     validos = [c for c, r in por_tf.items() if "error" not in r]
     if not validos:
         raise ValueError(next(iter(por_tf.values()))["error"])
@@ -158,7 +191,9 @@ def analizar_mercado(nombre: str, cfg: dict, plazo: str = "Cualquiera") -> dict:
                  and minimo <= por_tf[c]["senal"]["horizonte"] * MINUTOS[c] <= maximo]
     mejor = max(con_senal, key=lambda c: por_tf[c]["senal"]["confianza"]) if con_senal else None
     return {"nombre": nombre, "cfg": cfg, "por_tf": por_tf, "mejor": mejor,
-            "principal": mejor or ("15m" if "15m" in validos else validos[0])}
+            "principal": mejor or ("15m" if "15m" in validos else validos[0]),
+            "noticias": en_ventana(eventos, mon, ahora, ahora + pd.Timedelta(hours=24)),
+            "calendario_ok": eventos is not None}
 
 
 def registrar(a: dict) -> None:
@@ -196,9 +231,22 @@ def tarjeta(a: dict, compacta: bool = False) -> None:
         )
         st.markdown(f"<div style='font-size:1.15rem'>Confianza <b>{s['confianza'] * 100:.0f} %</b> · "
                     f"Vence {texto_vencimiento(vence, minutos * s['horizonte'])}</div>", unsafe_allow_html=True)
+        plan = s.get("plan")
+        if plan:
+            st.markdown(f"<div style='font-size:1.05rem;margin-top:.4rem'>🎯 Entrada <b>{fmt_precio(plan['entrada'])}</b>"
+                        f" · 🛑 SL <b>{fmt_precio(plan['sl'])}</b> · ✅ TP <b>{fmt_precio(plan['tp'])}</b>"
+                        f" · R:R <b>1:{plan['r']:g}</b></div>", unsafe_allow_html=True)
         if not compacta:
-            st.caption(f"Precio de entrada {fmt_precio(float(df['Close'].iat[-1]))} · "
-                       f"analizado con velas de {NOMBRE_VELA[a['mejor']]}")
+            st.caption(f"Analizado con velas de {NOMBRE_VELA[a['mejor']]}")
+            if plan and plan["datos_suficientes"]:
+                duracion = texto_plazo(int(round(plan["duracion_velas"] * minutos)))
+                texto = (f"Con este SL/TP, en el histórico reciente: TP antes que SL en {plan['tp_alcanzado']} de "
+                         f"{plan['operaciones']} operaciones, resultado medio {plan['esperanza']:+.2f} R tras costes, "
+                         f"duración típica {duracion}.")
+                (st.caption if plan["esperanza"] > 0 else st.warning)(
+                    texto if plan["esperanza"] > 0 else "⚠️ " + texto + " Con SL/TP no ha compensado.")
+            elif plan:
+                st.caption("Pocos casos en el histórico para valorar este Stop Loss / Take Profit.")
         if s["confianza"] < UMBRAL_RENTABLE:
             st.warning("Confianza baja (menos del 55 %): solo para practicar, no con dinero real.")
 
@@ -218,13 +266,33 @@ def detalles(a: dict) -> None:
             filas.append({"Velas": NOMBRE_VELA[codigo], "Resultado": s["accion"].capitalize(),
                           "Plazo": s["plazo"] if s["direccion"] else "—",
                           "Confianza": f"{s['confianza'] * 100:.0f} %" if s["direccion"] else "—"})
-        st.dataframe(pd.DataFrame(filas), hide_index=True, width="stretch")
         ctx = r["contexto"]
+        if r["senal"]["direccion"]:
+            a_favor, en_contra = factores(r["senal"], ctx, minutos, NOMBRE_VELA[r["tf_tendencia"]], fmt_precio,
+                                          lambda t: hora_local(t, "%H:%M"))
+            st.markdown("**A favor:**\n" + "\n".join(f"- {x}" for x in a_favor or ["—"]))
+            st.markdown("**En contra:**\n" + "\n".join(f"- {x}" for x in en_contra or ["Nada destacable"]))
+            st.caption("📏 = medido con el histórico de este mercado. El resto son referencias técnicas "
+                       "orientativas: ayudan a entender la situación, pero no cambian la decisión.")
+        st.dataframe(pd.DataFrame(filas), hide_index=True, width="stretch")
+        est = ctx["estructura"]
+        zona = {"premium": "premium (mitad alta)", "discount": "descuento (mitad baja)"}.get(est["zona"], "—")
+        iguales = " · ".join(x for x in (
+            f"máximos iguales en {fmt_precio(est['max_iguales'])}" if est["max_iguales"] else "",
+            f"mínimos iguales en {fmt_precio(est['min_iguales'])}" if est["min_iguales"] else "") if x)
         st.markdown(
-            f"- Tendencia: **{ctx['tendencia']}** · RSI: **{ctx['rsi']:.0f}**\n"
+            f"- Tendencia (EMA 50/200): **{ctx['tendencia']}** · Fuerza (ADX): **{ctx['regimen']}**\n"
+            f"- Estructura: **{est['estado']}** ({est['etiquetas']}) · Zona: **{zona}**\n"
+            f"- RSI: **{ctx['rsi']:.0f}** · Volatilidad: **{ctx['volatilidad']}**\n"
             f"- Soporte: **{fmt_precio(ctx['soporte'])}** · Resistencia: **{fmt_precio(ctx['resistencia'])}**\n"
             f"- Patrón de vela: **{ctx['patron'] or 'ninguno'}**"
+            + (f"\n- Liquidez: {iguales}" if iguales else "")
         )
+        if a["noticias"]:
+            st.markdown("**Noticias de alto impacto (24 h):**\n" + "\n".join(
+                f"- {hora_local(e['hora'], '%d/%m %H:%M')} · {e['moneda']}: {e['titulo']}" for e in a["noticias"]))
+        elif not a["calendario_ok"]:
+            st.caption("Calendario de noticias no disponible ahora mismo.")
         votos = r["senal"]["votos"]
         if votos:
             st.markdown(f"**Estrategias que se activaron (velas de {NOMBRE_VELA[a['principal']]}):**")
@@ -243,7 +311,7 @@ def detalles(a: dict) -> None:
             width="stretch", config={"displayModeBar": False},
         )
         st.caption(f"Velas de {NOMBRE_VELA[a['principal']]}. Punteadas: verde = soportes, roja = resistencias. "
-                   "Grises: Fibonacci.")
+                   "Grises: Fibonacci. Si hay señal: Stop Loss en rojo y Take Profit en verde.")
 
     with st.expander("🧪 Acierto en el histórico (backtest)"):
         bt = r["bt"]
@@ -258,7 +326,7 @@ def detalles(a: dict) -> None:
         tabla = bt.assign(celda=bt.apply(celda, axis=1)).pivot(index="estrategia", columns="horizonte",
                                                                 values="celda")
         tabla.columns = [texto_plazo(h * minutos) for h in tabla.columns]
-        tabla.index = [e.capitalize() for e in tabla.index]
+        tabla.index = [NOMBRES_CORTOS[e] for e in tabla.index]
         st.dataframe(tabla, width="stretch")
         st.caption(f"Velas de {NOMBRE_VELA[a['principal']]}, {len(r['df'])} velas de histórico. "
                    "🟢 ≥ 55 % y claramente mejor que el azar · 🟡 > 52 % · ⚪ azar.")
@@ -371,8 +439,14 @@ with st.expander("❓ Cómo funciona"):
   elígelo en «¿Para cuánto tiempo?».
 - Los plazos largos (horas, días) suelen ser más fiables: hay menos «ruido» y los costes pesan menos, pero
   dan menos señales.
-- Usa {len(ESTRATEGIAS)} estrategias: medias móviles, RSI, MACD, soportes y resistencias, Fibonacci y
-  patrones de velas. Solo cuentan las que **han funcionado de verdad** en el histórico de ese mercado.
+- Usa {len(ESTRATEGIAS)} estrategias: medias móviles (EMA y SMA), SuperTrend, RSI y sus divergencias, MACD,
+  Bollinger, estocástico, soportes y resistencias, ruptura y retesteo, Fibonacci, velas japonesas y
+  estructura de mercado (BOS, CHoCH, barridas de liquidez, FVG, order blocks). Solo cuentan las que **han
+  funcionado de verdad** en el histórico de ese mercado: tener más estrategias no da más peso a ninguna.
+- Si hay señal, propone **entrada, Stop Loss y Take Profit** y te dice cómo le fue a ese mismo plan en el
+  histórico reciente, ya descontado el coste de operar.
+- **No opera** si el coste se come más del 25 % del riesgo o si hay una noticia de alto impacto antes del
+  vencimiento (forex y oro, plazos de menos de un día).
 - Descarta las señales que van **en contra de la tendencia** del plazo mayor, salvo que en ese mercado el
   histórico demuestre que a esa estrategia ir contra la tendencia no le ha funcionado peor.
 - **Aprende**: cada señal se guarda y se comprueba al vencer. Si una estrategia falla en real, pierde peso.

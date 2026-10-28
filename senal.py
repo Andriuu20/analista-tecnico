@@ -11,19 +11,25 @@ from backtest import estimar
 from estrategias import ESTRATEGIAS
 
 UMBRAL_VOTO = 0.52  # acierto mínimo en la parte antigua para que una estrategia cuente
-Z_SIGNIFICATIVO = 2.2  # y superar el 50 % de forma significativa (corregido por probar 7 plazos)
+Z_SIGNIFICATIVO = 2.4  # superar el 50 % de forma significativa; calibrado con datos aleatorios para 17
+# estrategias × 7 plazos: con 2,4 da señal en un 3 % de las velas aleatorias (con 6 estrategias y 2,2 era un 4 %)
 MIN_SENALES = 20  # muestras mínimas para elegir plazo y para medir la confianza
 UMBRAL_RENTABLE = 0.55  # lo que hace falta en binarias con pagos del 80-90 %
 
 
 def texto_plazo(minutos: int) -> str:
+    minutos = int(minutos)
     if minutos < 60:
         return f"{minutos} min"
     if minutos < 1440:
-        horas = minutos / 60
-        return f"{horas:g} hora" + ("s" if horas != 1 else "")
-    dias = minutos / 1440
-    return f"{dias:g} día" + ("s" if dias != 1 else "")
+        horas, resto = divmod(minutos, 60)
+        if resto:
+            return f"{horas} h {resto} min"
+        return f"{horas} hora" + ("s" if horas != 1 else "")
+    dias, resto = divmod(minutos, 1440)
+    if resto >= 60:
+        return f"{dias} d {resto // 60} h"
+    return f"{dias} día" + ("s" if dias != 1 else "")
 
 
 def generar(senales: dict, bt: pd.DataFrame, vivo: pd.DataFrame | None, minutos_vela: int) -> dict:

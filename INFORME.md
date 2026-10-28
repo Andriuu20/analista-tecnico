@@ -114,3 +114,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 21/10 12:35 | ETH/USDT | 5m | VENDER | 75 min | soportes | -0.77 % |
 | 08/05 15:00 | Oro (XAU/USD) | 1h | COMPRAR | 180 min | bos | -0.75 % |
 | 07/04 03:00 | Oro (XAU/USD) | 1h | VENDER | 180 min | bos | -0.74 % |
+
+## Laboratorio en directo
+
+Todavía no hay señales comprobadas (1 señales apuntadas, esperando a vencer).

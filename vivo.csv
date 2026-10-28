@@ -1,1 +1,3 @@
-
+mercado,temporalidad,vela,accion,direccion,horizonte,plazo_min,confianza,estrategias,precio,precio_final,acierto,movimiento_pct,resultado_r,duracion_velas,plan_r,plan_esperanza,coste_r,elegida,adx,volatilidad_pct,zona,estructura,rsi,tendencia
+USD/CHF,15m,2026-10-28T11:15:00+00:00,COMPRAR,1,5,75,0.5414,barrida,0.829800009727478,0.8298199772834778,True,0.0024,,,2.0,-0.128,0.205,True,17.0,0.18,discount,1,43.4,1
+EUR/JPY,15m,2026-10-28T12:15:00+00:00,VENDER,-1,5,75,0.5454,bollinger,175.8280029296875,176.03199768066406,False,-0.116,,,2.0,-0.142,0.236,True,23.9,0.2,premium,1,71.9,1

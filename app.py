@@ -165,6 +165,18 @@ def tarjeta(a: dict, compacta: bool = False) -> None:
             st.warning("Confianza baja (menos del 55 %): solo para practicar, no con dinero real.")
 
 
+def desplegable_grafico(a: dict, titulo: str = "📊 Gráfico") -> None:
+    r = a["por_tf"][a["principal"]]
+    with st.expander(titulo):
+        st.plotly_chart(
+            grafico(r["df"], r["ind"], r["contexto"], r["senal"],
+                    cierra_fines_de_semana=a["cfg"]["fuente"] == "yahoo", velas=90),
+            width="stretch", config={"displayModeBar": False}, key=f"grafico_{a['nombre']}",
+        )
+        st.caption(f"Velas de {NOMBRE_VELA[a['principal']]}. Punteadas: verde = soportes, roja = resistencias. "
+                   "Grises: Fibonacci. Si hay señal: Stop Loss en rojo y Take Profit en verde.")
+
+
 def detalles(a: dict) -> None:
     r = a["por_tf"][a["principal"]]
     minutos = MINUTOS[a["principal"]]
@@ -218,14 +230,7 @@ def detalles(a: dict) -> None:
         if r["senal"]["motivo"]:
             st.caption(r["senal"]["motivo"])
 
-    with st.expander("📊 Gráfico"):
-        st.plotly_chart(
-            grafico(r["df"], r["ind"], r["contexto"], r["senal"],
-                    cierra_fines_de_semana=a["cfg"]["fuente"] == "yahoo", velas=90),
-            width="stretch", config={"displayModeBar": False},
-        )
-        st.caption(f"Velas de {NOMBRE_VELA[a['principal']]}. Punteadas: verde = soportes, roja = resistencias. "
-                   "Grises: Fibonacci. Si hay señal: Stop Loss en rojo y Take Profit en verde.")
+    desplegable_grafico(a)
 
     with st.expander("🧪 Acierto en el histórico (backtest)"):
         bt = r["bt"]
@@ -344,6 +349,7 @@ if resultado:
         st.markdown(f"**{len(contenido)} mercado(s) con señal**, de más a menos confianza:")
         for a in contenido:
             tarjeta(a, compacta=True)
+            desplegable_grafico(a, f"📊 Gráfico de {a['nombre']}")
 
 mis_resultados()
 with st.expander("❓ Cómo funciona"):

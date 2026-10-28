@@ -10,6 +10,7 @@ Garantías:
 
 Uso: python simulacion.py [--salida resultados/simulacion.csv] [--mercados "EUR/USD,BTC/USDT"]"""
 import argparse
+import json
 import sys
 import time
 from pathlib import Path
@@ -57,12 +58,16 @@ def resultado_sl_tp(df: pd.DataFrame, t: int, senal: dict, coste: float) -> tupl
     return float(res[0]), float(dur[0])
 
 
-def simular_mercado(nombre: str, cfg: dict, datos: dict) -> list[dict]:
+def simular_mercado(nombre: str, cfg: dict, datos: dict, diagnostico: dict | None = None) -> list[dict]:
+    """Señales simuladas del mercado. Si se pasa `diagnostico`, anota cuántas velas se evaluaron y por qué se
+    descartó cada posible señal (para encontrar errores sin tener que leer los registros de GitHub)."""
+    diag = diagnostico if diagnostico is not None else {}
     prep = {}
     for codigo, df in datos.items():
         try:
             df, ind, senales, _, _ = preparar(df, cfg["coste"])
-        except ValueError:  # pocas velas en esa temporalidad: se simula el resto
+        except ValueError as e:  # pocas velas en esa temporalidad: se simula el resto
+            diag[f"{codigo} sin datos suficientes"] = str(e)
             continue
         prep[codigo] = {"df": df, "ind": ind, "senales": senales}
 
@@ -78,18 +83,27 @@ def simular_mercado(nombre: str, cfg: dict, datos: dict) -> list[dict]:
                      else serie_tendencia(ind))
         activa = np.any([s != 0 for s in senales.values()], axis=0)
         libre_desde = 0
+        cuenta = diag.setdefault(codigo, {"velas": n, "evaluadas": 0, "con estrategia activa": 0,
+                                          "ESPERAR": 0, "fuera de 30 min-4 h": 0, "señales": 0, "motivos ESPERAR": {}})
         for t in range(max(n - VELAS_SIMULADAS[codigo], HISTORIA_MINIMA), n - 1):
+            cuenta["evaluadas"] += 1
             if t < libre_desde or not activa[t]:
                 continue
+            cuenta["con estrategia activa"] += 1
             r = {"df": df.iloc[: t + 1], "ind": ind.iloc[: t + 1],
                  "senales": {k: v[: t + 1] for k, v in senales.items()}}
             r["bt"] = backtest(cierre[: t + 1], r["senales"], cfg["coste"])
             senal = juzgar(r, cfg["coste"], codigo, tendencia[: t + 1], None)
             if not senal["direccion"]:
+                cuenta["ESPERAR"] += 1
+                motivo = senal["motivo"].split(":")[0].split("(")[0].strip()[:70]
+                cuenta["motivos ESPERAR"][motivo] = cuenta["motivos ESPERAR"].get(motivo, 0) + 1
                 continue
             h = senal["horizonte"]
             if not PLAZO_MIN <= h * minutos <= PLAZO_MAX or t + h >= n:
+                cuenta["fuera de 30 min-4 h"] += 1
                 continue
+            cuenta["señales"] += 1
             d = senal["direccion"]
             movimiento = (cierre[t + h] - cierre[t]) / cierre[t] * d
             res_r, dur = resultado_sl_tp(df, t, senal, cfg["coste"])
@@ -114,29 +128,31 @@ def main() -> int:
     parser.add_argument("--mercados", default=",".join(ACTIVOS))
     args = parser.parse_args()
 
-    filas, fallos = [], []
+    filas, diagnosticos = [], {}
     for nombre in [m.strip() for m in args.mercados.split(",") if m.strip()]:
         cfg, inicio = ACTIVOS[nombre], time.time()
+        diag = diagnosticos.setdefault(nombre, {})
         datos = {}
         for codigo in [*TEMPORALIDADES_SIM, "1d"]:
             try:
-                datos[codigo], _ = descargar(cfg["fuente"], cfg["simbolo"], codigo)
+                datos[codigo], origen = descargar(cfg["fuente"], cfg["simbolo"], codigo)
+                diag[f"descarga {codigo}"] = f"{len(datos[codigo])} velas de {origen}"
             except Exception as e:
-                fallos.append(f"{nombre} {codigo}: {e}")
+                diag[f"descarga {codigo}"] = f"ERROR: {type(e).__name__}: {e}"
         try:
-            nuevas = simular_mercado(nombre, cfg, datos)
+            nuevas = simular_mercado(nombre, cfg, datos, diag)
         except Exception as e:
-            fallos.append(f"{nombre}: {e}")
-            continue
+            diag["ERROR en la simulación"] = f"{type(e).__name__}: {e}"
+            nuevas = []
         filas += nuevas
         print(f"{nombre}: {len(nuevas)} señales simuladas ({time.time() - inicio:.0f} s)", flush=True)
 
-    Path(args.salida).parent.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame(filas).to_csv(args.salida, index=False)
-    print(f"Total: {len(filas)} señales -> {args.salida}")
-    for f in fallos:
-        print("AVISO:", f, file=sys.stderr)
-    return 0 if filas else 1
+    salida = Path(args.salida)
+    salida.parent.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(filas).to_csv(salida, index=False)
+    salida.with_suffix(".diag.json").write_text(json.dumps(diagnosticos, ensure_ascii=False, indent=1))
+    print(f"Total: {len(filas)} señales -> {salida}")
+    return 0  # sin señales no es un error: el diagnóstico explica por qué
 
 
 if __name__ == "__main__":

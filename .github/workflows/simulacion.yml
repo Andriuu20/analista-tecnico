@@ -64,8 +64,14 @@ jobs:
         run: |
           python - <<'EOF'
           import glob, pandas as pd
+          import json
           partes = [pd.read_csv(f) for f in sorted(glob.glob("parciales/*.csv")) if open(f).read().strip()]
-          pd.concat(partes, ignore_index=True).to_csv("resultados/simulacion.csv", index=False)
+          if partes:
+              pd.concat(partes, ignore_index=True).to_csv("resultados/simulacion.csv", index=False)
+          diagnostico = {}
+          for f in sorted(glob.glob("parciales/*.diag.json")):
+              diagnostico.update(json.load(open(f)))
+          json.dump(diagnostico, open("resultados/diagnostico_simulacion.json", "w"), ensure_ascii=False, indent=1)
           EOF
           python informe.py resultados/simulacion.csv resultados/vivo.csv --salida resultados/INFORME.md
       - name: Guardar en la rama resultados

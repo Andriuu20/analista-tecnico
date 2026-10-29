@@ -25,7 +25,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.128,
   "coste_r": 0.205,
-  "resultado_r": null,
+  "resultado_r": -1.205,
   "rasgos": {
    "adx": 17.0,
    "volatilidad_pct": 0.18,
@@ -33,7 +33,8 @@
    "estructura": 1,
    "rsi": 43.4,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 4.0
  },
  {
   "id": "EURJPY=X|15m|2026-10-28T12:15:00+00:00",
@@ -61,7 +62,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.142,
   "coste_r": 0.236,
-  "resultado_r": null,
+  "resultado_r": -1.236,
   "rasgos": {
    "adx": 23.9,
    "volatilidad_pct": 0.2,
@@ -69,7 +70,8 @@
    "estructura": 1,
    "rsi": 71.9,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 5.0
  },
  {
   "id": "JPY=X|5m|2026-10-29T01:40:00+00:00",
@@ -91,13 +93,13 @@
   "sl": 158.0072241641459,
   "tp": 157.493547277177,
   "precio_entrada": 157.83599853515625,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 157.73800659179688,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": -0.174,
   "coste_r": 0.111,
-  "resultado_r": null,
+  "resultado_r": -0.134,
   "rasgos": {
    "adx": 25.5,
    "volatilidad_pct": 0.91,
@@ -105,6 +107,7 @@
    "estructura": -1,
    "rsi": 42.7,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 50.0
  }
 ]

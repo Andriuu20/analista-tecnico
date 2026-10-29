@@ -70,5 +70,77 @@
    "rsi": 52.9,
    "tendencia": 0
   }
+ },
+ {
+  "id": "SOLUSDT|4h|2026-10-29T08:00:00+00:00",
+  "activo": "SOL/USDT",
+  "fuente": "binance",
+  "simbolo": "SOLUSDT",
+  "intervalo": "4h",
+  "vela": "2026-10-29T08:00:00+00:00",
+  "entrada": "2026-10-29T12:00:00+00:00",
+  "vencimiento": "2026-10-30T08:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 5,
+  "confianza": 0.5005,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 0,
+  "sl": 99.00148141065878,
+  "tp": 104.51555576802365,
+  "precio_entrada": 100.38,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.025,
+  "coste_r": 0.058,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 19.1,
+   "volatilidad_pct": 0.29,
+   "zona": "discount",
+   "estructura": 1,
+   "rsi": 44.5,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "XRPUSDT|1h|2026-10-29T14:00:00+00:00",
+  "activo": "XRP/USDT",
+  "fuente": "binance",
+  "simbolo": "XRPUSDT",
+  "intervalo": "1h",
+  "vela": "2026-10-29T14:00:00+00:00",
+  "entrada": "2026-10-29T15:00:00+00:00",
+  "vencimiento": "2026-10-30T11:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 20,
+  "confianza": 0.5418,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 1.285716715962458,
+  "tp": 1.3369665680750835,
+  "precio_entrada": 1.3028,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": 0.007,
+  "coste_r": 0.061,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 25.0,
+   "volatilidad_pct": 0.44,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 48.7,
+   "tendencia": 0
+  }
  }
 ]

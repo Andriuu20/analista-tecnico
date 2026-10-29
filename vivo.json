@@ -109,5 +109,42 @@
    "tendencia": 0
   },
   "duracion_velas": 50.0
+ },
+ {
+  "id": "EURJPY=X|5m|2026-10-29T15:25:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-10-29T15:25:00+00:00",
+  "entrada": "2026-10-29T15:30:00+00:00",
+  "vencimiento": "2026-10-29T16:20:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 10,
+  "confianza": 0.518,
+  "estrategias": [
+   "rsi",
+   "estocastico"
+  ],
+  "contexto": -1,
+  "sl": 176.3683124860833,
+  "tp": 175.84537576025525,
+  "precio_entrada": 176.19400024414062,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": -0.345,
+  "coste_r": 0.152,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 29.2,
+   "volatilidad_pct": 0.97,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 57.2,
+   "tendencia": -1
+  }
  }
 ]

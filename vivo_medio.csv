@@ -1,1 +1,2 @@
-
+mercado,temporalidad,vela,accion,direccion,horizonte,plazo_min,confianza,estrategias,precio,precio_final,acierto,movimiento_pct,resultado_r,duracion_velas,plan_r,plan_esperanza,coste_r,elegida,adx,volatilidad_pct,zona,estructura,rsi,tendencia
+USD/CHF,15m,2026-10-30T00:00:00+00:00,COMPRAR,1,20,300,0.505,rsi+estocastico,0.8233100175857544,0.8222500085830688,False,-0.1287,,,1.5,0.089,0.123,True,36.9,0.85,discount,-1,33.7,0

@@ -2,3 +2,4 @@ mercado,temporalidad,vela,accion,direccion,horizonte,plazo_min,confianza,estrate
 SOL/USDT,4h,2026-10-29T08:00:00+00:00,COMPRAR,1,5,1200,0.5005,soportes,100.38,97.35,False,-3.0185,,,3.0,-0.025,0.058,True,19.1,0.29,discount,1,44.5,0
 XRP/USDT,1h,2026-10-29T14:00:00+00:00,COMPRAR,1,20,1200,0.5418,estocastico,1.3028,1.259,False,-3.362,,,2.0,0.007,0.061,True,25.0,0.44,discount,-1,48.7,0
 USD/CHF,15m,2026-10-30T00:00:00+00:00,COMPRAR,1,20,300,0.505,rsi+estocastico,0.8233100175857544,0.8222500085830688,False,-0.1287,-1.123,2.0,1.5,0.089,0.123,True,36.9,0.85,discount,-1,33.7,0
+GBP/JPY,4h,2026-10-30T00:00:00+00:00,VENDER,-1,3,720,0.5272,bollinger,210.80599975585938,210.9409942626953,False,-0.064,,,1.0,0.087,0.055,True,21.4,0.54,premium,1,56.7,1

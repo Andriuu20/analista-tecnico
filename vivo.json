@@ -243,13 +243,13 @@
   "sl": 175.53232918042414,
   "tp": 176.05901831810255,
   "precio_entrada": 175.66400146484375,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 175.09500122070312,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 3.0,
   "plan_esperanza": -0.254,
   "coste_r": 0.2,
-  "resultado_r": null,
+  "resultado_r": -1.2,
   "rasgos": {
    "adx": 37.9,
    "volatilidad_pct": 0.68,
@@ -257,6 +257,7 @@
    "estructura": -1,
    "rsi": 40.5,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 1.0
  }
 ]

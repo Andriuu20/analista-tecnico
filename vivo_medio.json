@@ -252,5 +252,41 @@
    "rsi": 39.5,
    "tendencia": 0
   }
+ },
+ {
+  "id": "SOLUSDT|4h|2026-10-30T16:00:00+00:00",
+  "activo": "SOL/USDT",
+  "fuente": "binance",
+  "simbolo": "SOLUSDT",
+  "intervalo": "4h",
+  "vela": "2026-10-30T16:00:00+00:00",
+  "entrada": "2026-10-30T20:00:00+00:00",
+  "vencimiento": "2026-11-02T08:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 15,
+  "confianza": 0.5284,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 91.5545855477341,
+  "tp": 104.49624335679769,
+  "precio_entrada": 94.79,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": 0.014,
+  "coste_r": 0.023,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 24.2,
+   "volatilidad_pct": 0.73,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 34.0,
+   "tendencia": 0
+  }
  }
 ]

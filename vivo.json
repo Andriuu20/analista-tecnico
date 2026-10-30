@@ -259,5 +259,77 @@
    "tendencia": -1
   },
   "duracion_velas": 1.0
+ },
+ {
+  "id": "JPY=X|5m|2026-10-30T20:55:00+00:00",
+  "activo": "USD/JPY",
+  "fuente": "yahoo",
+  "simbolo": "JPY=X",
+  "intervalo": "5m",
+  "vela": "2026-10-30T20:55:00+00:00",
+  "entrada": "2026-10-30T21:00:00+00:00",
+  "vencimiento": "2026-10-30T22:40:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.503,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 0,
+  "sl": 157.59464033993558,
+  "tp": 157.36771089727725,
+  "precio_entrada": 157.5189971923828,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": -0.295,
+  "coste_r": 0.25,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 24.2,
+   "volatilidad_pct": 0.38,
+   "zona": "discount",
+   "estructura": 1,
+   "rsi": 50.3,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "SOLUSDT|15m|2026-10-30T22:30:00+00:00",
+  "activo": "SOL/USDT",
+  "fuente": "binance",
+  "simbolo": "SOLUSDT",
+  "intervalo": "15m",
+  "vela": "2026-10-30T22:30:00+00:00",
+  "entrada": "2026-10-30T22:45:00+00:00",
+  "vencimiento": "2026-10-30T23:30:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 3,
+  "confianza": 0.5042,
+  "estrategias": [
+   "barrida"
+  ],
+  "contexto": 1,
+  "sl": 96.47543469297837,
+  "tp": 94.91184796053243,
+  "precio_entrada": 95.85,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.317,
+  "coste_r": 0.123,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 21.5,
+   "volatilidad_pct": 0.56,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 64.0,
+   "tendencia": 1
+  }
  }
 ]

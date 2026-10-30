@@ -174,7 +174,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.412,
   "coste_r": 0.224,
-  "resultado_r": null,
+  "resultado_r": -1.224,
   "rasgos": {
    "adx": 12.9,
    "volatilidad_pct": 0.92,
@@ -182,7 +182,8 @@
    "estructura": 1,
    "rsi": 59.0,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 4.0
  },
  {
   "id": "JPY=X|5m|2026-10-30T06:15:00+00:00",
@@ -204,13 +205,13 @@
   "sl": 157.70364100334623,
   "tp": 157.28172861342475,
   "precio_entrada": 157.56300354003906,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 157.54600524902344,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": -0.285,
   "coste_r": 0.134,
-  "resultado_r": null,
+  "resultado_r": -1.134,
   "rasgos": {
    "adx": 24.1,
    "volatilidad_pct": 0.74,
@@ -218,6 +219,44 @@
    "estructura": 1,
    "rsi": 54.1,
    "tendencia": 1
+  },
+  "duracion_velas": 8.0
+ },
+ {
+  "id": "EURJPY=X|5m|2026-10-30T13:25:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-10-30T13:25:00+00:00",
+  "entrada": "2026-10-30T13:30:00+00:00",
+  "vencimiento": "2026-10-30T14:20:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 10,
+  "confianza": 0.5271,
+  "estrategias": [
+   "macd",
+   "estocastico"
+  ],
+  "contexto": -1,
+  "sl": 175.53232918042414,
+  "tp": 176.05901831810255,
+  "precio_entrada": 175.66400146484375,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.254,
+  "coste_r": 0.2,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 37.9,
+   "volatilidad_pct": 0.68,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 40.5,
+   "tendencia": -1
   }
  }
 ]

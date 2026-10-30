@@ -91,8 +91,8 @@
   "sl": 99.00148141065878,
   "tp": 104.51555576802365,
   "precio_entrada": 100.38,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 97.35,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 3.0,
   "plan_esperanza": -0.025,
@@ -127,8 +127,8 @@
   "sl": 1.285716715962458,
   "tp": 1.3369665680750835,
   "precio_entrada": 1.3028,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 1.259,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": 0.007,
@@ -170,7 +170,7 @@
   "plan_r": 1.5,
   "plan_esperanza": 0.089,
   "coste_r": 0.123,
-  "resultado_r": null,
+  "resultado_r": -1.123,
   "rasgos": {
    "adx": 36.9,
    "volatilidad_pct": 0.85,
@@ -178,7 +178,8 @@
    "estructura": -1,
    "rsi": 33.7,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 2.0
  },
  {
   "id": "GBPJPY=X|4h|2026-10-30T00:00:00+00:00",

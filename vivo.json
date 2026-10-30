@@ -147,5 +147,41 @@
    "tendencia": -1
   },
   "duracion_velas": 24.0
+ },
+ {
+  "id": "EURGBP=X|15m|2026-10-30T00:00:00+00:00",
+  "activo": "EUR/GBP",
+  "fuente": "yahoo",
+  "simbolo": "EURGBP=X",
+  "intervalo": "15m",
+  "vela": "2026-10-30T00:00:00+00:00",
+  "entrada": "2026-10-30T00:15:00+00:00",
+  "vencimiento": "2026-10-30T04:00:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 15,
+  "confianza": 0.5045,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 1,
+  "sl": 0.8363508316672806,
+  "tp": 0.8349486987595314,
+  "precio_entrada": 0.8357899785041809,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.412,
+  "coste_r": 0.224,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 12.9,
+   "volatilidad_pct": 0.92,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 59.0,
+   "tendencia": 1
+  }
  }
 ]

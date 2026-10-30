@@ -332,4 +332,4 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 
 ## Laboratorio en directo — medio plazo (más de 4 h a 5 días)
 
-Todavía no hay señales comprobadas (4 señales apuntadas, esperando a vencer).
+Todavía no hay señales comprobadas (5 señales apuntadas, esperando a vencer).

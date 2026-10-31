@@ -322,7 +322,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.317,
   "coste_r": 0.123,
-  "resultado_r": null,
+  "resultado_r": -1.123,
   "rasgos": {
    "adx": 21.5,
    "volatilidad_pct": 0.56,
@@ -330,6 +330,43 @@
    "estructura": -1,
    "rsi": 64.0,
    "tendencia": 1
+  },
+  "duracion_velas": 6.0
+ },
+ {
+  "id": "GC=F|15m|2026-10-30T20:45:00+00:00",
+  "activo": "Oro (XAU/USD)",
+  "fuente": "yahoo",
+  "simbolo": "GC=F",
+  "intervalo": "15m",
+  "vela": "2026-10-30T20:45:00+00:00",
+  "entrada": "2026-10-30T21:00:00+00:00",
+  "vencimiento": "2026-10-31T00:45:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 15,
+  "confianza": 0.5018,
+  "estrategias": [
+   "velas"
+  ],
+  "contexto": -1,
+  "sl": 3885.1639063044136,
+  "tp": 3926.371894422423,
+  "precio_entrada": 3898.89990234375,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": -0.225,
+  "coste_r": 0.085,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 48.7,
+   "volatilidad_pct": 0.86,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 45.4,
+   "tendencia": -1
   }
  }
 ]

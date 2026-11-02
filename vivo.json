@@ -360,7 +360,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.225,
   "coste_r": 0.085,
-  "resultado_r": null,
+  "resultado_r": 1.915,
   "rasgos": {
    "adx": 48.7,
    "volatilidad_pct": 0.86,
@@ -368,7 +368,8 @@
    "estructura": -1,
    "rsi": 45.4,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 27.0
  },
  {
   "id": "GC=F|15m|2026-11-02T00:45:00+00:00",
@@ -396,13 +397,50 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.245,
   "coste_r": 0.098,
-  "resultado_r": null,
+  "resultado_r": 0.539,
   "rasgos": {
    "adx": 29.4,
    "volatilidad_pct": 0.64,
    "zona": "discount",
    "estructura": -1,
    "rsi": 53.4,
+   "tendencia": -1
+  },
+  "duracion_velas": 50.0
+ },
+ {
+  "id": "JPY=X|5m|2026-11-02T18:05:00+00:00",
+  "activo": "USD/JPY",
+  "fuente": "yahoo",
+  "simbolo": "JPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-02T18:05:00+00:00",
+  "entrada": "2026-11-02T18:10:00+00:00",
+  "vencimiento": "2026-11-02T19:50:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5033,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": -1,
+  "sl": 157.90680095727697,
+  "tp": 157.55637794384447,
+  "precio_entrada": 157.7899932861328,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": -0.291,
+  "coste_r": 0.162,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 10.5,
+   "volatilidad_pct": 0.12,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 44.8,
    "tendencia": -1
   }
  }

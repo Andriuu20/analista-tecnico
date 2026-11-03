@@ -248,7 +248,7 @@ Generado automáticamente. Un patrón solo cuenta si aparece en la primera mitad
 | 14/10 22:00 | BTC/USDT | 4h | COMPRAR | 4800 min | fibonacci | -5.63 % |
 
 ## Laboratorio en directo — corto plazo (30 min a 4 h)
-**11 señales** del 28/10/2026 al 02/11/2026. Acierto (precio a favor al vencer): **63,6 %** · resultado medio con SL/TP tras costes: **-0.65 R** · no se distingue del azar todavía (z = 0.9).
+**12 señales** del 28/10/2026 al 02/11/2026. Acierto (precio a favor al vencer): **58,3 %** · resultado medio con SL/TP tras costes: **-0.70 R** · no se distingue del azar todavía (z = 0.6).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -256,14 +256,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### ¿La confianza sirve? (si funciona, los tramos altos deberían acertar más)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| <52 % | 8 | 75,0 % | -0.45 R |
+| <52 % | 9 | 66,7 % | -0.52 R |
 | 52-55 % | 3 | 33,3 % | -1.21 R |
 
 ### Por mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
+| USD/JPY | 4 | 50,0 % | -0.92 R |
 | EUR/JPY | 3 | 33,3 % | -1.20 R |
-| USD/JPY | 3 | 66,7 % | -0.84 R |
 | Oro (XAU/USD) | 2 | 100,0 % | +1.23 R |
 | EUR/GBP | 1 | 100,0 % | -1.22 R |
 | SOL/USDT | 1 | 0,0 % | -1.12 R |
@@ -273,19 +273,19 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 15m | 6 | 66,7 % | -0.39 R |
-| 5m | 5 | 60,0 % | -0.97 R |
+| 5m | 6 | 50,0 % | -1.01 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 1-2 h | 5 | 60,0 % | -0.99 R |
+| 1-2 h | 6 | 50,0 % | -1.02 R |
 | 30-59 min | 3 | 33,3 % | -1.16 R |
 | 2-4 h | 3 | 100,0 % | +0.41 R |
 
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| soportes | 3 | 66,7 % | -0.84 R |
+| soportes | 4 | 50,0 % | -0.92 R |
 | bollinger | 2 | 50,0 % | -1.23 R |
 | barrida | 2 | 50,0 % | -1.16 R |
 | estocastico | 2 | 50,0 % | -1.18 R |
@@ -299,41 +299,41 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 00-04 h | 3 | 100,0 % | -0.27 R |
 | 12-16 h | 3 | 33,3 % | -1.21 R |
 | 20-24 h | 3 | 33,3 % | -0.15 R |
+| 16-20 h | 2 | 50,0 % | -1.16 R |
 | 04-08 h | 1 | 100,0 % | -1.13 R |
-| 16-20 h | 1 | 100,0 % | -1.15 R |
 
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | fuerte (≥25) | 5 | 80,0 % | -0.01 R |
 | débil (20-25) | 4 | 25,0 % | -1.19 R |
-| lateral (<20) | 2 | 100,0 % | -1.21 R |
+| lateral (<20) | 3 | 66,7 % | -1.20 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | normal | 5 | 40,0 % | -0.83 R |
 | alta | 4 | 100,0 % | -0.15 R |
-| baja | 2 | 50,0 % | -1.22 R |
+| baja | 3 | 33,3 % | -1.20 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | a favor | 5 | 60,0 % | -1.18 R |
-| en contra | 4 | 75,0 % | +0.03 R |
+| en contra | 5 | 60,0 % | -0.21 R |
 | sin tendencia | 2 | 50,0 % | -0.69 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | a favor (barato al comprar / caro al vender) | 9 | 66,7 % | -0.65 R |
-| en contra | 2 | 50,0 % | -0.69 R |
+| en contra | 3 | 33,3 % | -0.85 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | en contra | 8 | 62,5 % | -0.59 R |
-| a favor | 3 | 66,7 % | -0.82 R |
+| a favor | 4 | 50,0 % | -0.91 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)
 | Fecha (España) | Mercado | Velas | Acción | Plazo | Estrategias | Movimiento |
@@ -342,6 +342,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 30/10 23:30 | SOL/USDT | 15m | VENDER | 45 min | barrida | -0.23 % |
 | 30/10 21:55 | USD/JPY | 5m | VENDER | 100 min | soportes | -0.17 % |
 | 28/10 13:15 | EUR/JPY | 15m | VENDER | 75 min | bollinger | -0.12 % |
+| 02/11 19:05 | USD/JPY | 5m | VENDER | 100 min | soportes | -0.07 % |
 
 ## Laboratorio en directo — medio plazo (más de 4 h a 5 días)
 **8 señales** del 28/10/2026 al 30/10/2026. Acierto (precio a favor al vencer): **25,0 %** · resultado medio con SL/TP tras costes: **-1.09 R** · no se distingue del azar todavía (z = -1.4).

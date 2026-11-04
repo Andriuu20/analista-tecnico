@@ -289,5 +289,41 @@
    "rsi": 34.0,
    "tendencia": 0
   }
+ },
+ {
+  "id": "GBPJPY=X|4h|2026-11-04T12:00:00+00:00",
+  "activo": "GBP/JPY",
+  "fuente": "yahoo",
+  "simbolo": "GBPJPY=X",
+  "intervalo": "4h",
+  "vela": "2026-11-04T12:00:00+00:00",
+  "entrada": "2026-11-04T16:00:00+00:00",
+  "vencimiento": "2026-11-05T04:00:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 3,
+  "confianza": 0.5207,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 1,
+  "sl": 214.22972280921275,
+  "tp": 212.60828988609975,
+  "precio_entrada": 213.41900634765625,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": 0.067,
+  "coste_r": 0.053,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 31.7,
+   "volatilidad_pct": 0.62,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 71.2,
+   "tendencia": 1
+  }
  }
 ]

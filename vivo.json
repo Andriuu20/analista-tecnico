@@ -471,7 +471,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.467,
   "coste_r": 0.209,
-  "resultado_r": null,
+  "resultado_r": 1.291,
   "rasgos": {
    "adx": 29.7,
    "volatilidad_pct": 0.91,
@@ -479,7 +479,8 @@
    "estructura": 1,
    "rsi": 57.6,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 23.0
  },
  {
   "id": "EURJPY=X|5m|2026-11-04T02:05:00+00:00",
@@ -503,13 +504,13 @@
   "sl": 177.13877679876433,
   "tp": 177.85967058026952,
   "precio_entrada": 177.31900024414062,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 177.4530029296875,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 3.0,
   "plan_esperanza": -0.235,
   "coste_r": 0.148,
-  "resultado_r": null,
+  "resultado_r": 1.073,
   "rasgos": {
    "adx": 29.1,
    "volatilidad_pct": 1.0,
@@ -517,7 +518,8 @@
    "estructura": -1,
    "rsi": 37.8,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "GBPJPY=X|5m|2026-11-04T02:05:00+00:00",
@@ -539,13 +541,13 @@
   "sl": 212.1781233712327,
   "tp": 212.5658646658767,
   "precio_entrada": 212.3719940185547,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 212.41900634765625,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.0,
   "plan_esperanza": -0.384,
   "coste_r": 0.219,
-  "resultado_r": null,
+  "resultado_r": -1.219,
   "rasgos": {
    "adx": 39.7,
    "volatilidad_pct": 1.0,
@@ -553,7 +555,8 @@
    "estructura": -1,
    "rsi": 35.3,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 24.0
  },
  {
   "id": "EURGBP=X|15m|2026-11-04T01:45:00+00:00",
@@ -575,8 +578,8 @@
   "sl": 0.8355260826682818,
   "tp": 0.8337359223461491,
   "precio_entrada": 0.8348100185394287,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 0.8351500034332275,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": -0.515,

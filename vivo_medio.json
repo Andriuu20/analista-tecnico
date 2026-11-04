@@ -325,5 +325,41 @@
    "rsi": 71.2,
    "tendencia": 1
   }
+ },
+ {
+  "id": "SOLUSDT|4h|2026-11-04T16:00:00+00:00",
+  "activo": "SOL/USDT",
+  "fuente": "binance",
+  "simbolo": "SOLUSDT",
+  "intervalo": "4h",
+  "vela": "2026-11-04T16:00:00+00:00",
+  "entrada": "2026-11-04T20:00:00+00:00",
+  "vencimiento": "2026-11-07T08:00:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 15,
+  "confianza": 0.5233,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 97.46940366424406,
+  "tp": 85.63178900726786,
+  "precio_entrada": 94.51,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.018,
+  "coste_r": 0.026,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 31.2,
+   "volatilidad_pct": 0.59,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 50.3,
+   "tendencia": 0
+  }
  }
 ]

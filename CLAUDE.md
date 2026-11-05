@@ -80,8 +80,10 @@ hay acceso a datos reales) y guarda en la rama **`resultados`** (no en `main`, p
 - `simulacion.py --rango corto|medio` + workflow «Simulación» (botón manual y cada día): revive los últimos meses
   vela a vela con el motor recortado a los datos de cada momento; sin solapar operaciones; sin filtro de noticias
   (no hay calendario histórico). Un trabajo por mercado y rango en paralelo.
-- `laboratorio.py --rango corto|medio` + workflow «Laboratorio en directo» (cada 30 min): resuelve vencidas
-  (binaria y SL/TP), apunta señales nuevas de todas las temporalidades del rango (marca cuál elegiría la app).
+- `laboratorio.py --rango corto|medio` + workflow «Laboratorio en directo»: resuelve vencidas (binaria y SL/TP),
+  apunta señales nuevas de todas las temporalidades del rango (marca cuál elegiría la app). GitHub no respetaba
+  un cron de 30 min (≈3 ejecuciones/día), así que cada ejecución dura ~6 h con un bucle interno cada 30 min y se
+  lanza cada 6 h (grupo de concurrencia propio «laboratorio»; los pushes a `resultados` reintentan con rebase).
 - `informe.py` → `resultados/INFORME.md`: aciertos por mercado, temporalidad, plazo, estrategia, hora, ADX,
   volatilidad, tendencia, zona, estructura y tramo de confianza.
 - **Cómo aprender de los errores sin sobreajustar:** solo cuentan patrones de ≥ 30 casos que aparecen en la
@@ -101,6 +103,10 @@ hay acceso a datos reales) y guarda en la rama **`resultados`** (no en `main`, p
   aciertan más (58,4 % → 56,4 %); las «a favor» de la tendencia, solo 50,2 %. Encaja con que las estrategias que
   más votan (soportes, Bollinger, estocástico) son de giro. Es 1 de ~40 grupos probados: puede ser casualidad →
   pendiente de confirmar con el laboratorio en directo antes de cambiar el motor. ETH/USDT falla (30 %, 50 casos).
+- **Revisión 05/11/2026 (1 semana):** el patrón «sin tendencia» NO se confirmó (simulación medio plazo
+  actualizada: 54,2 %; en directo 2 de 7) → el motor no se cambió. Medio plazo en simulación bajó a 52,4 %
+  (z = 1,4, ya no se distingue del azar); corto 48,5 %. En directo: corto 17 señales (58,8 %, SL/TP −0,39 R),
+  medio 8 (25 %). Muy pocas señales en directo por el cron lento → bucle de 6 h (ver arriba).
 - Las ejecuciones programadas de GitHub (cron) tardaron en arrancar el primer día; si `gh api .../actions/runs`
   no muestra eventos «schedule», lanzar a mano: `gh api -X POST repos/Andriuu20/analista-tecnico/actions/workflows/laboratorio.yml/dispatches -f ref=main`.
 

@@ -1,24 +1,28 @@
-# Laboratorio en directo: cada 30 minutos comprueba las señales vencidas, analiza los 14 mercados con el
-# mismo motor que la app, apunta las señales de corto plazo (30 min a 4 h) y de medio plazo (más de 4 h a
-# 5 días) y actualiza el informe de errores en la rama «resultados». No opera con dinero: solo apunta y comprueba.
+# Laboratorio en directo: comprueba las señales vencidas, analiza los 14 mercados con el mismo motor que la
+# app, apunta las señales de corto plazo (30 min a 4 h) y de medio plazo (más de 4 h a 5 días) y actualiza el
+# informe de errores en la rama «resultados». No opera con dinero: solo apunta y comprueba.
+#
+# GitHub no respeta un reloj de cada 30 minutos en repositorios gratuitos (en la práctica lo lanzaba unas 3
+# veces al día). Por eso cada ejecución dura casi 6 horas y repite el análisis cada 30 minutos por su cuenta,
+# guardando los resultados en cada vuelta; se lanza cada 6 horas para cubrir el día entero.
 name: Laboratorio en directo
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "7,37 * * * *"  # cada 30 minutos (GitHub puede retrasarlo unos minutos)
+    - cron: "7 */6 * * *"
 
 permissions:
   contents: write
 
 concurrency:
-  group: resultados
+  group: laboratorio
   cancel-in-progress: false
 
 jobs:
   laboratorio:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
@@ -30,19 +34,20 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Corto plazo (30 min a 4 h)
-        run: python laboratorio.py --rango corto --carpeta resultados
-      - name: Medio plazo (más de 4 h a 5 días)
-        run: python laboratorio.py --rango medio --carpeta resultados
-      - name: Actualizar el informe
-        run: >-
-          python informe.py resultados/simulacion.csv resultados/simulacion_medio.csv resultados/vivo.csv
-          resultados/vivo_medio.csv --salida resultados/INFORME.md
-      - name: Guardar en la rama resultados
-        working-directory: resultados
+      - name: Analizar cada 30 minutos durante casi 6 horas
         run: |
-          git config user.name "laboratorio"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet || git commit -m "Laboratorio $(date -u +'%Y-%m-%d %H:%M') UTC"
-          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
+          git -C resultados config user.name "laboratorio"
+          git -C resultados config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for vuelta in $(seq 1 11); do
+            inicio=$(date +%s)
+            git -C resultados pull --rebase -q || true
+            python laboratorio.py --rango corto --carpeta resultados || echo "AVISO: fallo en corto plazo"
+            python laboratorio.py --rango medio --carpeta resultados || echo "AVISO: fallo en medio plazo"
+            python informe.py resultados/simulacion.csv resultados/simulacion_medio.csv resultados/vivo.csv \
+              resultados/vivo_medio.csv --salida resultados/INFORME.md || echo "AVISO: fallo en el informe"
+            git -C resultados add -A
+            git -C resultados diff --cached --quiet || git -C resultados commit -q -m "Laboratorio $(date -u +'%Y-%m-%d %H:%M') UTC"
+            for i in 1 2 3; do git -C resultados pull --rebase -q && git -C resultados push -q && break; sleep 5; done
+            espera=$(( 1800 - ($(date +%s) - inicio) ))
+            if [ "$vuelta" -lt 11 ] && [ "$espera" -gt 0 ]; then sleep "$espera"; fi
+          done

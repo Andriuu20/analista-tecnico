@@ -658,7 +658,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.308,
   "coste_r": 0.209,
-  "resultado_r": null,
+  "resultado_r": -1.209,
   "rasgos": {
    "adx": 32.9,
    "volatilidad_pct": 0.12,
@@ -666,7 +666,8 @@
    "estructura": 1,
    "rsi": 62.0,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 27.0
  },
  {
   "id": "EURJPY=X|15m|2026-11-05T12:00:00+00:00",
@@ -724,13 +725,13 @@
   "sl": 158.2661457362758,
   "tp": 157.91169351279996,
   "precio_entrada": 158.1479949951172,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 157.9040069580078,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": -0.321,
   "coste_r": 0.161,
-  "resultado_r": null,
+  "resultado_r": 1.839,
   "rasgos": {
    "adx": 34.6,
    "volatilidad_pct": 0.8,
@@ -738,7 +739,8 @@
    "estructura": -1,
    "rsi": 23.7,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 7.0
  },
  {
   "id": "EURJPY=X|5m|2026-11-05T14:50:00+00:00",
@@ -766,7 +768,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.414,
   "coste_r": 0.194,
-  "resultado_r": null,
+  "resultado_r": -1.194,
   "rasgos": {
    "adx": 42.0,
    "volatilidad_pct": 0.93,
@@ -774,7 +776,8 @@
    "estructura": -1,
    "rsi": 26.4,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 1.0
  },
  {
   "id": "GBPJPY=X|5m|2026-11-05T14:50:00+00:00",
@@ -802,7 +805,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.348,
   "coste_r": 0.226,
-  "resultado_r": null,
+  "resultado_r": -1.226,
   "rasgos": {
    "adx": 22.1,
    "volatilidad_pct": 0.96,
@@ -810,6 +813,43 @@
    "estructura": -1,
    "rsi": 40.5,
    "tendencia": 1
+  },
+  "duracion_velas": 1.0
+ },
+ {
+  "id": "EURJPY=X|15m|2026-11-05T19:30:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "15m",
+  "vela": "2026-11-05T19:30:00+00:00",
+  "entrada": "2026-11-05T19:45:00+00:00",
+  "vencimiento": "2026-11-05T21:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 5,
+  "confianza": 0.519,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 176.90572654553168,
+  "tp": 177.48554397924914,
+  "precio_entrada": 177.0989990234375,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": 0.031,
+  "coste_r": 0.137,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 45.4,
+   "volatilidad_pct": 0.61,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 35.6,
+   "tendencia": 0
   }
  }
 ]

@@ -703,5 +703,113 @@
    "rsi": 44.6,
    "tendencia": 1
   }
+ },
+ {
+  "id": "JPY=X|5m|2026-11-05T14:50:00+00:00",
+  "activo": "USD/JPY",
+  "fuente": "yahoo",
+  "simbolo": "JPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-05T14:50:00+00:00",
+  "entrada": "2026-11-05T14:55:00+00:00",
+  "vencimiento": "2026-11-05T16:35:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5091,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": -1,
+  "sl": 158.2661457362758,
+  "tp": 157.91169351279996,
+  "precio_entrada": 158.1479949951172,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": -0.321,
+  "coste_r": 0.161,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 34.6,
+   "volatilidad_pct": 0.8,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 23.7,
+   "tendencia": -1
+  }
+ },
+ {
+  "id": "EURJPY=X|5m|2026-11-05T14:50:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-05T14:50:00+00:00",
+  "entrada": "2026-11-05T14:55:00+00:00",
+  "vencimiento": "2026-11-05T16:10:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 15,
+  "confianza": 0.5164,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 177.2577496543314,
+  "tp": 177.80676812684953,
+  "precio_entrada": 177.39500427246094,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.414,
+  "coste_r": 0.194,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 42.0,
+   "volatilidad_pct": 0.93,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 26.4,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "GBPJPY=X|5m|2026-11-05T14:50:00+00:00",
+  "activo": "GBP/JPY",
+  "fuente": "yahoo",
+  "simbolo": "GBPJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-05T14:50:00+00:00",
+  "entrada": "2026-11-05T14:55:00+00:00",
+  "vencimiento": "2026-11-05T16:10:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 15,
+  "confianza": 0.5051,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 1,
+  "sl": 212.9233388504074,
+  "tp": 213.67798149565283,
+  "precio_entrada": 213.11199951171875,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.348,
+  "coste_r": 0.226,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 22.1,
+   "volatilidad_pct": 0.96,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 40.5,
+   "tendencia": 1
+  }
  }
 ]

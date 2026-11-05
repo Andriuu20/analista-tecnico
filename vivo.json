@@ -872,8 +872,8 @@
   "sl": 157.63335560632171,
   "tp": 158.2232942805206,
   "precio_entrada": 157.8300018310547,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 157.66000366210938,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": -0.297,
@@ -958,6 +958,78 @@
    "estructura": 1,
    "rsi": 62.0,
    "tendencia": 1
+  }
+ },
+ {
+  "id": "EURJPY=X|5m|2026-11-05T22:15:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-05T22:15:00+00:00",
+  "entrada": "2026-11-05T22:20:00+00:00",
+  "vencimiento": "2026-11-05T23:10:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 10,
+  "confianza": 0.524,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": -1,
+  "sl": 176.71159150038056,
+  "tp": 177.19719571370203,
+  "precio_entrada": 176.83299255371094,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.255,
+  "coste_r": 0.218,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 30.9,
+   "volatilidad_pct": 0.77,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 32.7,
+   "tendencia": -1
+  }
+ },
+ {
+  "id": "EURJPY=X|15m|2026-11-05T22:00:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "15m",
+  "vela": "2026-11-05T22:00:00+00:00",
+  "entrada": "2026-11-05T22:15:00+00:00",
+  "vencimiento": "2026-11-05T23:30:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 5,
+  "confianza": 0.5142,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 176.6464772161423,
+  "tp": 177.20304776498102,
+  "precio_entrada": 176.83200073242188,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": false,
+  "plan_r": 2.0,
+  "plan_esperanza": 0.029,
+  "coste_r": 0.143,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 46.7,
+   "volatilidad_pct": 0.58,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 26.8,
+   "tendencia": 0
   }
  }
 ]

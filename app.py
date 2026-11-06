@@ -12,6 +12,7 @@ from graficos import grafico
 from motor import PLAZOS, TEMPORALIDADES, ZONA, hora_local, preparar
 from motor import analizar_mercado as analizar_con_motor
 from noticias import descargar_calendario
+import pantalla_empresas
 from registro import Almacen, anadir, estadisticas_vivo, nueva_entrada, resolver
 from senal import UMBRAL_RENTABLE, Z_SIGNIFICATIVO, texto_plazo
 from tendencia import resumen
@@ -295,6 +296,11 @@ def mis_resultados() -> None:
 
 # ============================ PANTALLA ============================
 st.markdown("## 📈 Analista técnico")
+TRADING, EMPRESAS = "📈 Trading", "💼 Análisis de inversión"
+seccion = st.segmented_control("Sección", [TRADING, EMPRESAS], default=TRADING, label_visibility="collapsed") or TRADING
+if seccion == EMPRESAS:
+    pantalla_empresas.mostrar()
+    st.stop()
 nombre = st.selectbox("¿Qué mercado analizo?", [TODOS, *ACTIVOS, OTRO], index=1)
 plazo = st.segmented_control("¿Para cuánto tiempo?", list(PLAZOS), default="Cualquiera") or "Cualquiera"
 cfg = None

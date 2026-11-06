@@ -1,0 +1,36 @@
+# Comprueba con datos reales de Yahoo Finance la sección «Empresas» y guarda el resultado en la rama
+# «resultados» (empresas_comprobacion.md). Se lanza a mano y una vez por semana.
+name: Comprobar empresas
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 6 * * 1"  # los lunes a las 06:23 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: resultados
+          path: resultados
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python comprobar_empresas.py --salida resultados/empresas_comprobacion.md
+      - name: Guardar en la rama resultados
+        working-directory: resultados
+        run: |
+          git config user.name "laboratorio"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Comprobación de empresas $(date -u +'%Y-%m-%d %H:%M') UTC"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done

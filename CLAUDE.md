@@ -71,6 +71,21 @@ vencimiento. Detalles plegados debajo: ¿Por qué?, Gráfico, Backtest, Mis resu
 - **Motor compartido** (`motor.py`): `preparar`, `juzgar`, `filtrar_noticias`, `analizar_mercado`. Lo usan la app,
   la simulación y el laboratorio, para que decidan exactamente igual. No duplicar lógica de decisión en otro sitio.
 
+## Sección «💼 Análisis de inversión» (largo plazo)
+Selector arriba de la app (Trading / Análisis de inversión). Lógica en `empresas.py`, pantalla en
+`pantalla_empresas.py`. Datos de Yahoo vía `yfinance` (info, 5 años de cierres, informes trimestrales con
+`get_earnings_dates`, noticias con `get_news`); referencia SPY (S&P 500).
+- El usuario pidió «análisis de inversión», no «recomendaciones»: no decir «compra X». Idea que quiere: **picos y
+  palas** — invertir en los proveedores de una tendencia, no solo en la marca famosa. Por eso `CADENAS` organiza
+  cada temática en **eslabones** de la materia prima a la marca final (IA, solar, coche eléctrico, obesidad, otras
+  grandes, salidas a bolsa recientes). Para añadir empresas, editar `CADENAS` (ticker de Yahoo, nombre, papel).
+- Ficha: puntos fuertes/débiles/riesgos con umbrales fijos (orientativos), rentabilidad vs S&P 500, números del
+  negocio, últimos informes, analistas, noticias. 📏 Medido: reacción de la acción frente al S&P 500 en las 20
+  sesiones siguientes a cada informe (desde el día después; test en `tests/test_empresas.py`) y rentabilidad media
+  por eslabón (`rendimiento_cadena`, con aviso de **sesgo de supervivencia**: las empresas se eligieron hoy).
+- Yahoo está bloqueado aquí: `comprobar_empresas.py` + workflow «Comprobar empresas» (manual y los lunes) prueba
+  todas las empresas con datos reales y deja `empresas_comprobacion.md` en la rama `resultados`.
+
 ## Laboratorio de pruebas (corto: 30 min - 4 h · medio: más de 4 h - 5 días)
 Para acumular resultados rápido y aprender de los errores sin dinero. Todo corre en **GitHub Actions** (aquí no
 hay acceso a datos reales) y guarda en la rama **`resultados`** (no en `main`, para no reiniciar Streamlit):
@@ -113,7 +128,8 @@ hay acceso a datos reales) y guarda en la rama **`resultados`** (no en `main`, p
 ## Archivos
 `app.py` (interfaz) · `datos.py` · `indicadores.py` · `estrategias.py` · `estructura.py` · `backtest.py` · `senal.py` ·
 `tendencia.py` · `plan.py` · `factores.py` · `noticias.py` · `registro.py` · `graficos.py` · `motor.py` · `simulacion.py` ·
-`laboratorio.py` · `informe.py` · `.github/workflows/` · `.streamlit/config.toml`
+`laboratorio.py` · `informe.py` · `empresas.py` · `pantalla_empresas.py` · `comprobar_empresas.py` · `.github/workflows/` ·
+`.streamlit/config.toml`
 (tema oscuro) · `requirements.txt` (Python 3.12 en Cloud) · `requirements-dev.txt` (pytest, solo para pruebas).
 
 ## Cómo probar

@@ -264,6 +264,8 @@ def reaccion_a_resultados(precios: pd.Series, referencia: pd.Series, resultados:
     pasados = resultados.dropna(subset=["sorpresa"]) if not resultados.empty else resultados
     filas = []
     for fecha, f in pasados.iterrows():
+        if not len(precios) or fecha.normalize() < precios.index[0]:
+            continue  # informe anterior a los precios descargados: no hay con qué medirlo
         despues = precios.index[precios.index > fecha.normalize()]
         if len(despues) <= DIAS_TRAS_RESULTADOS:
             continue

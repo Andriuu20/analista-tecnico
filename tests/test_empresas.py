@@ -26,6 +26,16 @@ def test_la_reaccion_empieza_a_contar_despues_del_informe():
     assert np.isclose(r2["bate"]["exceso_medio"], 0.10)
 
 
+def test_informes_anteriores_a_los_precios_no_se_miden():
+    """Yahoo da informes de más de 10 años pero solo bajamos 5 de precios: los antiguos no deben contarse
+    (antes se medían desde el primer precio disponible, años después del informe)."""
+    precios = pd.Series(np.linspace(100, 130, len(FECHAS)), index=FECHAS)
+    antiguos = pd.date_range("2015-01-15", periods=8, freq="91D", tz="UTC")
+    resultados = pd.DataFrame({"estimado": 1.0, "real": 1.1, "sorpresa": 10.0}, index=antiguos)
+    r = reaccion_a_resultados(precios, precios, resultados)
+    assert r["bate"]["casos"] == 0
+
+
 def test_rentabilidades_frente_al_indice():
     precios = pd.Series(np.linspace(100, 200, len(FECHAS)), index=FECHAS)
     referencia = pd.Series(np.linspace(100, 110, len(FECHAS)), index=FECHAS)

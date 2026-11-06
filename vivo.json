@@ -695,7 +695,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.249,
   "coste_r": 0.188,
-  "resultado_r": null,
+  "resultado_r": -1.188,
   "rasgos": {
    "adx": 12.7,
    "volatilidad_pct": 0.28,
@@ -703,7 +703,8 @@
    "estructura": -1,
    "rsi": 44.6,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 10.0
  },
  {
   "id": "JPY=X|5m|2026-11-05T14:50:00+00:00",
@@ -878,7 +879,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.297,
   "coste_r": 0.096,
-  "resultado_r": null,
+  "resultado_r": -1.096,
   "rasgos": {
    "adx": 17.6,
    "volatilidad_pct": 0.51,
@@ -886,7 +887,8 @@
    "estructura": 1,
    "rsi": 55.3,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 23.0
  },
  {
   "id": "JPY=X|5m|2026-11-05T20:45:00+00:00",
@@ -914,7 +916,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.292,
   "coste_r": 0.219,
-  "resultado_r": null,
+  "resultado_r": -1.219,
   "rasgos": {
    "adx": 13.0,
    "volatilidad_pct": 0.33,
@@ -922,7 +924,8 @@
    "estructura": 1,
    "rsi": 52.2,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 7.0
  },
  {
   "id": "CHF=X|15m|2026-11-05T21:00:00+00:00",
@@ -986,7 +989,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.255,
   "coste_r": 0.218,
-  "resultado_r": null,
+  "resultado_r": -1.218,
   "rasgos": {
    "adx": 30.9,
    "volatilidad_pct": 0.77,
@@ -994,7 +997,8 @@
    "estructura": -1,
    "rsi": 32.7,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "EURJPY=X|15m|2026-11-05T22:00:00+00:00",
@@ -1052,8 +1056,8 @@
   "sl": 176.508656027649,
   "tp": 177.2087011282957,
   "precio_entrada": 176.74200439453125,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 177.00900268554688,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": 0.029,

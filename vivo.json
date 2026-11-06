@@ -954,7 +954,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.107,
   "coste_r": 0.11,
-  "resultado_r": null,
+  "resultado_r": 1.89,
   "rasgos": {
    "adx": 24.0,
    "volatilidad_pct": 0.61,
@@ -962,7 +962,8 @@
    "estructura": 1,
    "rsi": 62.0,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 4.0
  },
  {
   "id": "EURJPY=X|5m|2026-11-05T22:15:00+00:00",

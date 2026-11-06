@@ -99,7 +99,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.025,
   "coste_r": 0.058,
-  "resultado_r": null,
+  "resultado_r": -1.058,
   "rasgos": {
    "adx": 19.1,
    "volatilidad_pct": 0.29,
@@ -107,7 +107,8 @@
    "estructura": 1,
    "rsi": 44.5,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "XRPUSDT|1h|2026-10-29T14:00:00+00:00",
@@ -470,6 +471,78 @@
    "zona": "discount",
    "estructura": -1,
    "rsi": 37.2,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "GBPJPY=X|4h|2026-11-06T16:00:00+00:00",
+  "activo": "GBP/JPY",
+  "fuente": "yahoo",
+  "simbolo": "GBPJPY=X",
+  "intervalo": "4h",
+  "vela": "2026-11-06T16:00:00+00:00",
+  "entrada": "2026-11-06T20:00:00+00:00",
+  "vencimiento": "2026-11-07T08:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 3,
+  "confianza": 0.5207,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 210.21398660447656,
+  "tp": 212.9860256025547,
+  "precio_entrada": 211.60000610351562,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": 0.056,
+  "coste_r": 0.031,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 28.4,
+   "volatilidad_pct": 0.81,
+   "zona": "discount",
+   "estructura": 1,
+   "rsi": 42.9,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "CHF=X|15m|2026-11-06T20:00:00+00:00",
+  "activo": "USD/CHF",
+  "fuente": "yahoo",
+  "simbolo": "CHF=X",
+  "intervalo": "15m",
+  "vela": "2026-11-06T20:00:00+00:00",
+  "entrada": "2026-11-06T20:15:00+00:00",
+  "vencimiento": "2026-11-07T01:15:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5129,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 0.822091552838954,
+  "tp": 0.8188877206664196,
+  "precio_entrada": 0.8208100199699402,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": 0.151,
+  "coste_r": 0.096,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 22.6,
+   "volatilidad_pct": 0.26,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 61.7,
    "tendencia": 0
   }
  }

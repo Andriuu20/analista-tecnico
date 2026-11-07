@@ -1185,5 +1185,41 @@
    "rsi": 52.2,
    "tendencia": 0
   }
+ },
+ {
+  "id": "ETHUSDT|15m|2026-11-07T16:30:00+00:00",
+  "activo": "ETH/USDT",
+  "fuente": "binance",
+  "simbolo": "ETHUSDT",
+  "intervalo": "15m",
+  "vela": "2026-11-07T16:30:00+00:00",
+  "entrada": "2026-11-07T16:45:00+00:00",
+  "vencimiento": "2026-11-07T17:15:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 2,
+  "confianza": 0.5077,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": -1,
+  "sl": 2229.9284997110262,
+  "tp": 2250.7745008669203,
+  "precio_entrada": 2235.14,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.348,
+  "coste_r": 0.214,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 21.5,
+   "volatilidad_pct": 0.08,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 37.1,
+   "tendencia": -1
+  }
  }
 ]

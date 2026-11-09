@@ -1588,5 +1588,77 @@
    "rsi": 32.3,
    "tendencia": -1
   }
+ },
+ {
+  "id": "EURJPY=X|5m|2026-11-09T08:55:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-09T08:55:00+00:00",
+  "entrada": "2026-11-09T09:00:00+00:00",
+  "vencimiento": "2026-11-09T10:15:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 15,
+  "confianza": 0.5131,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 176.96117072044794,
+  "tp": 176.5245078581874,
+  "precio_entrada": 176.8520050048828,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.354,
+  "coste_r": 0.243,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 30.3,
+   "volatilidad_pct": 0.54,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 71.3,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "BTCUSDT|1h|2026-11-09T08:00:00+00:00",
+  "activo": "BTC/USDT",
+  "fuente": "binance",
+  "simbolo": "BTCUSDT",
+  "intervalo": "1h",
+  "vela": "2026-11-09T08:00:00+00:00",
+  "entrada": "2026-11-09T09:00:00+00:00",
+  "vencimiento": "2026-11-09T10:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 1,
+  "confianza": 0.5417,
+  "estrategias": [
+   "rsi"
+  ],
+  "contexto": -1,
+  "sl": 73458.85564577008,
+  "tp": 75683.50435422991,
+  "precio_entrada": 74571.18,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": -0.005,
+  "coste_r": 0.034,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 26.0,
+   "volatilidad_pct": 0.84,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 41.6,
+   "tendencia": -1
+  }
  }
 ]

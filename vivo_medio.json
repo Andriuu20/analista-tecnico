@@ -611,7 +611,7 @@
   "plan_r": 1.5,
   "plan_esperanza": 0.145,
   "coste_r": 0.163,
-  "resultado_r": null,
+  "resultado_r": 1.337,
   "rasgos": {
    "adx": 35.6,
    "volatilidad_pct": 0.12,
@@ -619,7 +619,8 @@
    "estructura": -1,
    "rsi": 23.2,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 17.0
  },
  {
   "id": "ETHUSDT|4h|2026-11-09T12:00:00+00:00",

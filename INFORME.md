@@ -258,7 +258,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| USD/JPY | 15 | 66,7 % | +0.01 R |
+| USD/JPY | 15 | 66,7 % | -0.00 R |
 | EUR/JPY | 12 | 50,0 % | -0.79 R |
 | USD/CHF | 3 | 66,7 % | +0.34 R |
 | EUR/GBP | 3 | 33,3 % | -0.37 R |
@@ -271,7 +271,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por temporalidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 5m | 22 | 59,1 % | -0.30 R |
+| 5m | 22 | 59,1 % | -0.29 R |
 | 15m | 17 | 58,8 % | -0.35 R |
 | 1h | 1 | 100,0 % | — |
 
@@ -285,7 +285,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| soportes | 15 | 66,7 % | +0.01 R |
+| soportes | 15 | 66,7 % | -0.00 R |
 | bollinger | 11 | 36,4 % | -0.75 R |
 | estocastico | 7 | 71,4 % | -0.47 R |
 | barrida | 4 | 50,0 % | -0.15 R |
@@ -296,7 +296,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por franja horaria (hora de España)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 00-04 h | 15 | 80,0 % | -0.05 R |
+| 00-04 h | 15 | 80,0 % | -0.06 R |
 | 20-24 h | 10 | 30,0 % | -0.49 R |
 | 12-16 h | 8 | 50,0 % | -0.83 R |
 | 16-20 h | 5 | 60,0 % | -0.09 R |
@@ -306,14 +306,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| fuerte (≥25) | 21 | 66,7 % | +0.02 R |
+| fuerte (≥25) | 21 | 66,7 % | +0.01 R |
 | lateral (<20) | 10 | 50,0 % | -0.79 R |
 | débil (20-25) | 9 | 55,6 % | -0.76 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 22 | 59,1 % | -0.16 R |
+| normal | 22 | 59,1 % | -0.17 R |
 | alta | 12 | 66,7 % | -0.19 R |
 | baja | 6 | 50,0 % | -1.21 R |
 
@@ -322,18 +322,18 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | a favor | 15 | 66,7 % | -0.27 R |
 | en contra | 13 | 53,8 % | -0.33 R |
-| sin tendencia | 12 | 58,3 % | -0.40 R |
+| sin tendencia | 12 | 58,3 % | -0.38 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 28 | 60,7 % | -0.36 R |
+| a favor (barato al comprar / caro al vender) | 28 | 60,7 % | -0.35 R |
 | en contra | 12 | 58,3 % | -0.23 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 28 | 60,7 % | -0.33 R |
+| en contra | 28 | 60,7 % | -0.32 R |
 | a favor | 12 | 58,3 % | -0.31 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)

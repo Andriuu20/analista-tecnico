@@ -1396,7 +1396,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.299,
   "coste_r": 0.191,
-  "resultado_r": null,
+  "resultado_r": -0.202,
   "rasgos": {
    "adx": 26.9,
    "volatilidad_pct": 0.39,
@@ -1404,7 +1404,8 @@
    "estructura": -1,
    "rsi": 44.5,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "JPY=X|5m|2026-11-09T02:50:00+00:00",
@@ -1549,6 +1550,42 @@
    "estructura": 1,
    "rsi": 35.0,
    "tendencia": 0
+  }
+ },
+ {
+  "id": "ETHUSDT|15m|2026-11-09T06:45:00+00:00",
+  "activo": "ETH/USDT",
+  "fuente": "binance",
+  "simbolo": "ETHUSDT",
+  "intervalo": "15m",
+  "vela": "2026-11-09T06:45:00+00:00",
+  "entrada": "2026-11-09T07:00:00+00:00",
+  "vencimiento": "2026-11-09T07:30:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 2,
+  "confianza": 0.5283,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": -1,
+  "sl": 2097.2633729700547,
+  "tp": 2161.849881089836,
+  "precio_entrada": 2113.41,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.328,
+  "coste_r": 0.065,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 41.7,
+   "volatilidad_pct": 0.73,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 32.3,
+   "tendencia": -1
   }
  }
 ]

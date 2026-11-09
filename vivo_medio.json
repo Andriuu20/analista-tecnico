@@ -583,5 +583,41 @@
    "rsi": 53.8,
    "tendencia": -1
   }
+ },
+ {
+  "id": "CHF=X|15m|2026-11-09T08:15:00+00:00",
+  "activo": "USD/CHF",
+  "fuente": "yahoo",
+  "simbolo": "CHF=X",
+  "intervalo": "15m",
+  "vela": "2026-11-09T08:15:00+00:00",
+  "entrada": "2026-11-09T08:30:00+00:00",
+  "vencimiento": "2026-11-09T13:30:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 20,
+  "confianza": 0.5065,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 0.8169974698907689,
+  "tp": 0.8188787379433875,
+  "precio_entrada": 0.8177499771118164,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": 0.145,
+  "coste_r": 0.163,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 35.6,
+   "volatilidad_pct": 0.12,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 23.2,
+   "tendencia": 0
+  }
  }
 ]

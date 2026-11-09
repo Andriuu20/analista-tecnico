@@ -538,7 +538,7 @@
   "plan_r": 1.5,
   "plan_esperanza": 0.151,
   "coste_r": 0.096,
-  "resultado_r": null,
+  "resultado_r": 1.404,
   "rasgos": {
    "adx": 22.6,
    "volatilidad_pct": 0.26,
@@ -546,7 +546,8 @@
    "estructura": 1,
    "rsi": 61.7,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 37.0
  },
  {
   "id": "CHF=X|4h|2026-11-06T20:00:00+00:00",

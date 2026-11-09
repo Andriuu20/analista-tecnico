@@ -1176,7 +1176,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.244,
   "coste_r": 0.157,
-  "resultado_r": null,
+  "resultado_r": 0.843,
   "rasgos": {
    "adx": 17.5,
    "volatilidad_pct": 0.48,
@@ -1184,7 +1184,8 @@
    "estructura": -1,
    "rsi": 52.2,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 7.0
  },
  {
   "id": "ETHUSDT|15m|2026-11-07T16:30:00+00:00",
@@ -1506,7 +1507,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.299,
   "coste_r": 0.182,
-  "resultado_r": null,
+  "resultado_r": 1.818,
   "rasgos": {
    "adx": 14.1,
    "volatilidad_pct": 0.11,
@@ -1514,7 +1515,8 @@
    "estructura": -1,
    "rsi": 42.4,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 22.0
  },
  {
   "id": "CHF=X|15m|2026-11-09T06:15:00+00:00",
@@ -1609,8 +1611,8 @@
   "sl": 176.96117072044794,
   "tp": 176.5245078581874,
   "precio_entrada": 176.8520050048828,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 176.87899780273438,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 3.0,
   "plan_esperanza": -0.354,

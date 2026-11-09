@@ -1471,7 +1471,7 @@
   "plan_r": 2.0,
   "plan_esperanza": 0.017,
   "coste_r": 0.148,
-  "resultado_r": null,
+  "resultado_r": 1.852,
   "rasgos": {
    "adx": 17.9,
    "volatilidad_pct": 0.17,
@@ -1479,7 +1479,8 @@
    "estructura": 1,
    "rsi": 58.1,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 15.0
  },
  {
   "id": "JPY=X|5m|2026-11-09T05:55:00+00:00",
@@ -1617,7 +1618,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.354,
   "coste_r": 0.243,
-  "resultado_r": null,
+  "resultado_r": 0.362,
   "rasgos": {
    "adx": 30.3,
    "volatilidad_pct": 0.54,
@@ -1625,7 +1626,8 @@
    "estructura": 1,
    "rsi": 71.3,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "BTCUSDT|1h|2026-11-09T08:00:00+00:00",
@@ -1697,6 +1699,42 @@
    "estructura": 1,
    "rsi": 57.9,
    "tendencia": 1
+  }
+ },
+ {
+  "id": "EURGBP=X|15m|2026-11-09T15:45:00+00:00",
+  "activo": "EUR/GBP",
+  "fuente": "yahoo",
+  "simbolo": "EURGBP=X",
+  "intervalo": "15m",
+  "vela": "2026-11-09T15:45:00+00:00",
+  "entrada": "2026-11-09T16:00:00+00:00",
+  "vencimiento": "2026-11-09T17:15:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 5,
+  "confianza": 0.5071,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 0.8357670748578568,
+  "tp": 0.8344744377811163,
+  "precio_entrada": 0.8352500200271606,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.463,
+  "coste_r": 0.242,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 22.2,
+   "volatilidad_pct": 0.57,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 70.7,
+   "tendencia": 0
   }
  }
 ]

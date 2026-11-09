@@ -1279,8 +1279,8 @@
   "sl": 74225.22370612642,
   "tp": 75477.65629387359,
   "precio_entrada": 74851.44,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 75240.01,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.0,
   "plan_esperanza": -0.005,
@@ -1328,6 +1328,42 @@
    "zona": "discount",
    "estructura": -1,
    "rsi": 46.6,
+   "tendencia": -1
+  }
+ },
+ {
+  "id": "JPY=X|5m|2026-11-09T01:20:00+00:00",
+  "activo": "USD/JPY",
+  "fuente": "yahoo",
+  "simbolo": "JPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-09T01:20:00+00:00",
+  "entrada": "2026-11-09T01:25:00+00:00",
+  "vencimiento": "2026-11-09T03:05:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5105,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": -1,
+  "sl": 158.3979448790259,
+  "tp": 157.81311903101067,
+  "precio_entrada": 158.2030029296875,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": -0.304,
+  "coste_r": 0.097,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 27.9,
+   "volatilidad_pct": 0.56,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 37.2,
    "tendencia": -1
   }
  }

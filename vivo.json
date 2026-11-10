@@ -1841,7 +1841,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.018,
   "coste_r": 0.153,
-  "resultado_r": null,
+  "resultado_r": 1.847,
   "rasgos": {
    "adx": 21.0,
    "volatilidad_pct": 0.18,
@@ -1849,7 +1849,8 @@
    "estructura": 1,
    "rsi": 53.1,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 18.0
  },
  {
   "id": "JPY=X|5m|2026-11-10T04:20:00+00:00",

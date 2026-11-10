@@ -241,7 +241,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 07/08 14:00 | SOL/USDT | 4h | VENDER | 2400 min | bollinger | -5.94 % |
 
 ## Laboratorio en directo — corto plazo (30 min a 4 h)
-**50 señales** del 28/10/2026 al 10/11/2026. Acierto (precio a favor al vencer): **56,0 %** · resultado medio con SL/TP tras costes: **-0.22 R** · no se distingue del azar todavía (z = 0.8).
+**50 señales** del 28/10/2026 al 10/11/2026. Acierto (precio a favor al vencer): **56,0 %** · resultado medio con SL/TP tras costes: **-0.21 R** · no se distingue del azar todavía (z = 0.8).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -249,7 +249,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### ¿La confianza sirve? (si funciona, los tramos altos deberían acertar más)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| <52 % | 34 | 61,8 % | -0.23 R |
+| <52 % | 34 | 61,8 % | -0.22 R |
 | 52-55 % | 15 | 40,0 % | -0.11 R |
 | 55-58 % | 1 | 100,0 % | -1.22 R |
 
@@ -269,7 +269,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por temporalidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 5m | 26 | 57,7 % | -0.21 R |
+| 5m | 26 | 57,7 % | -0.20 R |
 | 15m | 22 | 54,5 % | -0.23 R |
 | 1h | 2 | 50,0 % | — |
 
@@ -306,12 +306,12 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | fuerte (≥25) | 24 | 58,3 % | -0.02 R |
 | lateral (<20) | 13 | 53,8 % | -0.25 R |
-| débil (20-25) | 13 | 53,8 % | -0.64 R |
+| débil (20-25) | 13 | 53,8 % | -0.58 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 28 | 53,6 % | -0.16 R |
+| normal | 28 | 53,6 % | -0.15 R |
 | alta | 13 | 61,5 % | -0.19 R |
 | baja | 9 | 55,6 % | -0.44 R |
 
@@ -319,19 +319,19 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | sin tendencia | 18 | 61,1 % | +0.03 R |
-| a favor | 17 | 58,8 % | -0.33 R |
+| a favor | 17 | 58,8 % | -0.31 R |
 | en contra | 15 | 46,7 % | -0.38 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 36 | 52,8 % | -0.28 R |
+| a favor (barato al comprar / caro al vender) | 36 | 52,8 % | -0.27 R |
 | en contra | 14 | 64,3 % | -0.06 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 36 | 55,6 % | -0.26 R |
+| en contra | 36 | 55,6 % | -0.25 R |
 | a favor | 14 | 57,1 % | -0.13 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)

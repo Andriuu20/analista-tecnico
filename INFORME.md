@@ -239,7 +239,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 13/05 10:00 | XRP/USDT | 4h | COMPRAR | 3600 min | fibonacci | -5.87 % |
 
 ## Laboratorio en directo — corto plazo (30 min a 4 h)
-**52 señales** del 28/10/2026 al 10/11/2026. Acierto (precio a favor al vencer): **55,8 %** · resultado medio con SL/TP tras costes: **-0.23 R** · no se distingue del azar todavía (z = 0.8).
+**53 señales** del 28/10/2026 al 10/11/2026. Acierto (precio a favor al vencer): **56,6 %** · resultado medio con SL/TP tras costes: **-0.23 R** · no se distingue del azar todavía (z = 1.0).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -247,7 +247,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### ¿La confianza sirve? (si funciona, los tramos altos deberían acertar más)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| <52 % | 35 | 62,9 % | -0.28 R |
+| <52 % | 36 | 63,9 % | -0.28 R |
 | 52-55 % | 16 | 37,5 % | -0.05 R |
 | 55-58 % | 1 | 100,0 % | -1.22 R |
 
@@ -255,7 +255,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | USD/JPY | 19 | 68,4 % | -0.09 R |
-| EUR/JPY | 14 | 42,9 % | -0.62 R |
+| EUR/JPY | 15 | 46,7 % | -0.62 R |
 | USD/CHF | 5 | 60,0 % | +0.64 R |
 | EUR/GBP | 4 | 50,0 % | +0.04 R |
 | ETH/USDT | 2 | 50,0 % | -1.14 R |
@@ -269,13 +269,13 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 5m | 28 | 57,1 % | -0.31 R |
-| 15m | 22 | 54,5 % | -0.13 R |
+| 15m | 23 | 56,5 % | -0.13 R |
 | 1h | 2 | 50,0 % | — |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 1-2 h | 36 | 52,8 % | -0.11 R |
+| 1-2 h | 37 | 54,1 % | -0.11 R |
 | 30-59 min | 13 | 53,8 % | -0.69 R |
 | 2-4 h | 3 | 100,0 % | +0.41 R |
 
@@ -283,7 +283,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | soportes | 19 | 68,4 % | -0.09 R |
-| bollinger | 15 | 33,3 % | -0.60 R |
+| bollinger | 16 | 37,5 % | -0.60 R |
 | estocastico | 9 | 55,6 % | -0.48 R |
 | barrida | 6 | 50,0 % | +0.35 R |
 | rsi | 5 | 80,0 % | -0.43 R |
@@ -296,41 +296,41 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 00-04 h | 18 | 77,8 % | +0.04 R |
 | 20-24 h | 10 | 30,0 % | -0.35 R |
 | 12-16 h | 8 | 50,0 % | -0.83 R |
+| 16-20 h | 7 | 71,4 % | +0.14 R |
 | 04-08 h | 6 | 50,0 % | -0.66 R |
-| 16-20 h | 6 | 66,7 % | +0.14 R |
 | 08-12 h | 4 | 25,0 % | +0.37 R |
 
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| fuerte (≥25) | 24 | 58,3 % | -0.02 R |
+| fuerte (≥25) | 25 | 60,0 % | -0.02 R |
 | débil (20-25) | 15 | 53,3 % | -0.49 R |
 | lateral (<20) | 13 | 53,8 % | -0.33 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 29 | 51,7 % | -0.23 R |
+| normal | 30 | 53,3 % | -0.23 R |
 | alta | 13 | 61,5 % | -0.19 R |
 | baja | 10 | 60,0 % | -0.29 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
+| a favor | 19 | 57,9 % | -0.36 R |
 | sin tendencia | 19 | 63,2 % | -0.01 R |
-| a favor | 18 | 55,6 % | -0.36 R |
 | en contra | 15 | 46,7 % | -0.38 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 38 | 52,6 % | -0.27 R |
+| a favor (barato al comprar / caro al vender) | 39 | 53,8 % | -0.27 R |
 | en contra | 14 | 64,3 % | -0.14 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 38 | 55,3 % | -0.27 R |
+| en contra | 39 | 56,4 % | -0.27 R |
 | a favor | 14 | 57,1 % | -0.13 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)

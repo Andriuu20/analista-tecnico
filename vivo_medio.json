@@ -720,7 +720,7 @@
   "plan_r": 1.5,
   "plan_esperanza": 0.188,
   "coste_r": 0.141,
-  "resultado_r": null,
+  "resultado_r": -1.141,
   "rasgos": {
    "adx": 25.8,
    "volatilidad_pct": 0.29,
@@ -728,6 +728,7 @@
    "estructura": 1,
    "rsi": 44.5,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 6.0
  }
 ]

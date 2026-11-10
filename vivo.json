@@ -1804,7 +1804,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.276,
   "coste_r": 0.221,
-  "resultado_r": null,
+  "resultado_r": -1.221,
   "rasgos": {
    "adx": 14.0,
    "volatilidad_pct": 0.24,
@@ -1812,7 +1812,8 @@
    "estructura": 1,
    "rsi": 47.0,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "CHF=X|15m|2026-11-10T02:30:00+00:00",
@@ -1876,7 +1877,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.27,
   "coste_r": 0.209,
-  "resultado_r": null,
+  "resultado_r": -1.209,
   "rasgos": {
    "adx": 22.5,
    "volatilidad_pct": 0.06,
@@ -1884,7 +1885,8 @@
    "estructura": -1,
    "rsi": 49.5,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 40.0
  },
  {
   "id": "XRPUSDT|5m|2026-11-10T05:50:00+00:00",
@@ -1906,13 +1908,13 @@
   "sl": 1.1055960471174449,
   "tp": 1.0930079057651099,
   "precio_entrada": 1.1014,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 1.1019,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": -0.2,
   "coste_r": 0.21,
-  "resultado_r": null,
+  "resultado_r": -1.21,
   "rasgos": {
    "adx": 20.2,
    "volatilidad_pct": 0.23,
@@ -1920,6 +1922,7 @@
    "estructura": 1,
    "rsi": 62.4,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 14.0
  }
 ]

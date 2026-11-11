@@ -211,7 +211,7 @@
   "plan_r": 1.0,
   "plan_esperanza": 0.087,
   "coste_r": 0.055,
-  "resultado_r": null,
+  "resultado_r": -1.055,
   "rasgos": {
    "adx": 21.4,
    "volatilidad_pct": 0.54,
@@ -219,7 +219,8 @@
    "estructura": 1,
    "rsi": 56.7,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 7.0
  },
  {
   "id": "SOLUSDT|4h|2026-10-30T00:00:00+00:00",
@@ -895,8 +896,8 @@
   "sl": 0.8288909933035465,
   "tp": 0.8269634930692774,
   "precio_entrada": 0.8281199932098389,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 0.8307999968528748,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": 0.151,

@@ -1953,7 +1953,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.031,
   "coste_r": 0.16,
-  "resultado_r": null,
+  "resultado_r": 1.84,
   "rasgos": {
    "adx": 30.6,
    "volatilidad_pct": 0.58,
@@ -1961,7 +1961,8 @@
    "estructura": -1,
    "rsi": 30.0,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 34.0
  },
  {
   "id": "XRPUSDT|5m|2026-11-11T01:05:00+00:00",
@@ -1989,7 +1990,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.202,
   "coste_r": 0.237,
-  "resultado_r": null,
+  "resultado_r": 1.763,
   "rasgos": {
    "adx": 27.5,
    "volatilidad_pct": 0.04,
@@ -1997,6 +1998,7 @@
    "estructura": -1,
    "rsi": 34.8,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 6.0
  }
 ]

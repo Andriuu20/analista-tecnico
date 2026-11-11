@@ -1287,7 +1287,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.005,
   "coste_r": 0.06,
-  "resultado_r": null,
+  "resultado_r": 0.94,
   "rasgos": {
    "adx": 22.2,
    "volatilidad_pct": 0.68,
@@ -1295,7 +1295,8 @@
    "estructura": -1,
    "rsi": 36.3,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 2.0
  },
  {
   "id": "JPY=X|5m|2026-11-09T00:50:00+00:00",
@@ -1982,8 +1983,8 @@
   "sl": 1.0465492573303086,
   "tp": 1.0572014853393827,
   "precio_entrada": 1.0501,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 1.053,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": -0.202,

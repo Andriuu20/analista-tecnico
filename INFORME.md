@@ -244,7 +244,7 @@ Generado automáticamente. Un patrón solo cuenta si aparece en la primera mitad
 | 13/05 10:00 | XRP/USDT | 4h | COMPRAR | 3600 min | fibonacci | -5.87 % |
 
 ## Laboratorio en directo — corto plazo (30 min a 4 h)
-**59 señales** del 28/10/2026 al 12/11/2026. Acierto (precio a favor al vencer): **54,2 %** · resultado medio con SL/TP tras costes: **-0.17 R** · no se distingue del azar todavía (z = 0.7).
+**59 señales** del 28/10/2026 al 12/11/2026. Acierto (precio a favor al vencer): **54,2 %** · resultado medio con SL/TP tras costes: **-0.19 R** · no se distingue del azar todavía (z = 0.7).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -253,7 +253,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | <52 % | 41 | 61,0 % | -0.19 R |
-| 52-55 % | 17 | 35,3 % | -0.05 R |
+| 52-55 % | 17 | 35,3 % | -0.11 R |
 | 55-58 % | 1 | 100,0 % | -1.22 R |
 
 ### Por mercado
@@ -261,7 +261,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | USD/JPY | 19 | 68,4 % | -0.09 R |
 | EUR/JPY | 19 | 42,1 % | -0.50 R |
-| USD/CHF | 6 | 50,0 % | +0.64 R |
+| USD/CHF | 6 | 50,0 % | +0.34 R |
 | EUR/GBP | 4 | 50,0 % | +0.04 R |
 | ETH/USDT | 2 | 50,0 % | -1.14 R |
 | BTC/USDT | 2 | 50,0 % | -0.05 R |
@@ -274,13 +274,13 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 5m | 29 | 58,6 % | -0.24 R |
-| 15m | 28 | 50,0 % | -0.09 R |
+| 15m | 28 | 50,0 % | -0.14 R |
 | 1h | 2 | 50,0 % | -0.05 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 1-2 h | 42 | 50,0 % | -0.09 R |
+| 1-2 h | 42 | 50,0 % | -0.12 R |
 | 30-59 min | 14 | 57,1 % | -0.52 R |
 | 2-4 h | 3 | 100,0 % | +0.41 R |
 
@@ -290,7 +290,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | bollinger | 21 | 38,1 % | -0.37 R |
 | soportes | 19 | 68,4 % | -0.09 R |
 | estocastico | 9 | 55,6 % | -0.48 R |
-| barrida | 7 | 42,9 % | +0.35 R |
+| barrida | 7 | 42,9 % | +0.13 R |
 | rsi | 5 | 80,0 % | -0.28 R |
 | velas | 2 | 100,0 % | +1.23 R |
 | macd | 1 | 0,0 % | -1.20 R |
@@ -300,7 +300,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | 00-04 h | 21 | 76,2 % | +0.17 R |
 | 20-24 h | 10 | 30,0 % | -0.35 R |
-| 16-20 h | 8 | 62,5 % | +0.38 R |
+| 16-20 h | 8 | 62,5 % | +0.19 R |
 | 12-16 h | 8 | 50,0 % | -0.83 R |
 | 04-08 h | 7 | 42,9 % | -0.66 R |
 | 08-12 h | 5 | 20,0 % | -0.23 R |
@@ -308,14 +308,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| fuerte (≥25) | 29 | 55,2 % | +0.08 R |
+| fuerte (≥25) | 29 | 55,2 % | +0.03 R |
 | débil (20-25) | 16 | 50,0 % | -0.45 R |
 | lateral (<20) | 14 | 57,1 % | -0.33 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 33 | 51,5 % | -0.12 R |
+| normal | 33 | 51,5 % | -0.16 R |
 | alta | 14 | 57,1 % | -0.25 R |
 | baja | 12 | 58,3 % | -0.20 R |
 
@@ -324,18 +324,18 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | a favor | 21 | 57,1 % | -0.29 R |
 | sin tendencia | 21 | 57,1 % | -0.01 R |
-| en contra | 17 | 47,1 % | -0.21 R |
+| en contra | 17 | 47,1 % | -0.26 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 45 | 51,1 % | -0.18 R |
+| a favor (barato al comprar / caro al vender) | 45 | 51,1 % | -0.20 R |
 | en contra | 14 | 64,3 % | -0.14 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 45 | 53,3 % | -0.18 R |
+| en contra | 45 | 53,3 % | -0.20 R |
 | a favor | 14 | 57,1 % | -0.13 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)

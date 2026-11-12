@@ -252,7 +252,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### ¿La confianza sirve? (si funciona, los tramos altos deberían acertar más)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| <52 % | 41 | 61,0 % | -0.22 R |
+| <52 % | 41 | 61,0 % | -0.23 R |
 | 52-55 % | 18 | 38,9 % | -0.03 R |
 | 55-58 % | 1 | 100,0 % | -1.22 R |
 
@@ -274,13 +274,13 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 5m | 30 | 60,0 % | -0.19 R |
-| 15m | 28 | 50,0 % | -0.18 R |
+| 15m | 28 | 50,0 % | -0.19 R |
 | 1h | 2 | 50,0 % | -0.05 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 1-2 h | 43 | 51,2 % | -0.11 R |
+| 1-2 h | 43 | 51,2 % | -0.12 R |
 | 30-59 min | 14 | 57,1 % | -0.52 R |
 | 2-4 h | 3 | 100,0 % | +0.41 R |
 
@@ -298,7 +298,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por franja horaria (hora de España)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 00-04 h | 21 | 76,2 % | +0.10 R |
+| 00-04 h | 21 | 76,2 % | +0.08 R |
 | 20-24 h | 10 | 30,0 % | -0.35 R |
 | 04-08 h | 8 | 50,0 % | -0.38 R |
 | 12-16 h | 8 | 50,0 % | -0.83 R |
@@ -308,7 +308,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| fuerte (≥25) | 29 | 55,2 % | +0.03 R |
+| fuerte (≥25) | 29 | 55,2 % | +0.02 R |
 | débil (20-25) | 16 | 50,0 % | -0.45 R |
 | lateral (<20) | 15 | 60,0 % | -0.27 R |
 
@@ -316,14 +316,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | normal | 34 | 52,9 % | -0.14 R |
-| alta | 14 | 57,1 % | -0.25 R |
+| alta | 14 | 57,1 % | -0.27 R |
 | baja | 12 | 58,3 % | -0.20 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | a favor | 22 | 59,1 % | -0.26 R |
-| sin tendencia | 21 | 57,1 % | -0.01 R |
+| sin tendencia | 21 | 57,1 % | -0.03 R |
 | en contra | 17 | 47,1 % | -0.26 R |
 
 ### Zona premium/discount
@@ -335,7 +335,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 46 | 54,3 % | -0.19 R |
+| en contra | 46 | 54,3 % | -0.20 R |
 | a favor | 14 | 57,1 % | -0.13 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)

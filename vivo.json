@@ -2028,7 +2028,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.025,
   "coste_r": 0.223,
-  "resultado_r": null,
+  "resultado_r": -1.223,
   "rasgos": {
    "adx": 23.0,
    "volatilidad_pct": 0.13,
@@ -2036,7 +2036,8 @@
    "estructura": -1,
    "rsi": 41.1,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 2.0
  },
  {
   "id": "CHF=X|15m|2026-11-11T16:45:00+00:00",
@@ -2072,6 +2073,42 @@
    "estructura": 1,
    "rsi": 79.3,
    "tendencia": -1
+  }
+ },
+ {
+  "id": "EURJPY=X|15m|2026-11-12T00:45:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "15m",
+  "vela": "2026-11-12T00:45:00+00:00",
+  "entrada": "2026-11-12T01:00:00+00:00",
+  "vencimiento": "2026-11-12T02:15:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 5,
+  "confianza": 0.5142,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 1,
+  "sl": 176.9624128931323,
+  "tp": 177.33916652330572,
+  "precio_entrada": 177.08799743652344,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": -0.007,
+  "coste_r": 0.212,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 19.8,
+   "volatilidad_pct": 0.22,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 37.4,
+   "tendencia": 1
   }
  }
 ]

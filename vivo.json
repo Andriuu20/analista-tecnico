@@ -2102,7 +2102,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.007,
   "coste_r": 0.212,
-  "resultado_r": null,
+  "resultado_r": -1.212,
   "rasgos": {
    "adx": 19.8,
    "volatilidad_pct": 0.22,
@@ -2110,7 +2110,8 @@
    "estructura": -1,
    "rsi": 37.4,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 1.0
  },
  {
   "id": "EURJPY=X|15m|2026-11-12T02:45:00+00:00",
@@ -2204,13 +2205,13 @@
   "sl": 159.6248510888119,
   "tp": 159.90773984627432,
   "precio_entrada": 159.73800659179688,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 159.8470001220703,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": -0.262,
   "coste_r": 0.169,
-  "resultado_r": null,
+  "resultado_r": 1.331,
   "rasgos": {
    "adx": 11.9,
    "volatilidad_pct": 0.7,
@@ -2218,6 +2219,7 @@
    "estructura": -1,
    "rsi": 53.9,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 24.0
  }
 ]

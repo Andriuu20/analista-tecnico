@@ -2244,8 +2244,8 @@
   "sl": 176.8430498952417,
   "tp": 177.1729089985791,
   "precio_entrada": 176.9530029296875,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 176.55099487304688,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 2.0,
   "plan_esperanza": -0.001,
@@ -2258,6 +2258,42 @@
    "estructura": -1,
    "rsi": 44.9,
    "tendencia": 0
+  }
+ },
+ {
+  "id": "CHF=X|15m|2026-11-12T17:15:00+00:00",
+  "activo": "USD/CHF",
+  "fuente": "yahoo",
+  "simbolo": "CHF=X",
+  "intervalo": "15m",
+  "vela": "2026-11-12T17:15:00+00:00",
+  "entrada": "2026-11-12T17:30:00+00:00",
+  "vencimiento": "2026-11-12T18:45:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 5,
+  "confianza": 0.5344,
+  "estrategias": [
+   "barrida"
+  ],
+  "contexto": -1,
+  "sl": 0.8361867930750888,
+  "tp": 0.8331663675584711,
+  "precio_entrada": 0.8351799845695496,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": 0.003,
+  "coste_r": 0.124,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 38.6,
+   "volatilidad_pct": 0.75,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 68.8,
+   "tendencia": -1
   }
  }
 ]

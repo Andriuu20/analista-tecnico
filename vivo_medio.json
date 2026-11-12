@@ -912,5 +912,41 @@
    "tendencia": -1
   },
   "duracion_velas": 7.0
+ },
+ {
+  "id": "ETHUSDT|4h|2026-11-12T12:00:00+00:00",
+  "activo": "ETH/USDT",
+  "fuente": "binance",
+  "simbolo": "ETHUSDT",
+  "intervalo": "4h",
+  "vela": "2026-11-12T12:00:00+00:00",
+  "entrada": "2026-11-12T16:00:00+00:00",
+  "vencimiento": "2026-11-13T04:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 3,
+  "confianza": 0.5135,
+  "estrategias": [
+   "barrida"
+  ],
+  "contexto": 0,
+  "sl": 1955.5986476092141,
+  "tp": 2062.6013523907855,
+  "precio_entrada": 2009.1,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": 0.062,
+  "coste_r": 0.019,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 52.5,
+   "volatilidad_pct": 0.47,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 28.5,
+   "tendencia": 0
+  }
  }
 ]

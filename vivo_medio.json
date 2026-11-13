@@ -948,5 +948,41 @@
    "rsi": 28.5,
    "tendencia": 0
   }
+ },
+ {
+  "id": "GBPJPY=X|1h|2026-11-13T02:00:00+00:00",
+  "activo": "GBP/JPY",
+  "fuente": "yahoo",
+  "simbolo": "GBPJPY=X",
+  "intervalo": "1h",
+  "vela": "2026-11-13T02:00:00+00:00",
+  "entrada": "2026-11-13T03:00:00+00:00",
+  "vencimiento": "2026-11-13T23:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 20,
+  "confianza": 0.5034,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 0,
+  "sl": 211.31710178901653,
+  "tp": 212.03488795707722,
+  "precio_entrada": 211.67599487304688,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": -0.165,
+  "coste_r": 0.118,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 34.5,
+   "volatilidad_pct": 0.42,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 49.5,
+   "tendencia": 0
+  }
  }
 ]

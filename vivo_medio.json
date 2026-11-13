@@ -358,7 +358,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.018,
   "coste_r": 0.026,
-  "resultado_r": null,
+  "resultado_r": 2.974,
   "rasgos": {
    "adx": 31.2,
    "volatilidad_pct": 0.59,
@@ -366,7 +366,8 @@
    "estructura": -1,
    "rsi": 50.3,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 25.0
  },
  {
   "id": "CHF=X|15m|2026-11-05T21:30:00+00:00",
@@ -933,8 +934,8 @@
   "sl": 1955.5986476092141,
   "tp": 2062.6013523907855,
   "precio_entrada": 2009.1,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 1934.57,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 1.0,
   "plan_esperanza": 0.062,
@@ -982,6 +983,42 @@
    "zona": "premium",
    "estructura": -1,
    "rsi": 49.5,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "CHF=X|4h|2026-11-13T00:00:00+00:00",
+  "activo": "USD/CHF",
+  "fuente": "yahoo",
+  "simbolo": "CHF=X",
+  "intervalo": "4h",
+  "vela": "2026-11-13T00:00:00+00:00",
+  "entrada": "2026-11-13T04:00:00+00:00",
+  "vencimiento": "2026-11-16T12:00:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5297,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 0.8385260066224103,
+  "tp": 0.8296610175322048,
+  "precio_entrada": 0.8349800109863281,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.098,
+  "coste_r": 0.035,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 39.2,
+   "volatilidad_pct": 0.75,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 70.2,
    "tendencia": 0
   }
  }

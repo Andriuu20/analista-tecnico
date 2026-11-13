@@ -2324,7 +2324,7 @@
   "plan_r": 2.0,
   "plan_esperanza": 0.024,
   "coste_r": 0.194,
-  "resultado_r": null,
+  "resultado_r": 1.806,
   "rasgos": {
    "adx": 14.4,
    "volatilidad_pct": 0.09,
@@ -2332,7 +2332,8 @@
    "estructura": 1,
    "rsi": 43.1,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 19.0
  },
  {
   "id": "EURJPY=X|15m|2026-11-13T06:30:00+00:00",
@@ -2360,7 +2361,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.03,
   "coste_r": 0.126,
-  "resultado_r": null,
+  "resultado_r": -1.126,
   "rasgos": {
    "adx": 20.0,
    "volatilidad_pct": 0.73,
@@ -2368,7 +2369,8 @@
    "estructura": 1,
    "rsi": 42.6,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 7.0
  },
  {
   "id": "JPY=X|5m|2026-11-13T07:50:00+00:00",
@@ -2396,7 +2398,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.266,
   "coste_r": 0.115,
-  "resultado_r": null,
+  "resultado_r": 0.885,
   "rasgos": {
    "adx": 32.6,
    "volatilidad_pct": 0.89,
@@ -2404,7 +2406,8 @@
    "estructura": -1,
    "rsi": 43.5,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "CHF=X|15m|2026-11-13T08:00:00+00:00",
@@ -2468,7 +2471,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.264,
   "coste_r": 0.117,
-  "resultado_r": null,
+  "resultado_r": 0.456,
   "rasgos": {
    "adx": 15.7,
    "volatilidad_pct": 0.77,
@@ -2476,7 +2479,8 @@
    "estructura": 1,
    "rsi": 52.4,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "JPY=X|5m|2026-11-13T09:20:00+00:00",
@@ -2504,7 +2508,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.266,
   "coste_r": 0.23,
-  "resultado_r": null,
+  "resultado_r": -1.23,
   "rasgos": {
    "adx": 12.4,
    "volatilidad_pct": 0.62,
@@ -2512,7 +2516,8 @@
    "estructura": 1,
    "rsi": 56.6,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 34.0
  },
  {
   "id": "JPY=X|5m|2026-11-13T09:50:00+00:00",
@@ -2534,13 +2539,13 @@
   "sl": 159.82100007590705,
   "tp": 160.0160050741277,
   "precio_entrada": 159.8990020751953,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 159.9199981689453,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": -0.268,
   "coste_r": 0.246,
-  "resultado_r": null,
+  "resultado_r": 1.254,
   "rasgos": {
    "adx": 11.8,
    "volatilidad_pct": 0.51,
@@ -2548,7 +2553,8 @@
    "estructura": 1,
    "rsi": 51.3,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 28.0
  },
  {
   "id": "BTCUSDT|1h|2026-11-13T09:00:00+00:00",
@@ -2584,6 +2590,42 @@
    "estructura": -1,
    "rsi": 31.4,
    "tendencia": -1
+  }
+ },
+ {
+  "id": "JPY=X|5m|2026-11-13T19:25:00+00:00",
+  "activo": "USD/JPY",
+  "fuente": "yahoo",
+  "simbolo": "JPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-13T19:25:00+00:00",
+  "entrada": "2026-11-13T19:30:00+00:00",
+  "vencimiento": "2026-11-13T21:10:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 20,
+  "confianza": 0.5138,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 0,
+  "sl": 159.6673555521083,
+  "tp": 159.83865641078233,
+  "precio_entrada": 159.7530059814453,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": -0.247,
+  "coste_r": 0.224,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 39.2,
+   "volatilidad_pct": 0.63,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 48.4,
+   "tendencia": 0
   }
  }
 ]

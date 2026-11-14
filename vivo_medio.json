@@ -432,7 +432,7 @@
   "plan_r": 1.0,
   "plan_esperanza": 0.037,
   "coste_r": 0.016,
-  "resultado_r": null,
+  "resultado_r": -1.016,
   "rasgos": {
    "adx": 25.9,
    "volatilidad_pct": 0.94,
@@ -440,7 +440,8 @@
    "estructura": 1,
    "rsi": 39.3,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 18.0
  },
  {
   "id": "SOLUSDT|4h|2026-11-06T04:00:00+00:00",
@@ -1093,6 +1094,42 @@
    "estructura": 1,
    "rsi": 71.6,
    "tendencia": -1
+  }
+ },
+ {
+  "id": "ETHUSDT|4h|2026-11-14T04:00:00+00:00",
+  "activo": "ETH/USDT",
+  "fuente": "binance",
+  "simbolo": "ETHUSDT",
+  "intervalo": "4h",
+  "vela": "2026-11-14T04:00:00+00:00",
+  "entrada": "2026-11-14T08:00:00+00:00",
+  "vencimiento": "2026-11-16T20:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 15,
+  "confianza": 0.517,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 1834.9199342260124,
+  "tp": 1961.5800657739876,
+  "precio_entrada": 1898.25,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": 0.162,
+  "coste_r": 0.015,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 56.0,
+   "volatilidad_pct": 0.81,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 28.3,
+   "tendencia": 0
   }
  }
 ]

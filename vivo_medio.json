@@ -469,7 +469,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.147,
   "coste_r": 0.023,
-  "resultado_r": null,
+  "resultado_r": -1.023,
   "rasgos": {
    "adx": 28.3,
    "volatilidad_pct": 0.69,
@@ -477,7 +477,8 @@
    "estructura": -1,
    "rsi": 37.2,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 16.0
  },
  {
   "id": "GBPJPY=X|4h|2026-11-06T16:00:00+00:00",
@@ -1165,6 +1166,42 @@
    "zona": "discount",
    "estructura": -1,
    "rsi": 28.2,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "SOLUSDT|4h|2026-11-14T12:00:00+00:00",
+  "activo": "SOL/USDT",
+  "fuente": "binance",
+  "simbolo": "SOLUSDT",
+  "intervalo": "4h",
+  "vela": "2026-11-14T12:00:00+00:00",
+  "entrada": "2026-11-14T16:00:00+00:00",
+  "vencimiento": "2026-11-17T04:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 15,
+  "confianza": 0.5306,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 70.87397483742198,
+  "tp": 82.93807548773404,
+  "precio_entrada": 73.89,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.186,
+  "coste_r": 0.02,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 51.6,
+   "volatilidad_pct": 0.62,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 24.2,
    "tendencia": 0
   }
  }

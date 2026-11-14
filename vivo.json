@@ -2757,13 +2757,13 @@
   "sl": 0.9503351365148479,
   "tp": 0.9829945904554565,
   "precio_entrada": 0.9585,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 0.9579,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 3.0,
   "plan_esperanza": -0.098,
   "coste_r": 0.094,
-  "resultado_r": null,
+  "resultado_r": -1.094,
   "rasgos": {
    "adx": 37.0,
    "volatilidad_pct": 1.0,
@@ -2771,7 +2771,8 @@
    "estructura": -1,
    "rsi": 30.1,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "BTCUSDT|1h|2026-11-14T17:00:00+00:00",
@@ -2794,8 +2795,8 @@
   "sl": 64944.61253621436,
   "tp": 67337.08119567847,
   "precio_entrada": 65901.6,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 65565.84,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": -0.282,

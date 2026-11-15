@@ -1240,5 +1240,78 @@
    "rsi": 24.4,
    "tendencia": 0
   }
+ },
+ {
+  "id": "ETHUSDT|4h|2026-11-15T00:00:00+00:00",
+  "activo": "ETH/USDT",
+  "fuente": "binance",
+  "simbolo": "ETHUSDT",
+  "intervalo": "4h",
+  "vela": "2026-11-15T00:00:00+00:00",
+  "entrada": "2026-11-15T04:00:00+00:00",
+  "vencimiento": "2026-11-17T16:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 15,
+  "confianza": 0.5196,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 1737.016588621145,
+  "tp": 1900.6034113788548,
+  "precio_entrada": 1818.81,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": 0.175,
+  "coste_r": 0.011,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 59.4,
+   "volatilidad_pct": 1.0,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 30.3,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "SOLUSDT|4h|2026-11-15T00:00:00+00:00",
+  "activo": "SOL/USDT",
+  "fuente": "binance",
+  "simbolo": "SOLUSDT",
+  "intervalo": "4h",
+  "vela": "2026-11-15T00:00:00+00:00",
+  "entrada": "2026-11-15T04:00:00+00:00",
+  "vencimiento": "2026-11-17T16:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 15,
+  "confianza": 0.526,
+  "estrategias": [
+   "bollinger",
+   "estocastico"
+  ],
+  "contexto": -1,
+  "sl": 67.86056221494756,
+  "tp": 81.89831335515733,
+  "precio_entrada": 71.37,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.127,
+  "coste_r": 0.016,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 56.1,
+   "volatilidad_pct": 0.9,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 24.5,
+   "tendencia": -1
+  }
  }
 ]

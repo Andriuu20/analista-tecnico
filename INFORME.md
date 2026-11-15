@@ -355,7 +355,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 14/11 10:00 | BTC/USDT | 1h | COMPRAR | 60 min | rsi | -0.18 % |
 
 ## Laboratorio en directo — medio plazo (más de 4 h a 5 días)
-**26 señales** del 28/10/2026 al 13/11/2026. Acierto (precio a favor al vencer): **26,9 %** · resultado medio con SL/TP tras costes: **-0.11 R** · claramente peor que el azar (z = -2.4).
+**27 señales** del 28/10/2026 al 13/11/2026. Acierto (precio a favor al vencer): **25,9 %** · resultado medio con SL/TP tras costes: **-0.11 R** · claramente peor que el azar (z = -2.5).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -364,12 +364,12 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 52-55 % | 16 | 25,0 % | -0.04 R |
-| <52 % | 10 | 30,0 % | -0.18 R |
+| <52 % | 11 | 27,3 % | -0.18 R |
 
 ### Por mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| SOL/USDT | 10 | 30,0 % | +0.11 R |
+| SOL/USDT | 11 | 27,3 % | +0.11 R |
 | USD/CHF | 7 | 28,6 % | +0.11 R |
 | ETH/USDT | 4 | 25,0 % | -1.02 R |
 | GBP/JPY | 4 | 25,0 % | -1.05 R |
@@ -378,21 +378,21 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por temporalidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 4h | 18 | 27,8 % | -0.14 R |
+| 4h | 19 | 26,3 % | -0.14 R |
 | 15m | 6 | 33,3 % | +0.11 R |
 | 1h | 2 | 0,0 % | -1.06 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 2-5 días | 12 | 25,0 % | +0.30 R |
+| 2-5 días | 13 | 23,1 % | +0.30 R |
 | 4-12 h | 11 | 36,4 % | -0.18 R |
 | 12-24 h | 3 | 0,0 % | -1.06 R |
 
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| bollinger | 12 | 33,3 % | +0.30 R |
+| bollinger | 13 | 30,8 % | +0.30 R |
 | estocastico | 10 | 20,0 % | -0.18 R |
 | barrida | 2 | 50,0 % | -1.02 R |
 | soportes | 2 | 0,0 % | -1.06 R |
@@ -406,44 +406,45 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 16-20 h | 5 | 20,0 % | +0.98 R |
 | 00-04 h | 5 | 20,0 % | -1.09 R |
 | 08-12 h | 3 | 33,3 % | -0.29 R |
-| 04-08 h | 1 | 0,0 % | -1.02 R |
+| 04-08 h | 2 | 0,0 % | -1.02 R |
 
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| fuerte (≥25) | 17 | 29,4 % | -0.16 R |
+| fuerte (≥25) | 18 | 27,8 % | -0.16 R |
 | débil (20-25) | 6 | 16,7 % | -0.24 R |
 | lateral (<20) | 3 | 33,3 % | +0.29 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 20 | 20,0 % | +0.01 R |
+| normal | 21 | 19,0 % | +0.01 R |
 | alta | 4 | 25,0 % | -1.07 R |
 | baja | 2 | 100,0 % | +0.15 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| sin tendencia | 21 | 28,6 % | -0.06 R |
+| sin tendencia | 22 | 27,3 % | -0.06 R |
 | a favor | 3 | 33,3 % | +0.13 R |
 | en contra | 2 | 0,0 % | -1.16 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 23 | 21,7 % | -0.25 R |
+| a favor (barato al comprar / caro al vender) | 24 | 20,8 % | -0.25 R |
 | en contra | 3 | 66,7 % | +0.92 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 21 | 23,8 % | -0.20 R |
+| en contra | 22 | 22,7 % | -0.20 R |
 | a favor | 5 | 40,0 % | +0.30 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)
 | Fecha (España) | Mercado | Velas | Acción | Plazo | Estrategias | Movimiento |
 |---|---|---|---|---|---|---|
+| 13/11 05:00 | SOL/USDT | 4h | COMPRAR | 3600 min | bollinger | -10.06 % |
 | 10/11 17:00 | ETH/USDT | 4h | COMPRAR | 3600 min | bollinger | -5.39 % |
 | 09/11 13:00 | SOL/USDT | 4h | COMPRAR | 3600 min | bollinger | -5.20 % |
 | 09/11 13:00 | ETH/USDT | 4h | COMPRAR | 3600 min | bollinger | -4.30 % |
@@ -453,4 +454,3 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 10/11 21:00 | SOL/USDT | 4h | COMPRAR | 3600 min | estocastico | -3.22 % |
 | 29/10 09:00 | SOL/USDT | 4h | COMPRAR | 1200 min | soportes | -3.02 % |
 | 30/10 01:00 | SOL/USDT | 4h | COMPRAR | 3600 min | bollinger | -2.54 % |
-| 06/11 21:00 | USD/CHF | 4h | VENDER | 4800 min | estocastico | -1.47 % |

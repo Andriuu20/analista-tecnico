@@ -2919,5 +2919,41 @@
    "rsi": 61.8,
    "tendencia": -1
   }
+ },
+ {
+  "id": "XRPUSDT|5m|2026-11-15T23:10:00+00:00",
+  "activo": "XRP/USDT",
+  "fuente": "binance",
+  "simbolo": "XRPUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-15T23:10:00+00:00",
+  "entrada": "2026-11-15T23:15:00+00:00",
+  "vencimiento": "2026-11-16T00:55:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5092,
+  "estrategias": [
+   "rsi"
+  ],
+  "contexto": 0,
+  "sl": 0.9752797061009272,
+  "tp": 0.9585608816972184,
+  "precio_entrada": 0.9711,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.066,
+  "coste_r": 0.186,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 28.9,
+   "volatilidad_pct": 0.22,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 58.3,
+   "tendencia": 0
+  }
  }
 ]

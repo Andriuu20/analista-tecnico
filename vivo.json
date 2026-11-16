@@ -2731,7 +2731,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.024,
   "coste_r": 0.033,
-  "resultado_r": null,
+  "resultado_r": -1.033,
   "rasgos": {
    "adx": 47.3,
    "volatilidad_pct": 0.83,
@@ -2739,7 +2739,8 @@
    "estructura": -1,
    "rsi": 36.3,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 5.0
  },
  {
   "id": "XRPUSDT|5m|2026-11-14T16:50:00+00:00",
@@ -2805,7 +2806,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.282,
   "coste_r": 0.034,
-  "resultado_r": null,
+  "resultado_r": -1.034,
   "rasgos": {
    "adx": 52.4,
    "volatilidad_pct": 0.91,
@@ -2813,7 +2814,8 @@
    "estructura": -1,
    "rsi": 30.6,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "BTCUSDT|1h|2026-11-14T23:00:00+00:00",
@@ -2997,5 +2999,41 @@
    "tendencia": 0
   },
   "duracion_velas": 5.0
+ },
+ {
+  "id": "XRPUSDT|5m|2026-11-16T21:50:00+00:00",
+  "activo": "XRP/USDT",
+  "fuente": "binance",
+  "simbolo": "XRPUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-16T21:50:00+00:00",
+  "entrada": "2026-11-16T21:55:00+00:00",
+  "vencimiento": "2026-11-16T22:45:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 10,
+  "confianza": 0.5038,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 0.9628667129627488,
+  "tp": 0.9441998611117537,
+  "precio_entrada": 0.9582,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.038,
+  "coste_r": 0.164,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 12.4,
+   "volatilidad_pct": 0.13,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 52.2,
+   "tendencia": 0
+  }
  }
 ]

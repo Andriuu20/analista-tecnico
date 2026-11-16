@@ -2913,7 +2913,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.126,
   "coste_r": 0.102,
-  "resultado_r": null,
+  "resultado_r": -1.102,
   "rasgos": {
    "adx": 15.7,
    "volatilidad_pct": 0.21,
@@ -2921,7 +2921,8 @@
    "estructura": 1,
    "rsi": 61.8,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 10.0
  },
  {
   "id": "XRPUSDT|5m|2026-11-15T23:10:00+00:00",
@@ -2986,7 +2987,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.245,
   "coste_r": 0.202,
-  "resultado_r": null,
+  "resultado_r": -1.202,
   "rasgos": {
    "adx": 39.6,
    "volatilidad_pct": 0.73,
@@ -2994,6 +2995,7 @@
    "estructura": -1,
    "rsi": 57.3,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 5.0
  }
 ]

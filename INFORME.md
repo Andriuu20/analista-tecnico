@@ -358,7 +358,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 12/11 16:45 | EUR/JPY | 15m | COMPRAR | 75 min | bollinger | -0.23 % |
 
 ## Laboratorio en directo — medio plazo (más de 4 h a 5 días)
-**31 señales** del 28/10/2026 al 14/11/2026. Acierto (precio a favor al vencer): **22,6 %** · resultado medio con SL/TP tras costes: **-0.11 R** · claramente peor que el azar (z = -3.1).
+**32 señales** del 28/10/2026 al 14/11/2026. Acierto (precio a favor al vencer): **21,9 %** · resultado medio con SL/TP tras costes: **-0.11 R** · claramente peor que el azar (z = -3.2).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -367,35 +367,35 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 52-55 % | 18 | 22,2 % | +0.07 R |
-| <52 % | 13 | 23,1 % | -0.28 R |
+| <52 % | 14 | 21,4 % | -0.28 R |
 
 ### Por mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | SOL/USDT | 13 | 23,1 % | +0.11 R |
 | USD/CHF | 8 | 25,0 % | +0.11 R |
-| ETH/USDT | 5 | 20,0 % | -1.02 R |
+| ETH/USDT | 6 | 16,7 % | -1.02 R |
 | GBP/JPY | 4 | 25,0 % | -0.41 R |
 | XRP/USDT | 1 | 0,0 % | -1.06 R |
 
 ### Por temporalidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 4h | 23 | 21,7 % | -0.04 R |
+| 4h | 24 | 20,8 % | -0.04 R |
 | 15m | 6 | 33,3 % | +0.11 R |
 | 1h | 2 | 0,0 % | -1.09 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 2-5 días | 17 | 17,6 % | +0.30 R |
+| 2-5 días | 18 | 16,7 % | +0.30 R |
 | 4-12 h | 11 | 36,4 % | -0.05 R |
 | 12-24 h | 3 | 0,0 % | -1.08 R |
 
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| bollinger | 15 | 26,7 % | +0.39 R |
+| bollinger | 16 | 25,0 % | +0.39 R |
 | estocastico | 12 | 16,7 % | -0.18 R |
 | barrida | 2 | 50,0 % | -1.02 R |
 | soportes | 2 | 0,0 % | -1.09 R |
@@ -407,14 +407,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 12-16 h | 7 | 28,6 % | -0.39 R |
 | 00-04 h | 6 | 16,7 % | -1.09 R |
 | 20-24 h | 6 | 33,3 % | +1.17 R |
-| 16-20 h | 5 | 20,0 % | +0.98 R |
+| 16-20 h | 6 | 16,7 % | +0.98 R |
 | 08-12 h | 4 | 25,0 % | -0.29 R |
 | 04-08 h | 3 | 0,0 % | -1.02 R |
 
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| fuerte (≥25) | 21 | 23,8 % | -0.15 R |
+| fuerte (≥25) | 22 | 22,7 % | -0.15 R |
 | débil (20-25) | 7 | 14,3 % | -0.24 R |
 | lateral (<20) | 3 | 33,3 % | +0.29 R |
 
@@ -422,26 +422,26 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | normal | 23 | 17,4 % | -0.00 R |
-| alta | 6 | 16,7 % | -1.07 R |
+| alta | 7 | 14,3 % | -1.07 R |
 | baja | 2 | 100,0 % | +0.15 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| sin tendencia | 26 | 23,1 % | -0.14 R |
+| sin tendencia | 27 | 22,2 % | -0.14 R |
 | a favor | 3 | 33,3 % | +0.40 R |
 | en contra | 2 | 0,0 % | -1.16 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 28 | 17,9 % | -0.17 R |
+| a favor (barato al comprar / caro al vender) | 29 | 17,2 % | -0.17 R |
 | en contra | 3 | 66,7 % | +0.24 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 26 | 19,2 % | -0.19 R |
+| en contra | 27 | 18,5 % | -0.19 R |
 | a favor | 5 | 40,0 % | +0.30 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)

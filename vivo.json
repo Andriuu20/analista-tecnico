@@ -3035,5 +3035,41 @@
    "rsi": 52.2,
    "tendencia": 0
   }
+ },
+ {
+  "id": "JPY=X|5m|2026-11-17T00:50:00+00:00",
+  "activo": "USD/JPY",
+  "fuente": "yahoo",
+  "simbolo": "JPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-17T00:50:00+00:00",
+  "entrada": "2026-11-17T00:55:00+00:00",
+  "vencimiento": "2026-11-17T02:35:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5022,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 1,
+  "sl": 159.53443526283863,
+  "tp": 159.25585748171864,
+  "precio_entrada": 159.42300415039062,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.295,
+  "coste_r": 0.172,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 14.8,
+   "volatilidad_pct": 0.71,
+   "zona": "discount",
+   "estructura": 1,
+   "rsi": 47.7,
+   "tendencia": 1
+  }
  }
 ]

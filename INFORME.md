@@ -248,7 +248,7 @@ Generado automáticamente. Un patrón solo cuenta si aparece en la primera mitad
 | 13/11 09:00 | ETH/USDT | 4h | COMPRAR | 3600 min | bollinger | -6.32 % |
 
 ## Laboratorio en directo — corto plazo (30 min a 4 h)
-**87 señales** del 28/10/2026 al 17/11/2026. Acierto (precio a favor al vencer): **50,6 %** · resultado medio con SL/TP tras costes: **-0.26 R** · no se distingue del azar todavía (z = 0.1).
+**87 señales** del 28/10/2026 al 17/11/2026. Acierto (precio a favor al vencer): **50,6 %** · resultado medio con SL/TP tras costes: **-0.27 R** · no se distingue del azar todavía (z = 0.1).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -256,14 +256,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### ¿La confianza sirve? (si funciona, los tramos altos deberían acertar más)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| <52 % | 62 | 54,8 % | -0.31 R |
+| <52 % | 62 | 54,8 % | -0.33 R |
 | 52-55 % | 24 | 37,5 % | -0.09 R |
 | 55-58 % | 1 | 100,0 % | -1.22 R |
 
 ### Por mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| USD/JPY | 29 | 69,0 % | +0.01 R |
+| USD/JPY | 29 | 69,0 % | -0.04 R |
 | EUR/JPY | 22 | 36,4 % | -0.57 R |
 | USD/CHF | 9 | 44,4 % | +0.17 R |
 | BTC/USDT | 9 | 33,3 % | -0.47 R |
@@ -277,21 +277,21 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por temporalidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 5m | 43 | 58,1 % | -0.21 R |
+| 5m | 43 | 58,1 % | -0.23 R |
 | 15m | 35 | 45,7 % | -0.27 R |
 | 1h | 9 | 33,3 % | -0.47 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 1-2 h | 64 | 48,4 % | -0.17 R |
+| 1-2 h | 64 | 48,4 % | -0.19 R |
 | 30-59 min | 17 | 52,9 % | -0.62 R |
 | 2-4 h | 6 | 66,7 % | -0.13 R |
 
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| soportes | 29 | 69,0 % | +0.01 R |
+| soportes | 29 | 69,0 % | -0.04 R |
 | bollinger | 28 | 32,1 % | -0.50 R |
 | rsi | 11 | 54,5 % | -0.53 R |
 | estocastico | 11 | 45,5 % | -0.55 R |
@@ -304,7 +304,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 00-04 h | 26 | 73,1 % | -0.03 R |
-| 08-12 h | 15 | 46,7 % | -0.09 R |
+| 08-12 h | 15 | 46,7 % | -0.17 R |
 | 04-08 h | 13 | 38,5 % | -0.40 R |
 | 20-24 h | 13 | 30,8 % | -0.39 R |
 | 16-20 h | 12 | 41,7 % | -0.25 R |
@@ -314,34 +314,34 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | fuerte (≥25) | 43 | 46,5 % | -0.16 R |
-| lateral (<20) | 27 | 59,3 % | -0.27 R |
+| lateral (<20) | 27 | 59,3 % | -0.31 R |
 | débil (20-25) | 17 | 47,1 % | -0.50 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 48 | 52,1 % | -0.25 R |
+| normal | 48 | 52,1 % | -0.27 R |
 | alta | 24 | 45,8 % | -0.35 R |
 | baja | 15 | 53,3 % | -0.12 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor | 30 | 60,0 % | -0.12 R |
+| a favor | 30 | 60,0 % | -0.15 R |
 | en contra | 29 | 37,9 % | -0.47 R |
 | sin tendencia | 28 | 53,6 % | -0.19 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 64 | 46,9 % | -0.33 R |
+| a favor (barato al comprar / caro al vender) | 64 | 46,9 % | -0.34 R |
 | en contra | 23 | 60,9 % | -0.08 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | en contra | 67 | 46,3 % | -0.32 R |
-| a favor | 20 | 65,0 % | -0.03 R |
+| a favor | 20 | 65,0 % | -0.09 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)
 | Fecha (España) | Mercado | Velas | Acción | Plazo | Estrategias | Movimiento |

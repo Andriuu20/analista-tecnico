@@ -3139,7 +3139,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.308,
   "coste_r": 0.227,
-  "resultado_r": null,
+  "resultado_r": -1.227,
   "rasgos": {
    "adx": 18.3,
    "volatilidad_pct": 0.48,
@@ -3147,7 +3147,8 @@
    "estructura": -1,
    "rsi": 56.9,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "SOLUSDT|5m|2026-11-17T08:40:00+00:00",

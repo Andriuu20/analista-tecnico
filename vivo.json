@@ -2843,7 +2843,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.293,
   "coste_r": 0.029,
-  "resultado_r": null,
+  "resultado_r": -1.029,
   "rasgos": {
    "adx": 56.9,
    "volatilidad_pct": 0.99,
@@ -2851,7 +2851,8 @@
    "estructura": -1,
    "rsi": 28.1,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 2.0
  },
  {
   "id": "BTCUSDT|1h|2026-11-15T02:00:00+00:00",
@@ -3026,7 +3027,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.038,
   "coste_r": 0.164,
-  "resultado_r": null,
+  "resultado_r": -1.164,
   "rasgos": {
    "adx": 12.4,
    "volatilidad_pct": 0.13,
@@ -3034,7 +3035,8 @@
    "estructura": 1,
    "rsi": 52.2,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 4.0
  },
  {
   "id": "JPY=X|5m|2026-11-17T00:50:00+00:00",

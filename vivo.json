@@ -2880,7 +2880,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.293,
   "coste_r": 0.023,
-  "resultado_r": null,
+  "resultado_r": 0.08,
   "rasgos": {
    "adx": 55.7,
    "volatilidad_pct": 1.0,
@@ -2888,7 +2888,8 @@
    "estructura": -1,
    "rsi": 43.4,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "XRPUSDT|15m|2026-11-15T22:00:00+00:00",
@@ -3064,7 +3065,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.295,
   "coste_r": 0.172,
-  "resultado_r": null,
+  "resultado_r": -1.172,
   "rasgos": {
    "adx": 14.8,
    "volatilidad_pct": 0.71,
@@ -3072,7 +3073,8 @@
    "estructura": 1,
    "rsi": 47.7,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 2.0
  },
  {
   "id": "JPY=X|5m|2026-11-17T01:20:00+00:00",
@@ -3094,19 +3096,56 @@
   "sl": 159.64810600887276,
   "tp": 159.4479022919085,
   "precio_entrada": 159.54800415039062,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 159.35299682617188,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.0,
   "plan_esperanza": -0.272,
   "coste_r": 0.191,
-  "resultado_r": null,
+  "resultado_r": 0.809,
   "rasgos": {
    "adx": 14.6,
    "volatilidad_pct": 0.76,
    "zona": "premium",
    "estructura": 1,
    "rsi": 63.4,
+   "tendencia": 1
+  },
+  "duracion_velas": 10.0
+ },
+ {
+  "id": "JPY=X|5m|2026-11-17T07:40:00+00:00",
+  "activo": "USD/JPY",
+  "fuente": "yahoo",
+  "simbolo": "JPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-17T07:40:00+00:00",
+  "entrada": "2026-11-17T07:45:00+00:00",
+  "vencimiento": "2026-11-17T09:25:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5008,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 1,
+  "sl": 159.36427566983104,
+  "tp": 159.15358344349562,
+  "precio_entrada": 159.27999877929688,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.308,
+  "coste_r": 0.227,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 18.3,
+   "volatilidad_pct": 0.48,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 56.9,
    "tendencia": 1
   }
  }

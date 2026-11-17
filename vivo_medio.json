@@ -979,7 +979,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.165,
   "coste_r": 0.118,
-  "resultado_r": null,
+  "resultado_r": -1.118,
   "rasgos": {
    "adx": 34.5,
    "volatilidad_pct": 0.42,
@@ -987,7 +987,8 @@
    "estructura": -1,
    "rsi": 49.5,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 4.0
  },
  {
   "id": "CHF=X|4h|2026-11-13T00:00:00+00:00",
@@ -1190,8 +1191,8 @@
   "sl": 70.87397483742198,
   "tp": 82.93807548773404,
   "precio_entrada": 73.89,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 72.83,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 3.0,
   "plan_esperanza": -0.186,

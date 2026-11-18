@@ -3259,5 +3259,77 @@
    "rsi": 69.8,
    "tendencia": -1
   }
+ },
+ {
+  "id": "CHF=X|15m|2026-11-18T08:15:00+00:00",
+  "activo": "USD/CHF",
+  "fuente": "yahoo",
+  "simbolo": "CHF=X",
+  "intervalo": "15m",
+  "vela": "2026-11-18T08:15:00+00:00",
+  "entrada": "2026-11-18T08:30:00+00:00",
+  "vencimiento": "2026-11-18T09:45:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 5,
+  "confianza": 0.5321,
+  "estrategias": [
+   "barrida"
+  ],
+  "contexto": -1,
+  "sl": 0.842567529499727,
+  "tp": 0.8403249458070645,
+  "precio_entrada": 0.8418200016021729,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 2.0,
+  "plan_esperanza": 0.015,
+  "coste_r": 0.169,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 14.7,
+   "volatilidad_pct": 0.33,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 62.8,
+   "tendencia": -1
+  }
+ },
+ {
+  "id": "BTCUSDT|5m|2026-11-18T08:35:00+00:00",
+  "activo": "BTC/USDT",
+  "fuente": "binance",
+  "simbolo": "BTCUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-18T08:35:00+00:00",
+  "entrada": "2026-11-18T08:40:00+00:00",
+  "vencimiento": "2026-11-18T10:20:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5316,
+  "estrategias": [
+   "fibonacci"
+  ],
+  "contexto": 0,
+  "sl": 64962.928390168585,
+  "tp": 63999.25482949426,
+  "precio_entrada": 64722.01,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": 0.175,
+  "coste_r": 0.134,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 13.2,
+   "volatilidad_pct": 0.14,
+   "zona": "discount",
+   "estructura": 1,
+   "rsi": 51.7,
+   "tendencia": 0
+  }
  }
 ]

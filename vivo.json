@@ -3250,7 +3250,7 @@
   "plan_r": 2.0,
   "plan_esperanza": 0.061,
   "coste_r": 0.12,
-  "resultado_r": null,
+  "resultado_r": -1.12,
   "rasgos": {
    "adx": 21.3,
    "volatilidad_pct": 0.93,
@@ -3258,7 +3258,8 @@
    "estructura": -1,
    "rsi": 69.8,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 46.0
  },
  {
   "id": "CHF=X|15m|2026-11-18T08:15:00+00:00",
@@ -3322,7 +3323,7 @@
   "plan_r": 3.0,
   "plan_esperanza": 0.175,
   "coste_r": 0.134,
-  "resultado_r": null,
+  "resultado_r": 2.866,
   "rasgos": {
    "adx": 13.2,
    "volatilidad_pct": 0.14,
@@ -3330,7 +3331,8 @@
    "estructura": 1,
    "rsi": 51.7,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 49.0
  },
  {
   "id": "BTCUSDT|5m|2026-11-18T09:05:00+00:00",
@@ -3358,7 +3360,7 @@
   "plan_r": 3.0,
   "plan_esperanza": 0.175,
   "coste_r": 0.136,
-  "resultado_r": null,
+  "resultado_r": 2.864,
   "rasgos": {
    "adx": 10.5,
    "volatilidad_pct": 0.08,
@@ -3366,6 +3368,7 @@
    "estructura": 1,
    "rsi": 51.2,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 43.0
  }
 ]

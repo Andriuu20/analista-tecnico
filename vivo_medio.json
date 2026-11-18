@@ -653,7 +653,7 @@
   "plan_r": 1.0,
   "plan_esperanza": 0.153,
   "coste_r": 0.019,
-  "resultado_r": null,
+  "resultado_r": -1.019,
   "rasgos": {
    "adx": 40.5,
    "volatilidad_pct": 0.64,
@@ -661,7 +661,8 @@
    "estructura": -1,
    "rsi": 36.8,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 5.0
  },
  {
   "id": "SOLUSDT|4h|2026-11-09T12:00:00+00:00",
@@ -689,7 +690,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.081,
   "coste_r": 0.027,
-  "resultado_r": null,
+  "resultado_r": -1.027,
   "rasgos": {
    "adx": 34.7,
    "volatilidad_pct": 0.33,
@@ -697,7 +698,8 @@
    "estructura": -1,
    "rsi": 42.3,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 5.0
  },
  {
   "id": "CHF=X|15m|2026-11-10T01:00:00+00:00",

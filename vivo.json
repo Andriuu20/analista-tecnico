@@ -3472,7 +3472,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.077,
   "coste_r": 0.168,
-  "resultado_r": null,
+  "resultado_r": 0.832,
   "rasgos": {
    "adx": 61.4,
    "volatilidad_pct": 0.73,
@@ -3480,7 +3480,8 @@
    "estructura": -1,
    "rsi": 31.1,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 6.0
  },
  {
   "id": "BTCUSDT|5m|2026-11-19T08:35:00+00:00",
@@ -3508,7 +3509,7 @@
   "plan_r": 3.0,
   "plan_esperanza": 0.271,
   "coste_r": 0.144,
-  "resultado_r": null,
+  "resultado_r": -1.144,
   "rasgos": {
    "adx": 29.0,
    "volatilidad_pct": 0.05,
@@ -3516,6 +3517,43 @@
    "estructura": 1,
    "rsi": 52.5,
    "tendencia": 0
+  },
+  "duracion_velas": 6.0
+ },
+ {
+  "id": "CAD=X|5m|2026-11-19T20:20:00+00:00",
+  "activo": "USD/CAD",
+  "fuente": "yahoo",
+  "simbolo": "CAD=X",
+  "intervalo": "5m",
+  "vela": "2026-11-19T20:20:00+00:00",
+  "entrada": "2026-11-19T20:25:00+00:00",
+  "vencimiento": "2026-11-19T22:05:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 20,
+  "confianza": 0.5208,
+  "estrategias": [
+   "order_block"
+  ],
+  "contexto": 1,
+  "sl": 1.4325258994626069,
+  "tp": 1.4350340103579498,
+  "precio_entrada": 1.4337799549102783,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": -0.099,
+  "coste_r": 0.171,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 37.8,
+   "volatilidad_pct": 0.71,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 61.5,
+   "tendencia": 1
   }
  }
 ]

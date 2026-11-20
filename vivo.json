@@ -3620,7 +3620,7 @@
   "plan_r": 2.0,
   "plan_esperanza": -0.045,
   "coste_r": 0.247,
-  "resultado_r": null,
+  "resultado_r": -1.247,
   "rasgos": {
    "adx": 38.0,
    "volatilidad_pct": 0.41,
@@ -3628,7 +3628,8 @@
    "estructura": -1,
    "rsi": 40.9,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 2.0
  },
  {
   "id": "BTCUSDT|5m|2026-11-20T08:55:00+00:00",

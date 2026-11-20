@@ -3629,5 +3629,41 @@
    "rsi": 40.9,
    "tendencia": -1
   }
+ },
+ {
+  "id": "BTCUSDT|5m|2026-11-20T08:55:00+00:00",
+  "activo": "BTC/USDT",
+  "fuente": "binance",
+  "simbolo": "BTCUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-20T08:55:00+00:00",
+  "entrada": "2026-11-20T09:00:00+00:00",
+  "vencimiento": "2026-11-20T10:15:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 15,
+  "confianza": 0.5118,
+  "estrategias": [
+   "fibonacci"
+  ],
+  "contexto": 1,
+  "sl": 62077.66604980373,
+  "tp": 61099.761850588824,
+  "precio_entrada": 61833.19,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": 0.076,
+  "coste_r": 0.126,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 11.0,
+   "volatilidad_pct": 0.24,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 47.8,
+   "tendencia": 1
+  }
  }
 ]

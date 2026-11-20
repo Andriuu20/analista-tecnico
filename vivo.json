@@ -3546,7 +3546,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.099,
   "coste_r": 0.171,
-  "resultado_r": null,
+  "resultado_r": 0.829,
   "rasgos": {
    "adx": 37.8,
    "volatilidad_pct": 0.71,
@@ -3554,7 +3554,8 @@
    "estructura": 1,
    "rsi": 61.5,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 12.0
  },
  {
   "id": "BTCUSDT|5m|2026-11-19T22:50:00+00:00",
@@ -3582,7 +3583,7 @@
   "plan_r": 3.0,
   "plan_esperanza": 0.259,
   "coste_r": 0.129,
-  "resultado_r": null,
+  "resultado_r": -1.129,
   "rasgos": {
    "adx": 28.7,
    "volatilidad_pct": 0.66,
@@ -3590,6 +3591,7 @@
    "estructura": -1,
    "rsi": 57.2,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 27.0
  }
 ]

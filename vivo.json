@@ -3667,5 +3667,41 @@
    "tendencia": 1
   },
   "duracion_velas": 19.0
+ },
+ {
+  "id": "BTCUSDT|5m|2026-11-21T23:00:00+00:00",
+  "activo": "BTC/USDT",
+  "fuente": "binance",
+  "simbolo": "BTCUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-21T23:00:00+00:00",
+  "entrada": "2026-11-21T23:05:00+00:00",
+  "vencimiento": "2026-11-21T23:55:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 10,
+  "confianza": 0.5112,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 59964.06258820877,
+  "tp": 60507.77223537369,
+  "precio_entrada": 60099.99,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.288,
+  "coste_r": 0.221,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 30.3,
+   "volatilidad_pct": 0.06,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 32.9,
+   "tendencia": 0
+  }
  }
 ]

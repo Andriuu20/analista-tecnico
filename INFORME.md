@@ -368,7 +368,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 30/10 23:30 | SOL/USDT | 15m | VENDER | 45 min | barrida | -0.23 % |
 
 ## Laboratorio en directo — medio plazo (más de 4 h a 5 días)
-**41 señales** del 28/10/2026 al 21/11/2026. Acierto (precio a favor al vencer): **26,8 %** · resultado medio con SL/TP tras costes: **-0.54 R** · claramente peor que el azar (z = -3.0).
+**42 señales** del 28/10/2026 al 23/11/2026. Acierto (precio a favor al vencer): **26,2 %** · resultado medio con SL/TP tras costes: **-0.56 R** · claramente peor que el azar (z = -3.1).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -377,7 +377,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 52-55 % | 24 | 33,3 % | -0.51 R |
-| <52 % | 17 | 17,6 % | -0.58 R |
+| <52 % | 18 | 16,7 % | -0.61 R |
 
 ### Por mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
@@ -386,7 +386,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | USD/CHF | 11 | 18,2 % | -0.18 R |
 | ETH/USDT | 7 | 14,3 % | -1.02 R |
 | GBP/JPY | 4 | 25,0 % | -0.56 R |
-| EUR/GBP | 1 | 0,0 % | — |
+| EUR/GBP | 2 | 0,0 % | -1.15 R |
 | XRP/USDT | 1 | 0,0 % | -1.06 R |
 
 ### Por temporalidad
@@ -394,20 +394,20 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | 4h | 32 | 28,1 % | -0.64 R |
 | 15m | 6 | 33,3 % | +0.11 R |
-| 1h | 3 | 0,0 % | -1.09 R |
+| 1h | 4 | 0,0 % | -1.11 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 2-5 días | 23 | 21,7 % | -0.63 R |
-| 4-12 h | 12 | 33,3 % | -0.23 R |
+| 4-12 h | 13 | 30,8 % | -0.31 R |
 | 12-24 h | 3 | 0,0 % | -1.08 R |
 | 1-2 días | 3 | 66,7 % | — |
 
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| bollinger | 22 | 36,4 % | -0.47 R |
+| bollinger | 23 | 34,8 % | -0.51 R |
 | estocastico | 17 | 29,4 % | -0.51 R |
 | soportes | 4 | 0,0 % | -1.09 R |
 | barrida | 2 | 50,0 % | -1.02 R |
@@ -417,7 +417,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 00-04 h | 9 | 22,2 % | -1.06 R |
-| 12-16 h | 8 | 25,0 % | -0.75 R |
+| 12-16 h | 9 | 22,2 % | -0.80 R |
 | 20-24 h | 8 | 37,5 % | +0.43 R |
 | 16-20 h | 6 | 16,7 % | -0.36 R |
 | 04-08 h | 5 | 20,0 % | -1.02 R |
@@ -426,34 +426,34 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| fuerte (≥25) | 31 | 29,0 % | -0.69 R |
+| fuerte (≥25) | 31 | 29,0 % | -0.71 R |
 | débil (20-25) | 7 | 14,3 % | -0.36 R |
-| lateral (<20) | 3 | 33,3 % | +0.29 R |
+| lateral (<20) | 4 | 25,0 % | +0.29 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 30 | 23,3 % | -0.40 R |
+| normal | 31 | 22,6 % | -0.43 R |
 | alta | 9 | 22,2 % | -1.04 R |
 | baja | 2 | 100,0 % | +0.15 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| sin tendencia | 29 | 20,7 % | -0.58 R |
+| sin tendencia | 30 | 20,0 % | -0.58 R |
 | en contra | 7 | 42,9 % | -1.08 R |
-| a favor | 5 | 40,0 % | +0.40 R |
+| a favor | 5 | 40,0 % | +0.01 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 37 | 21,6 % | -0.61 R |
+| a favor (barato al comprar / caro al vender) | 38 | 21,1 % | -0.63 R |
 | en contra | 4 | 75,0 % | +0.24 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 35 | 22,9 % | -0.59 R |
+| en contra | 36 | 22,2 % | -0.61 R |
 | a favor | 6 | 50,0 % | -0.24 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)

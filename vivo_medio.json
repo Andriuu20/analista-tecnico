@@ -1503,7 +1503,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.144,
   "coste_r": 0.147,
-  "resultado_r": null,
+  "resultado_r": -1.147,
   "rasgos": {
    "adx": 33.6,
    "volatilidad_pct": 0.56,
@@ -1511,7 +1511,8 @@
    "estructura": 1,
    "rsi": 65.3,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "CHF=X|4h|2026-11-20T04:00:00+00:00",
@@ -1678,8 +1679,8 @@
   "sl": 0.8359066914681195,
   "tp": 0.8376533318396808,
   "precio_entrada": 0.8367800116539001,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 0.836359977722168,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 1.0,
   "plan_esperanza": -0.165,
@@ -1692,6 +1693,78 @@
    "estructura": -1,
    "rsi": 41.4,
    "tendencia": 0
+  }
+ },
+ {
+  "id": "CHF=X|4h|2026-11-23T16:00:00+00:00",
+  "activo": "USD/CHF",
+  "fuente": "yahoo",
+  "simbolo": "CHF=X",
+  "intervalo": "4h",
+  "vela": "2026-11-23T16:00:00+00:00",
+  "entrada": "2026-11-23T20:00:00+00:00",
+  "vencimiento": "2026-11-25T12:00:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 10,
+  "confianza": 0.5018,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": -1,
+  "sl": 0.8446647915251322,
+  "tp": 0.8368777941156526,
+  "precio_entrada": 0.8415499925613403,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": 0.057,
+  "coste_r": 0.041,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 26.9,
+   "volatilidad_pct": 0.87,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 53.1,
+   "tendencia": -1
+  }
+ },
+ {
+  "id": "SOLUSDT|4h|2026-11-23T16:00:00+00:00",
+  "activo": "SOL/USDT",
+  "fuente": "binance",
+  "simbolo": "SOLUSDT",
+  "intervalo": "4h",
+  "vela": "2026-11-23T16:00:00+00:00",
+  "entrada": "2026-11-23T20:00:00+00:00",
+  "vencimiento": "2026-11-26T08:00:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 15,
+  "confianza": 0.5233,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 1,
+  "sl": 76.2541109330198,
+  "tp": 63.63766720094058,
+  "precio_entrada": 73.1,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.059,
+  "coste_r": 0.019,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 28.1,
+   "volatilidad_pct": 0.76,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 55.5,
+   "tendencia": 1
   }
  }
 ]

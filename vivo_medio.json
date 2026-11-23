@@ -877,7 +877,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.088,
   "coste_r": 0.031,
-  "resultado_r": null,
+  "resultado_r": -1.031,
   "rasgos": {
    "adx": 23.7,
    "volatilidad_pct": 0.89,
@@ -885,7 +885,8 @@
    "estructura": 1,
    "rsi": 63.3,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "CHF=X|15m|2026-11-11T08:30:00+00:00",
@@ -1282,7 +1283,7 @@
   "plan_r": 1.0,
   "plan_esperanza": 0.175,
   "coste_r": 0.011,
-  "resultado_r": null,
+  "resultado_r": -1.011,
   "rasgos": {
    "adx": 59.4,
    "volatilidad_pct": 1.0,
@@ -1290,7 +1291,8 @@
    "estructura": -1,
    "rsi": 30.3,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 22.0
  },
  {
   "id": "SOLUSDT|4h|2026-11-15T00:00:00+00:00",
@@ -1319,7 +1321,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.127,
   "coste_r": 0.016,
-  "resultado_r": null,
+  "resultado_r": -1.016,
   "rasgos": {
    "adx": 56.1,
    "volatilidad_pct": 0.9,
@@ -1327,7 +1329,8 @@
    "estructura": -1,
    "rsi": 24.5,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 34.0
  },
  {
   "id": "CHF=X|4h|2026-11-16T04:00:00+00:00",
@@ -1617,6 +1620,78 @@
    "estructura": -1,
    "rsi": 31.5,
    "tendencia": -1
+  }
+ },
+ {
+  "id": "CHF=X|4h|2026-11-23T08:00:00+00:00",
+  "activo": "USD/CHF",
+  "fuente": "yahoo",
+  "simbolo": "CHF=X",
+  "intervalo": "4h",
+  "vela": "2026-11-23T08:00:00+00:00",
+  "entrada": "2026-11-23T12:00:00+00:00",
+  "vencimiento": "2026-11-25T04:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 10,
+  "confianza": 0.5024,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 1,
+  "sl": 0.8370225559387073,
+  "tp": 0.8412911101112567,
+  "precio_entrada": 0.838729977607727,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": 0.061,
+  "coste_r": 0.074,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 30.3,
+   "volatilidad_pct": 0.77,
+   "zona": "discount",
+   "estructura": 1,
+   "rsi": 44.3,
+   "tendencia": 1
+  }
+ },
+ {
+  "id": "EURGBP=X|1h|2026-11-23T11:00:00+00:00",
+  "activo": "EUR/GBP",
+  "fuente": "yahoo",
+  "simbolo": "EURGBP=X",
+  "intervalo": "1h",
+  "vela": "2026-11-23T11:00:00+00:00",
+  "entrada": "2026-11-23T12:00:00+00:00",
+  "vencimiento": "2026-11-23T22:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 10,
+  "confianza": 0.516,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 0.8359066914681195,
+  "tp": 0.8376533318396808,
+  "precio_entrada": 0.8367800116539001,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": -0.165,
+  "coste_r": 0.144,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 18.4,
+   "volatilidad_pct": 0.6,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 41.4,
+   "tendencia": 0
   }
  }
 ]

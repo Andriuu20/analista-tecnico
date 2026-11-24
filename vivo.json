@@ -3834,8 +3834,8 @@
   "sl": 0.8377438595741025,
   "tp": 0.8357761094124088,
   "precio_entrada": 0.8367599844932556,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 0.8366600275039673,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.0,
   "plan_esperanza": -0.278,
@@ -3956,6 +3956,78 @@
    "estructura": -1,
    "rsi": 53.3,
    "tendencia": 1
+  }
+ },
+ {
+  "id": "ETHUSDT|5m|2026-11-24T04:40:00+00:00",
+  "activo": "ETH/USDT",
+  "fuente": "binance",
+  "simbolo": "ETHUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-24T04:40:00+00:00",
+  "entrada": "2026-11-24T04:45:00+00:00",
+  "vencimiento": "2026-11-24T06:25:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5571,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 1,
+  "sl": 1711.7438481471454,
+  "tp": 1692.0092277792817,
+  "precio_entrada": 1703.85,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": 0.04,
+  "coste_r": 0.108,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 24.8,
+   "volatilidad_pct": 0.68,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 59.5,
+   "tendencia": 1
+  }
+ },
+ {
+  "id": "SOLUSDT|5m|2026-11-24T04:40:00+00:00",
+  "activo": "SOL/USDT",
+  "fuente": "binance",
+  "simbolo": "SOLUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-24T04:40:00+00:00",
+  "entrada": "2026-11-24T04:45:00+00:00",
+  "vencimiento": "2026-11-24T06:25:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5275,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 72.13948745777608,
+  "tp": 70.70153762667177,
+  "precio_entrada": 71.78,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.101,
+  "coste_r": 0.16,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 26.0,
+   "volatilidad_pct": 0.65,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 57.7,
+   "tendencia": 0
   }
  }
 ]

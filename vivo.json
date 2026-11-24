@@ -3885,5 +3885,77 @@
    "rsi": 56.3,
    "tendencia": 0
   }
+ },
+ {
+  "id": "BTCUSDT|5m|2026-11-24T04:10:00+00:00",
+  "activo": "BTC/USDT",
+  "fuente": "binance",
+  "simbolo": "BTCUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-24T04:10:00+00:00",
+  "entrada": "2026-11-24T04:15:00+00:00",
+  "vencimiento": "2026-11-24T05:55:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5567,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 0,
+  "sl": 60698.86167573561,
+  "tp": 59539.01497279319,
+  "precio_entrada": 60408.9,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": 0.017,
+  "coste_r": 0.104,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 32.6,
+   "volatilidad_pct": 0.75,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 49.7,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "ETHUSDT|5m|2026-11-24T04:10:00+00:00",
+  "activo": "ETH/USDT",
+  "fuente": "binance",
+  "simbolo": "ETHUSDT",
+  "intervalo": "5m",
+  "vela": "2026-11-24T04:10:00+00:00",
+  "entrada": "2026-11-24T04:15:00+00:00",
+  "vencimiento": "2026-11-24T05:55:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.554,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 1,
+  "sl": 1706.219491683318,
+  "tp": 1684.0707624750228,
+  "precio_entrada": 1697.36,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": 0.026,
+  "coste_r": 0.096,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 34.3,
+   "volatilidad_pct": 0.75,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 53.3,
+   "tendencia": 1
+  }
  }
 ]

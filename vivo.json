@@ -3731,7 +3731,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.306,
   "coste_r": 0.03,
-  "resultado_r": null,
+  "resultado_r": -1.03,
   "rasgos": {
    "adx": 21.5,
    "volatilidad_pct": 0.87,
@@ -3739,7 +3739,8 @@
    "estructura": 1,
    "rsi": 61.7,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 17.0
  },
  {
   "id": "EURJPY=X|5m|2026-11-23T00:15:00+00:00",
@@ -3877,7 +3878,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.386,
   "coste_r": 0.121,
-  "resultado_r": null,
+  "resultado_r": -0.412,
   "rasgos": {
    "adx": 22.1,
    "volatilidad_pct": 0.93,
@@ -3885,7 +3886,8 @@
    "estructura": 1,
    "rsi": 56.3,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "BTCUSDT|5m|2026-11-24T04:10:00+00:00",
@@ -4091,8 +4093,8 @@
   "sl": 0.8376610173522663,
   "tp": 0.8362834313900425,
   "precio_entrada": 0.8371099829673767,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 0.8370100259780884,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": -0.348,

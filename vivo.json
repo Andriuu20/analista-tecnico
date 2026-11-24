@@ -4069,5 +4069,41 @@
    "rsi": 58.4,
    "tendencia": 1
   }
+ },
+ {
+  "id": "EURGBP=X|15m|2026-11-24T11:15:00+00:00",
+  "activo": "EUR/GBP",
+  "fuente": "yahoo",
+  "simbolo": "EURGBP=X",
+  "intervalo": "15m",
+  "vela": "2026-11-24T11:15:00+00:00",
+  "entrada": "2026-11-24T11:30:00+00:00",
+  "vencimiento": "2026-11-24T12:45:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 5,
+  "confianza": 0.5183,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": 0,
+  "sl": 0.8376610173522663,
+  "tp": 0.8362834313900425,
+  "precio_entrada": 0.8371099829673767,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.348,
+  "coste_r": 0.228,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 24.2,
+   "volatilidad_pct": 0.73,
+   "zona": "premium",
+   "estructura": 1,
+   "rsi": 60.2,
+   "tendencia": 0
+  }
  }
 ]

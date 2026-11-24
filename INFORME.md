@@ -264,7 +264,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | <52 % | 71 | 52,1 % | -0.36 R |
-| 52-55 % | 35 | 54,3 % | +0.03 R |
+| 52-55 % | 35 | 54,3 % | +0.01 R |
 | 55-58 % | 4 | 50,0 % | -0.51 R |
 
 ### Por mercado
@@ -274,7 +274,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | EUR/JPY | 23 | 34,8 % | -0.45 R |
 | BTC/USDT | 19 | 52,6 % | -0.31 R |
 | USD/CHF | 12 | 50,0 % | -0.17 R |
-| EUR/GBP | 6 | 50,0 % | +0.04 R |
+| EUR/GBP | 6 | 50,0 % | -0.07 R |
 | XRP/USDT | 6 | 50,0 % | -0.67 R |
 | ETH/USDT | 4 | 50,0 % | -0.50 R |
 | GBP/JPY | 3 | 33,3 % | -1.22 R |
@@ -299,7 +299,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| bollinger | 33 | 33,3 % | -0.38 R |
+| bollinger | 33 | 33,3 % | -0.39 R |
 | soportes | 30 | 66,7 % | -0.08 R |
 | estocastico | 16 | 50,0 % | -0.46 R |
 | barrida | 13 | 46,2 % | -0.24 R |
@@ -313,7 +313,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por franja horaria (hora de España)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 00-04 h | 32 | 71,9 % | -0.18 R |
+| 00-04 h | 32 | 71,9 % | -0.20 R |
 | 08-12 h | 25 | 52,0 % | +0.00 R |
 | 04-08 h | 18 | 38,9 % | -0.28 R |
 | 20-24 h | 15 | 40,0 % | -0.36 R |
@@ -331,14 +331,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | normal | 62 | 53,2 % | -0.31 R |
-| alta | 29 | 48,3 % | -0.25 R |
+| alta | 29 | 48,3 % | -0.26 R |
 | baja | 19 | 57,9 % | +0.03 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | a favor | 41 | 58,5 % | -0.27 R |
-| sin tendencia | 37 | 56,8 % | -0.03 R |
+| sin tendencia | 37 | 56,8 % | -0.04 R |
 | en contra | 32 | 40,6 % | -0.43 R |
 
 ### Zona premium/discount

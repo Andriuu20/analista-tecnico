@@ -3840,7 +3840,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.278,
   "coste_r": 0.128,
-  "resultado_r": null,
+  "resultado_r": -0.524,
   "rasgos": {
    "adx": 21.8,
    "volatilidad_pct": 0.93,
@@ -3848,7 +3848,8 @@
    "estructura": 1,
    "rsi": 58.0,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "EURGBP=X|15m|2026-11-24T00:00:00+00:00",

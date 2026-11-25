@@ -4217,5 +4217,41 @@
    "rsi": 53.8,
    "tendencia": -1
   }
+ },
+ {
+  "id": "EURJPY=X|5m|2026-11-25T01:40:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-25T01:40:00+00:00",
+  "entrada": "2026-11-25T01:45:00+00:00",
+  "vencimiento": "2026-11-25T03:25:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 20,
+  "confianza": 0.5146,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 1,
+  "sl": 174.44861302461211,
+  "tp": 174.9021467660074,
+  "precio_entrada": 174.56199645996094,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.268,
+  "coste_r": 0.231,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 19.4,
+   "volatilidad_pct": 0.22,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 50.8,
+   "tendencia": 1
+  }
  }
 ]

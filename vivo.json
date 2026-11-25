@@ -4099,7 +4099,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.348,
   "coste_r": 0.228,
-  "resultado_r": null,
+  "resultado_r": -1.228,
   "rasgos": {
    "adx": 24.2,
    "volatilidad_pct": 0.73,
@@ -4107,7 +4107,8 @@
    "estructura": 1,
    "rsi": 60.2,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 12.0
  },
  {
   "id": "BTCUSDT|5m|2026-11-24T22:10:00+00:00",
@@ -4201,8 +4202,8 @@
   "sl": 174.73263159490804,
   "tp": 174.27811839886962,
   "precio_entrada": 174.61900329589844,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 174.58200073242188,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 3.0,
   "plan_esperanza": -0.291,

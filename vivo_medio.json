@@ -1535,8 +1535,8 @@
   "sl": 0.8456587279977176,
   "tp": 0.8378619722810725,
   "precio_entrada": 0.8425400257110596,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 0.8313900232315063,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": -0.16,
@@ -1686,7 +1686,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.165,
   "coste_r": 0.144,
-  "resultado_r": null,
+  "resultado_r": -1.144,
   "rasgos": {
    "adx": 18.4,
    "volatilidad_pct": 0.6,
@@ -1694,7 +1694,8 @@
    "estructura": -1,
    "rsi": 41.4,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 2.0
  },
  {
   "id": "CHF=X|4h|2026-11-23T16:00:00+00:00",
@@ -1824,8 +1825,8 @@
   "sl": 0.837759173413285,
   "tp": 0.8361007804670251,
   "precio_entrada": 0.836929976940155,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 0.8365600109100342,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.0,
   "plan_esperanza": -0.144,
@@ -1838,6 +1839,42 @@
    "estructura": -1,
    "rsi": 56.3,
    "tendencia": 0
+  }
+ },
+ {
+  "id": "CHF=X|4h|2026-11-25T16:00:00+00:00",
+  "activo": "USD/CHF",
+  "fuente": "yahoo",
+  "simbolo": "CHF=X",
+  "intervalo": "4h",
+  "vela": "2026-11-25T16:00:00+00:00",
+  "entrada": "2026-11-25T20:00:00+00:00",
+  "vencimiento": "2026-11-29T04:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 20,
+  "confianza": 0.5232,
+  "estrategias": [
+   "estocastico"
+  ],
+  "contexto": 1,
+  "sl": 0.8266789059303549,
+  "tp": 0.8370816200282654,
+  "precio_entrada": 0.830839991569519,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.183,
+  "coste_r": 0.03,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 29.7,
+   "volatilidad_pct": 0.94,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 29.9,
+   "tendencia": 1
   }
  }
 ]

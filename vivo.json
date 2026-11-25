@@ -4367,5 +4367,41 @@
    "rsi": 45.2,
    "tendencia": -1
   }
+ },
+ {
+  "id": "CAD=X|5m|2026-11-25T09:40:00+00:00",
+  "activo": "USD/CAD",
+  "fuente": "yahoo",
+  "simbolo": "CAD=X",
+  "intervalo": "5m",
+  "vela": "2026-11-25T09:40:00+00:00",
+  "entrada": "2026-11-25T09:45:00+00:00",
+  "vencimiento": "2026-11-25T11:25:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5077,
+  "estrategias": [
+   "order_block"
+  ],
+  "contexto": 0,
+  "sl": 1.4294525068288402,
+  "tp": 1.426927478980486,
+  "precio_entrada": 1.428189992904663,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.0,
+  "plan_esperanza": -0.215,
+  "coste_r": 0.17,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 17.1,
+   "volatilidad_pct": 0.08,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 49.8,
+   "tendencia": 0
+  }
  }
 ]

@@ -245,7 +245,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 27/08 06:00 | Oro (XAU/USD) | 1d | COMPRAR | 4320 min | soportes | -5.74 % |
 
 ## Laboratorio en directo — corto plazo (30 min a 4 h)
-**117 señales** del 28/10/2026 al 25/11/2026. Acierto (precio a favor al vencer): **53,8 %** · resultado medio con SL/TP tras costes: **-0.24 R** · no se distingue del azar todavía (z = 0.8).
+**117 señales** del 28/10/2026 al 25/11/2026. Acierto (precio a favor al vencer): **53,8 %** · resultado medio con SL/TP tras costes: **-0.25 R** · no se distingue del azar todavía (z = 0.8).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -253,7 +253,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### ¿La confianza sirve? (si funciona, los tramos altos deberían acertar más)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| <52 % | 76 | 52,6 % | -0.38 R |
+| <52 % | 76 | 52,6 % | -0.39 R |
 | 52-55 % | 35 | 54,3 % | +0.01 R |
 | 55-58 % | 6 | 66,7 % | -0.07 R |
 
@@ -262,7 +262,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | USD/JPY | 29 | 69,0 % | -0.04 R |
 | EUR/JPY | 26 | 38,5 % | -0.44 R |
-| BTC/USDT | 21 | 52,4 % | -0.19 R |
+| BTC/USDT | 21 | 52,4 % | -0.23 R |
 | USD/CHF | 12 | 50,0 % | -0.17 R |
 | EUR/GBP | 7 | 57,1 % | -0.29 R |
 | XRP/USDT | 6 | 50,0 % | -0.67 R |
@@ -277,19 +277,19 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | 5m | 63 | 61,9 % | -0.16 R |
 | 15m | 41 | 48,8 % | -0.29 R |
-| 1h | 13 | 30,8 % | -0.52 R |
+| 1h | 13 | 30,8 % | -0.57 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 1-2 h | 88 | 54,5 % | -0.13 R |
 | 30-59 min | 20 | 50,0 % | -0.71 R |
-| 2-4 h | 9 | 55,6 % | -0.25 R |
+| 2-4 h | 9 | 55,6 % | -0.35 R |
 
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| bollinger | 35 | 34,3 % | -0.44 R |
+| bollinger | 35 | 34,3 % | -0.45 R |
 | soportes | 33 | 66,7 % | -0.10 R |
 | estocastico | 18 | 55,6 % | -0.32 R |
 | barrida | 13 | 46,2 % | -0.24 R |
@@ -305,7 +305,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | 00-04 h | 35 | 68,6 % | -0.26 R |
 | 08-12 h | 25 | 52,0 % | -0.04 R |
-| 04-08 h | 18 | 38,9 % | -0.28 R |
+| 04-08 h | 18 | 38,9 % | -0.32 R |
 | 20-24 h | 18 | 50,0 % | -0.12 R |
 | 16-20 h | 12 | 41,7 % | -0.25 R |
 | 12-16 h | 9 | 55,6 % | -0.87 R |
@@ -313,34 +313,34 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por fuerza de la tendencia (ADX)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| fuerte (≥25) | 57 | 45,6 % | -0.16 R |
+| fuerte (≥25) | 57 | 45,6 % | -0.17 R |
 | lateral (<20) | 33 | 63,6 % | -0.25 R |
 | débil (20-25) | 27 | 59,3 % | -0.42 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 67 | 53,7 % | -0.33 R |
+| normal | 67 | 53,7 % | -0.34 R |
 | alta | 29 | 48,3 % | -0.30 R |
 | baja | 21 | 61,9 % | +0.10 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor | 44 | 59,1 % | -0.26 R |
+| a favor | 44 | 59,1 % | -0.28 R |
 | sin tendencia | 38 | 57,9 % | -0.08 R |
 | en contra | 35 | 42,9 % | -0.40 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 85 | 50,6 % | -0.33 R |
+| a favor (barato al comprar / caro al vender) | 85 | 50,6 % | -0.34 R |
 | en contra | 32 | 62,5 % | -0.01 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| en contra | 84 | 48,8 % | -0.29 R |
+| en contra | 84 | 48,8 % | -0.30 R |
 | a favor | 33 | 66,7 % | -0.13 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)

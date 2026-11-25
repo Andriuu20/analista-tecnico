@@ -3805,7 +3805,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.279,
   "coste_r": 0.036,
-  "resultado_r": null,
+  "resultado_r": -1.036,
   "rasgos": {
    "adx": 31.0,
    "volatilidad_pct": 0.6,
@@ -3813,7 +3813,8 @@
    "estructura": 1,
    "rsi": 59.6,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 7.0
  },
  {
   "id": "EURGBP=X|15m|2026-11-23T23:30:00+00:00",
@@ -4328,6 +4329,42 @@
    "zona": "discount",
    "estructura": -1,
    "rsi": 37.3,
+   "tendencia": -1
+  }
+ },
+ {
+  "id": "BTCUSDT|1h|2026-11-25T08:00:00+00:00",
+  "activo": "BTC/USDT",
+  "fuente": "binance",
+  "simbolo": "BTCUSDT",
+  "intervalo": "1h",
+  "vela": "2026-11-25T08:00:00+00:00",
+  "entrada": "2026-11-25T09:00:00+00:00",
+  "vencimiento": "2026-11-25T11:00:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 2,
+  "confianza": 0.5047,
+  "estrategias": [
+   "bollinger"
+  ],
+  "contexto": -1,
+  "sl": 58609.09449616236,
+  "tp": 60667.058255756456,
+  "precio_entrada": 59432.28,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 1.5,
+  "plan_esperanza": -0.303,
+  "coste_r": 0.036,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 25.0,
+   "volatilidad_pct": 0.47,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 45.2,
    "tendencia": -1
   }
  }

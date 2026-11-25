@@ -4136,7 +4136,7 @@
   "plan_r": 3.0,
   "plan_esperanza": 0.063,
   "coste_r": 0.197,
-  "resultado_r": null,
+  "resultado_r": 2.803,
   "rasgos": {
    "adx": 21.9,
    "volatilidad_pct": 0.04,
@@ -4144,7 +4144,8 @@
    "estructura": 1,
    "rsi": 57.6,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 25.0
  },
  {
   "id": "ETHUSDT|5m|2026-11-24T22:10:00+00:00",
@@ -4172,7 +4173,7 @@
   "plan_r": 1.5,
   "plan_esperanza": 0.071,
   "coste_r": 0.176,
-  "resultado_r": null,
+  "resultado_r": -1.176,
   "rasgos": {
    "adx": 23.6,
    "volatilidad_pct": 0.05,
@@ -4180,7 +4181,8 @@
    "estructura": 1,
    "rsi": 59.0,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 5.0
  },
  {
   "id": "EURJPY=X|5m|2026-11-24T22:40:00+00:00",
@@ -4252,6 +4254,42 @@
    "estructura": -1,
    "rsi": 50.8,
    "tendencia": 1
+  }
+ },
+ {
+  "id": "EURJPY=X|5m|2026-11-25T02:40:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-25T02:40:00+00:00",
+  "entrada": "2026-11-25T02:45:00+00:00",
+  "vencimiento": "2026-11-25T04:25:00+00:00",
+  "accion": "VENDER",
+  "direccion": -1,
+  "horizonte": 20,
+  "confianza": 0.5135,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": -1,
+  "sl": 174.5945547757702,
+  "tp": 174.1003078406581,
+  "precio_entrada": 174.4709930419922,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.293,
+  "coste_r": 0.212,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 15.5,
+   "volatilidad_pct": 0.27,
+   "zona": "discount",
+   "estructura": -1,
+   "rsi": 38.2,
+   "tendencia": -1
   }
  }
 ]

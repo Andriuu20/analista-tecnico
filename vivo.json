@@ -4352,8 +4352,8 @@
   "sl": 58609.09449616236,
   "tp": 60667.058255756456,
   "precio_entrada": 59432.28,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 58900.0,
+  "resultado": "fallo",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": -0.303,
@@ -4473,6 +4473,42 @@
    "zona": "premium",
    "estructura": -1,
    "rsi": 52.0,
+   "tendencia": 0
+  }
+ },
+ {
+  "id": "EURJPY=X|5m|2026-11-25T11:10:00+00:00",
+  "activo": "EUR/JPY",
+  "fuente": "yahoo",
+  "simbolo": "EURJPY=X",
+  "intervalo": "5m",
+  "vela": "2026-11-25T11:10:00+00:00",
+  "entrada": "2026-11-25T11:15:00+00:00",
+  "vencimiento": "2026-11-25T12:55:00+00:00",
+  "accion": "COMPRAR",
+  "direccion": 1,
+  "horizonte": 20,
+  "confianza": 0.5124,
+  "estrategias": [
+   "soportes"
+  ],
+  "contexto": 0,
+  "sl": 174.1435982568267,
+  "tp": 175.1011876513949,
+  "precio_entrada": 174.38299560546875,
+  "precio_salida": null,
+  "resultado": "pendiente",
+  "elegida": true,
+  "plan_r": 3.0,
+  "plan_esperanza": -0.303,
+  "coste_r": 0.109,
+  "resultado_r": null,
+  "rasgos": {
+   "adx": 13.2,
+   "volatilidad_pct": 0.73,
+   "zona": "premium",
+   "estructura": -1,
+   "rsi": 54.9,
    "tendencia": 0
   }
  }

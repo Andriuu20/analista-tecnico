@@ -1,99 +1,99 @@
 {
  "EUR/USD": {
-  "descarga 5m": "16932 velas de Yahoo Finance",
-  "descarga 15m": "5645 velas de Yahoo Finance",
-  "descarga 1h": "17254 velas de Yahoo Finance",
+  "descarga 5m": "16925 velas de Yahoo Finance",
+  "descarga 15m": "5642 velas de Yahoo Finance",
+  "descarga 1h": "17253 velas de Yahoo Finance",
   "descarga 4h": "4450 velas de Yahoo Finance",
   "descarga 1d": "2600 velas de Yahoo Finance",
   "15m": {
-   "velas": 5645,
+   "velas": 5642,
    "evaluadas": 4599,
    "con estrategia activa": 2762,
-   "ESPERAR": 2760,
-   "fuera de plazo": 2,
+   "ESPERAR": 2761,
+   "fuera de plazo": 1,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2011,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 749
+    "Las señales iban en contra de la tendencia del plazo mayor.": 759,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2002
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4564,
-   "ESPERAR": 4563,
-   "fuera de plazo": 1,
+   "con estrategia activa": 4566,
+   "ESPERAR": 4558,
+   "fuera de plazo": 8,
    "señales": 0,
    "motivos ESPERAR": {
     "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 4474,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 89
+    "Las señales iban en contra de la tendencia del plazo mayor.": 84
    }
   },
   "4h": {
    "velas": 4450,
    "evaluadas": 3399,
-   "con estrategia activa": 2344,
-   "ESPERAR": 2344,
+   "con estrategia activa": 2345,
+   "ESPERAR": 2345,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2292,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 52
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2291,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 54
    }
   },
   "1d": {
    "velas": 2600,
    "evaluadas": 1599,
-   "con estrategia activa": 816,
-   "ESPERAR": 816,
+   "con estrategia activa": 815,
+   "ESPERAR": 815,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Las señales iban en contra de la tendencia del plazo mayor.": 212,
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 604
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 604,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 211
    }
   }
  },
  "USD/JPY": {
-  "descarga 5m": "16865 velas de Yahoo Finance",
-  "descarga 15m": "5626 velas de Yahoo Finance",
-  "descarga 1h": "17158 velas de Yahoo Finance",
-  "descarga 4h": "4447 velas de Yahoo Finance",
+  "descarga 5m": "16859 velas de Yahoo Finance",
+  "descarga 15m": "5624 velas de Yahoo Finance",
+  "descarga 1h": "17096 velas de Yahoo Finance",
+  "descarga 4h": "4430 velas de Yahoo Finance",
   "descarga 1d": "2600 velas de Yahoo Finance",
   "15m": {
-   "velas": 5626,
+   "velas": 5624,
    "evaluadas": 4599,
-   "con estrategia activa": 3374,
-   "ESPERAR": 3374,
+   "con estrategia activa": 3402,
+   "ESPERAR": 3402,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2718,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 656
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2672,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 730
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4761,
-   "ESPERAR": 4740,
+   "con estrategia activa": 4823,
+   "ESPERAR": 4811,
    "fuera de plazo": 2,
-   "señales": 19,
+   "señales": 10,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 4112,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 628
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 4225,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 586
    }
   },
   "4h": {
-   "velas": 4447,
+   "velas": 4430,
    "evaluadas": 3399,
-   "con estrategia activa": 2338,
-   "ESPERAR": 2277,
-   "fuera de plazo": 45,
-   "señales": 16,
+   "con estrategia activa": 2325,
+   "ESPERAR": 2229,
+   "fuera de plazo": 71,
+   "señales": 25,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1650,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 627
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1606,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 623
    }
   },
   "1d": {
@@ -104,167 +104,165 @@
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 704,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 93
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 701,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 96
    }
   }
  },
  "EUR/JPY": {
-  "descarga 5m": "16928 velas de Yahoo Finance",
-  "descarga 15m": "5644 velas de Yahoo Finance",
-  "descarga 1h": "17262 velas de Yahoo Finance",
-  "descarga 4h": "4452 velas de Yahoo Finance",
+  "descarga 5m": "16920 velas de Yahoo Finance",
+  "descarga 15m": "5641 velas de Yahoo Finance",
+  "descarga 1h": "17198 velas de Yahoo Finance",
+  "descarga 4h": "4435 velas de Yahoo Finance",
   "descarga 1d": "2601 velas de Yahoo Finance",
   "15m": {
-   "velas": 5644,
+   "velas": 5641,
    "evaluadas": 4599,
-   "con estrategia activa": 3261,
-   "ESPERAR": 3207,
-   "fuera de plazo": 54,
+   "con estrategia activa": 3282,
+   "ESPERAR": 3253,
+   "fuera de plazo": 29,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2954,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 242,
-    "El movimiento típico es demasiado pequeño": 11
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2894,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 353,
+    "El movimiento típico es demasiado pequeño": 6
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4748,
-   "ESPERAR": 4618,
-   "fuera de plazo": 116,
-   "señales": 14,
+   "con estrategia activa": 4746,
+   "ESPERAR": 4608,
+   "fuera de plazo": 115,
+   "señales": 23,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3740,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 876,
-    "El movimiento típico es demasiado pequeño": 2
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3715,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 890,
+    "El movimiento típico es demasiado pequeño": 3
    }
   },
   "4h": {
-   "velas": 4452,
+   "velas": 4435,
    "evaluadas": 3399,
    "con estrategia activa": 2449,
    "ESPERAR": 2449,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1693,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 756
+    "Las señales iban en contra de la tendencia del plazo mayor.": 747,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1702
    }
   },
   "1d": {
    "velas": 2601,
    "evaluadas": 1600,
-   "con estrategia activa": 811,
-   "ESPERAR": 798,
-   "fuera de plazo": 13,
+   "con estrategia activa": 810,
+   "ESPERAR": 796,
+   "fuera de plazo": 14,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 581,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 579,
     "Las señales iban en contra de la tendencia del plazo mayor.": 217
    }
   }
  },
  "GBP/USD": {
-  "descarga 5m": "16934 velas de Yahoo Finance",
-  "descarga 15m": "5646 velas de Yahoo Finance",
-  "descarga 1h": "17194 velas de Yahoo Finance",
-  "descarga 4h": "4433 velas de Yahoo Finance",
+  "descarga 5m": "16929 velas de Yahoo Finance",
+  "descarga 15m": "5644 velas de Yahoo Finance",
+  "descarga 1h": "17257 velas de Yahoo Finance",
+  "descarga 4h": "4450 velas de Yahoo Finance",
   "descarga 1d": "2600 velas de Yahoo Finance",
   "15m": {
-   "velas": 5646,
+   "velas": 5644,
    "evaluadas": 4599,
-   "con estrategia activa": 3093,
-   "ESPERAR": 3089,
-   "fuera de plazo": 4,
+   "con estrategia activa": 3101,
+   "ESPERAR": 3101,
+   "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2302,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 785,
-    "El movimiento típico es demasiado pequeño": 2
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2315,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 786
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4199,
-   "ESPERAR": 4150,
+   "con estrategia activa": 4524,
+   "ESPERAR": 4499,
    "fuera de plazo": 0,
-   "señales": 49,
+   "señales": 25,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 4106,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 41,
-    "El movimiento típico es demasiado pequeño": 3
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 4440,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 58,
+    "El movimiento típico es demasiado pequeño": 1
    }
   },
   "4h": {
-   "velas": 4433,
+   "velas": 4450,
    "evaluadas": 3399,
-   "con estrategia activa": 2359,
-   "ESPERAR": 2357,
+   "con estrategia activa": 2367,
+   "ESPERAR": 2365,
    "fuera de plazo": 0,
    "señales": 2,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2190,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 167
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2202,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 163
    }
   },
   "1d": {
    "velas": 2600,
    "evaluadas": 1599,
-   "con estrategia activa": 1062,
-   "ESPERAR": 1062,
+   "con estrategia activa": 1061,
+   "ESPERAR": 1061,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 842,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 841,
     "Las señales iban en contra de la tendencia del plazo mayor.": 220
    }
   }
  },
  "GBP/JPY": {
-  "descarga 5m": "16934 velas de Yahoo Finance",
-  "descarga 15m": "5647 velas de Yahoo Finance",
-  "descarga 1h": "17259 velas de Yahoo Finance",
+  "descarga 5m": "16927 velas de Yahoo Finance",
+  "descarga 15m": "5644 velas de Yahoo Finance",
+  "descarga 1h": "17258 velas de Yahoo Finance",
   "descarga 4h": "4451 velas de Yahoo Finance",
   "descarga 1d": "2601 velas de Yahoo Finance",
   "15m": {
-   "velas": 5647,
+   "velas": 5644,
    "evaluadas": 4599,
-   "con estrategia activa": 3259,
-   "ESPERAR": 3253,
-   "fuera de plazo": 6,
+   "con estrategia activa": 3283,
+   "ESPERAR": 3281,
+   "fuera de plazo": 2,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3125,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 124,
-    "El movimiento típico es demasiado pequeño": 4
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3003,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 278
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4426,
-   "ESPERAR": 4286,
+   "con estrategia activa": 4437,
+   "ESPERAR": 4297,
    "fuera de plazo": 22,
    "señales": 118,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3243,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 1037,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 1019,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3272,
     "El movimiento típico es demasiado pequeño": 6
    }
   },
   "4h": {
    "velas": 4451,
    "evaluadas": 3399,
-   "con estrategia activa": 2360,
-   "ESPERAR": 2333,
+   "con estrategia activa": 2358,
+   "ESPERAR": 2329,
    "fuera de plazo": 0,
-   "señales": 27,
+   "señales": 29,
    "motivos ESPERAR": {
-    "Las señales iban en contra de la tendencia del plazo mayor.": 760,
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1573
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1574,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 755
    }
   },
   "1d": {
@@ -275,289 +273,290 @@
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 642,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 139
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 641,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 140
    }
   }
  },
  "AUD/USD": {
-  "descarga 5m": "16943 velas de Yahoo Finance",
-  "descarga 15m": "5654 velas de Yahoo Finance",
-  "descarga 1h": "17258 velas de Yahoo Finance",
-  "descarga 4h": "4442 velas de Yahoo Finance",
+  "descarga 5m": "16938 velas de Yahoo Finance",
+  "descarga 15m": "5651 velas de Yahoo Finance",
+  "descarga 1h": "17320 velas de Yahoo Finance",
+  "descarga 4h": "4459 velas de Yahoo Finance",
   "descarga 1d": "2600 velas de Yahoo Finance",
   "15m": {
-   "velas": 5654,
+   "velas": 5651,
    "evaluadas": 4599,
-   "con estrategia activa": 2889,
-   "ESPERAR": 2621,
-   "fuera de plazo": 260,
-   "señales": 8,
+   "con estrategia activa": 2921,
+   "ESPERAR": 2832,
+   "fuera de plazo": 83,
+   "señales": 6,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1833,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 734,
-    "El movimiento típico es demasiado pequeño": 54
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2109,
+    "El movimiento típico es demasiado pequeño": 16,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 706,
+    "Las estrategias fiables se contradicen": 1
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4620,
-   "ESPERAR": 4613,
+   "con estrategia activa": 4611,
+   "ESPERAR": 4602,
    "fuera de plazo": 0,
-   "señales": 7,
+   "señales": 9,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3714,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 899
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3718,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 884
    }
   },
   "4h": {
-   "velas": 4442,
+   "velas": 4459,
    "evaluadas": 3399,
    "con estrategia activa": 2447,
    "ESPERAR": 2447,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2364,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 83
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2370,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 77
    }
   },
   "1d": {
    "velas": 2600,
    "evaluadas": 1599,
    "con estrategia activa": 885,
-   "ESPERAR": 861,
+   "ESPERAR": 863,
    "fuera de plazo": 0,
-   "señales": 24,
+   "señales": 22,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 764,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 97
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 785,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 78
    }
   }
  },
  "USD/CAD": {
-  "descarga 5m": "16880 velas de Yahoo Finance",
-  "descarga 15m": "5642 velas de Yahoo Finance",
-  "descarga 1h": "17326 velas de Yahoo Finance",
-  "descarga 4h": "4459 velas de Yahoo Finance",
+  "descarga 5m": "16873 velas de Yahoo Finance",
+  "descarga 15m": "5639 velas de Yahoo Finance",
+  "descarga 1h": "17260 velas de Yahoo Finance",
+  "descarga 4h": "4442 velas de Yahoo Finance",
   "descarga 1d": "2600 velas de Yahoo Finance",
   "15m": {
-   "velas": 5642,
+   "velas": 5639,
    "evaluadas": 4599,
-   "con estrategia activa": 2942,
-   "ESPERAR": 2915,
+   "con estrategia activa": 2909,
+   "ESPERAR": 2882,
    "fuera de plazo": 0,
    "señales": 27,
    "motivos ESPERAR": {
-    "Las señales iban en contra de la tendencia del plazo mayor.": 1092,
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1818,
-    "El movimiento típico es demasiado pequeño": 5
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1780,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 1100,
+    "El movimiento típico es demasiado pequeño": 2
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4773,
-   "ESPERAR": 4767,
+   "con estrategia activa": 4822,
+   "ESPERAR": 4820,
    "fuera de plazo": 0,
-   "señales": 6,
+   "señales": 2,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3512,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 1254,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 1213,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3606,
     "El movimiento típico es demasiado pequeño": 1
    }
   },
   "4h": {
-   "velas": 4459,
+   "velas": 4442,
    "evaluadas": 3399,
-   "con estrategia activa": 2369,
-   "ESPERAR": 2369,
+   "con estrategia activa": 2372,
+   "ESPERAR": 2372,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2303,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 66
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2301,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 71
    }
   },
   "1d": {
    "velas": 2600,
    "evaluadas": 1599,
-   "con estrategia activa": 799,
-   "ESPERAR": 799,
+   "con estrategia activa": 798,
+   "ESPERAR": 798,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 705,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 704,
     "Las señales iban en contra de la tendencia del plazo mayor.": 94
    }
   }
  },
  "USD/CHF": {
-  "descarga 5m": "16867 velas de Yahoo Finance",
-  "descarga 15m": "5629 velas de Yahoo Finance",
-  "descarga 1h": "17193 velas de Yahoo Finance",
-  "descarga 4h": "4451 velas de Yahoo Finance",
+  "descarga 5m": "16860 velas de Yahoo Finance",
+  "descarga 15m": "5627 velas de Yahoo Finance",
+  "descarga 1h": "17129 velas de Yahoo Finance",
+  "descarga 4h": "4435 velas de Yahoo Finance",
   "descarga 1d": "2600 velas de Yahoo Finance",
   "15m": {
-   "velas": 5629,
+   "velas": 5627,
    "evaluadas": 4599,
-   "con estrategia activa": 3281,
-   "ESPERAR": 3200,
-   "fuera de plazo": 81,
-   "señales": 0,
+   "con estrategia activa": 3224,
+   "ESPERAR": 3143,
+   "fuera de plazo": 78,
+   "señales": 3,
    "motivos ESPERAR": {
-    "Las señales iban en contra de la tendencia del plazo mayor.": 1047,
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2138,
-    "El movimiento típico es demasiado pequeño": 15
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2084,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 1041,
+    "El movimiento típico es demasiado pequeño": 18
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4101,
-   "ESPERAR": 4026,
+   "con estrategia activa": 4018,
+   "ESPERAR": 3932,
    "fuera de plazo": 0,
-   "señales": 75,
+   "señales": 86,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 4003,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 23
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3916,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 16
    }
   },
   "4h": {
-   "velas": 4451,
+   "velas": 4435,
    "evaluadas": 3399,
-   "con estrategia activa": 1843,
-   "ESPERAR": 1759,
+   "con estrategia activa": 1859,
+   "ESPERAR": 1752,
    "fuera de plazo": 2,
-   "señales": 82,
+   "señales": 105,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1604,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 155
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1595,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 157
    }
   },
   "1d": {
    "velas": 2600,
    "evaluadas": 1599,
-   "con estrategia activa": 802,
-   "ESPERAR": 802,
+   "con estrategia activa": 801,
+   "ESPERAR": 801,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 702,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 100
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 700,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 101
    }
   }
  },
  "EUR/GBP": {
-  "descarga 5m": "16939 velas de Yahoo Finance",
-  "descarga 15m": "5649 velas de Yahoo Finance",
-  "descarga 1h": "17277 velas de Yahoo Finance",
+  "descarga 5m": "16932 velas de Yahoo Finance",
+  "descarga 15m": "5646 velas de Yahoo Finance",
+  "descarga 1h": "17276 velas de Yahoo Finance",
   "descarga 4h": "4453 velas de Yahoo Finance",
   "descarga 1d": "2601 velas de Yahoo Finance",
   "15m": {
-   "velas": 5649,
+   "velas": 5646,
    "evaluadas": 4599,
-   "con estrategia activa": 3344,
-   "ESPERAR": 3301,
-   "fuera de plazo": 43,
+   "con estrategia activa": 3342,
+   "ESPERAR": 3289,
+   "fuera de plazo": 53,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2516,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 700,
-    "El movimiento típico es demasiado pequeño": 85
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2369,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 840,
+    "El movimiento típico es demasiado pequeño": 80
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4860,
-   "ESPERAR": 4820,
-   "fuera de plazo": 21,
-   "señales": 19,
+   "con estrategia activa": 4689,
+   "ESPERAR": 4616,
+   "fuera de plazo": 40,
+   "señales": 33,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 4391,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 425,
-    "El movimiento típico es demasiado pequeño": 4
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 4187,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 418,
+    "El movimiento típico es demasiado pequeño": 11
    }
   },
   "4h": {
    "velas": 4453,
    "evaluadas": 3399,
-   "con estrategia activa": 1916,
-   "ESPERAR": 1874,
+   "con estrategia activa": 2038,
+   "ESPERAR": 2005,
    "fuera de plazo": 0,
-   "señales": 42,
+   "señales": 33,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1717,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 157
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1844,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 161
    }
   },
   "1d": {
    "velas": 2601,
    "evaluadas": 1600,
-   "con estrategia activa": 781,
-   "ESPERAR": 781,
+   "con estrategia activa": 780,
+   "ESPERAR": 780,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 725,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 724,
     "Las señales iban en contra de la tendencia del plazo mayor.": 56
    }
   }
  },
  "Oro (XAU/USD)": {
-  "descarga 5m": "13607 velas de Yahoo Finance",
-  "descarga 15m": "4551 velas de Yahoo Finance",
-  "descarga 1h": "13687 velas de Yahoo Finance",
-  "descarga 4h": "3704 velas de Yahoo Finance",
+  "descarga 5m": "13769 velas de Yahoo Finance",
+  "descarga 15m": "4605 velas de Yahoo Finance",
+  "descarga 1h": "13701 velas de Yahoo Finance",
+  "descarga 4h": "3709 velas de Yahoo Finance",
   "descarga 1d": "2515 velas de Yahoo Finance",
   "15m": {
-   "velas": 4551,
-   "evaluadas": 3550,
-   "con estrategia activa": 2481,
-   "ESPERAR": 2481,
+   "velas": 4605,
+   "evaluadas": 3604,
+   "con estrategia activa": 2518,
+   "ESPERAR": 2518,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2271,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 210
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2304,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 214
    }
   },
   "1h": {
    "velas": 8000,
    "evaluadas": 6999,
-   "con estrategia activa": 4804,
-   "ESPERAR": 4779,
-   "fuera de plazo": 25,
+   "con estrategia activa": 4809,
+   "ESPERAR": 4796,
+   "fuera de plazo": 13,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3434,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 1345
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 3446,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 1350
    }
   },
   "4h": {
-   "velas": 3704,
-   "evaluadas": 2703,
-   "con estrategia activa": 1780,
-   "ESPERAR": 1748,
-   "fuera de plazo": 30,
+   "velas": 3709,
+   "evaluadas": 2708,
+   "con estrategia activa": 1785,
+   "ESPERAR": 1752,
+   "fuera de plazo": 31,
    "señales": 2,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1083,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 665
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1085,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 667
    }
   },
   "1d": {
    "velas": 2515,
    "evaluadas": 1514,
-   "con estrategia activa": 819,
-   "ESPERAR": 679,
+   "con estrategia activa": 820,
+   "ESPERAR": 680,
    "fuera de plazo": 0,
    "señales": 140,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 540,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 139
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 539,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 141
    }
   }
  },
@@ -566,47 +565,46 @@
   "descarga 15m": "4999 velas de Binance",
   "descarga 1h": "4999 velas de Binance",
   "descarga 4h": "4999 velas de Binance",
-  "descarga 1d": "3387 velas de Binance",
+  "descarga 1d": "3388 velas de Binance",
   "15m": {
    "velas": 4999,
    "evaluadas": 3998,
-   "con estrategia activa": 2774,
-   "ESPERAR": 2762,
-   "fuera de plazo": 4,
-   "señales": 8,
+   "con estrategia activa": 2901,
+   "ESPERAR": 2901,
+   "fuera de plazo": 0,
+   "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2565,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 190,
-    "El movimiento típico es demasiado pequeño": 7
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2645,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 256
    }
   },
   "1h": {
    "velas": 4999,
    "evaluadas": 3998,
    "con estrategia activa": 2838,
-   "ESPERAR": 2769,
-   "fuera de plazo": 69,
+   "ESPERAR": 2779,
+   "fuera de plazo": 59,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2576,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 193
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2614,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 165
    }
   },
   "4h": {
    "velas": 4999,
    "evaluadas": 3399,
-   "con estrategia activa": 2493,
-   "ESPERAR": 2493,
+   "con estrategia activa": 2494,
+   "ESPERAR": 2494,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1762,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 731
+    "Las señales iban en contra de la tendencia del plazo mayor.": 731,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1763
    }
   },
   "1d": {
-   "velas": 3387,
-   "evaluadas": 2386,
+   "velas": 3388,
+   "evaluadas": 2387,
    "con estrategia activa": 1640,
    "ESPERAR": 1640,
    "fuera de plazo": 0,
@@ -620,49 +618,48 @@
  "ETH/USDT": {
   "descarga 5m": "4999 velas de Binance",
   "descarga 15m": "4999 velas de Binance",
-  "descarga 1h": "4999 velas de Binance",
+  "descarga 1h": "5000 velas de Binance",
   "descarga 4h": "4999 velas de Binance",
-  "descarga 1d": "3387 velas de Binance",
+  "descarga 1d": "3388 velas de Binance",
   "15m": {
    "velas": 4999,
    "evaluadas": 3998,
-   "con estrategia activa": 2864,
-   "ESPERAR": 2813,
-   "fuera de plazo": 51,
+   "con estrategia activa": 2876,
+   "ESPERAR": 2826,
+   "fuera de plazo": 50,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2575,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 235,
-    "El movimiento típico es demasiado pequeño": 3
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2458,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 368
    }
   },
   "1h": {
-   "velas": 4999,
-   "evaluadas": 3998,
-   "con estrategia activa": 2900,
-   "ESPERAR": 2900,
+   "velas": 5000,
+   "evaluadas": 3999,
+   "con estrategia activa": 2899,
+   "ESPERAR": 2899,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2503,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 397
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2553,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 346
    }
   },
   "4h": {
    "velas": 4999,
    "evaluadas": 3399,
-   "con estrategia activa": 2189,
-   "ESPERAR": 2130,
+   "con estrategia activa": 2167,
+   "ESPERAR": 2090,
    "fuera de plazo": 0,
-   "señales": 59,
+   "señales": 77,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2034,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 96
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1996,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 94
    }
   },
   "1d": {
-   "velas": 3387,
-   "evaluadas": 2386,
+   "velas": 3388,
+   "evaluadas": 2387,
    "con estrategia activa": 1615,
    "ESPERAR": 1604,
    "fuera de plazo": 11,
@@ -678,52 +675,52 @@
   "descarga 15m": "4999 velas de Binance",
   "descarga 1h": "4999 velas de Binance",
   "descarga 4h": "4999 velas de Binance",
-  "descarga 1d": "2297 velas de Binance",
+  "descarga 1d": "2298 velas de Binance",
   "15m": {
    "velas": 4999,
    "evaluadas": 3998,
-   "con estrategia activa": 2856,
-   "ESPERAR": 2856,
+   "con estrategia activa": 2855,
+   "ESPERAR": 2855,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2360,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 496
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2291,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 564
    }
   },
   "1h": {
    "velas": 4999,
    "evaluadas": 3998,
-   "con estrategia activa": 2864,
-   "ESPERAR": 2780,
-   "fuera de plazo": 84,
+   "con estrategia activa": 2859,
+   "ESPERAR": 2777,
+   "fuera de plazo": 82,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2561,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 219
+    "Las señales iban en contra de la tendencia del plazo mayor.": 247,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2530
    }
   },
   "4h": {
    "velas": 4999,
    "evaluadas": 3399,
-   "con estrategia activa": 1609,
-   "ESPERAR": 1511,
-   "fuera de plazo": 2,
-   "señales": 96,
+   "con estrategia activa": 1749,
+   "ESPERAR": 1669,
+   "fuera de plazo": 0,
+   "señales": 80,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1465,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 46
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1617,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 52
    }
   },
   "1d": {
-   "velas": 2297,
-   "evaluadas": 1296,
-   "con estrategia activa": 916,
-   "ESPERAR": 916,
+   "velas": 2298,
+   "evaluadas": 1297,
+   "con estrategia activa": 917,
+   "ESPERAR": 917,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 720,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 721,
     "Las señales iban en contra de la tendencia del plazo mayor.": 196
    }
   }
@@ -731,55 +728,55 @@
  "XRP/USDT": {
   "descarga 5m": "4999 velas de Binance",
   "descarga 15m": "4999 velas de Binance",
-  "descarga 1h": "4999 velas de Binance",
+  "descarga 1h": "5000 velas de Binance",
   "descarga 4h": "4999 velas de Binance",
-  "descarga 1d": "3127 velas de Binance",
+  "descarga 1d": "3128 velas de Binance",
   "15m": {
    "velas": 4999,
    "evaluadas": 3998,
-   "con estrategia activa": 2937,
-   "ESPERAR": 2925,
-   "fuera de plazo": 12,
+   "con estrategia activa": 2940,
+   "ESPERAR": 2929,
+   "fuera de plazo": 11,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2833,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 91,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2817,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 111,
     "El movimiento típico es demasiado pequeño": 1
    }
   },
   "1h": {
-   "velas": 4999,
-   "evaluadas": 3998,
-   "con estrategia activa": 2879,
-   "ESPERAR": 2855,
-   "fuera de plazo": 20,
-   "señales": 4,
+   "velas": 5000,
+   "evaluadas": 3999,
+   "con estrategia activa": 2837,
+   "ESPERAR": 2809,
+   "fuera de plazo": 18,
+   "señales": 10,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2243,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 612
+    "Las señales iban en contra de la tendencia del plazo mayor.": 607,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2202
    }
   },
   "4h": {
    "velas": 4999,
    "evaluadas": 3399,
-   "con estrategia activa": 2442,
-   "ESPERAR": 2441,
+   "con estrategia activa": 2441,
+   "ESPERAR": 2440,
    "fuera de plazo": 0,
    "señales": 1,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2214,
-    "Las señales iban en contra de la tendencia del plazo mayor.": 227
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 2210,
+    "Las señales iban en contra de la tendencia del plazo mayor.": 230
    }
   },
   "1d": {
-   "velas": 3127,
-   "evaluadas": 2126,
-   "con estrategia activa": 1522,
-   "ESPERAR": 1522,
+   "velas": 3128,
+   "evaluadas": 2127,
+   "con estrategia activa": 1523,
+   "ESPERAR": 1523,
    "fuera de plazo": 0,
    "señales": 0,
    "motivos ESPERAR": {
-    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1446,
+    "Hay señales, pero ninguna estrategia tiene un historial fiable en este": 1447,
     "Las señales iban en contra de la tendencia del plazo mayor.": 76
    }
   }

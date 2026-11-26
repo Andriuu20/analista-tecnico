@@ -247,7 +247,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | 13/05 10:00 | XRP/USDT | 4h | COMPRAR | 3600 min | fibonacci | -5.87 % |
 
 ## Laboratorio en directo — corto plazo (30 min a 4 h)
-**125 señales** del 28/10/2026 al 25/11/2026. Acierto (precio a favor al vencer): **53,6 %** · resultado medio con SL/TP tras costes: **-0.27 R** · no se distingue del azar todavía (z = 0.8).
+**126 señales** del 28/10/2026 al 26/11/2026. Acierto (precio a favor al vencer): **54,0 %** · resultado medio con SL/TP tras costes: **-0.27 R** · no se distingue del azar todavía (z = 0.9).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -255,7 +255,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### ¿La confianza sirve? (si funciona, los tramos altos deberían acertar más)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| <52 % | 84 | 52,4 % | -0.41 R |
+| <52 % | 85 | 52,9 % | -0.41 R |
 | 52-55 % | 35 | 54,3 % | +0.01 R |
 | 55-58 % | 6 | 66,7 % | -0.07 R |
 
@@ -269,7 +269,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | EUR/GBP | 7 | 57,1 % | -0.29 R |
 | XRP/USDT | 6 | 50,0 % | -0.67 R |
 | ETH/USDT | 5 | 60,0 % | -0.63 R |
-| USD/CAD | 4 | 75,0 % | +0.32 R |
+| USD/CAD | 5 | 80,0 % | +0.32 R |
 | GBP/JPY | 3 | 33,3 % | -1.22 R |
 | SOL/USDT | 3 | 33,3 % | -0.31 R |
 | Oro (XAU/USD) | 2 | 100,0 % | +1.23 R |
@@ -277,14 +277,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por temporalidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 5m | 69 | 62,3 % | -0.21 R |
+| 5m | 70 | 62,9 % | -0.21 R |
 | 15m | 41 | 48,8 % | -0.29 R |
 | 1h | 15 | 26,7 % | -0.57 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 1-2 h | 94 | 55,3 % | -0.17 R |
+| 1-2 h | 95 | 55,8 % | -0.17 R |
 | 30-59 min | 20 | 50,0 % | -0.71 R |
 | 2-4 h | 11 | 45,5 % | -0.35 R |
 
@@ -300,13 +300,14 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | order_block | 4 | 75,0 % | +0.32 R |
 | velas | 2 | 100,0 % | +1.23 R |
 | macd | 1 | 0,0 % | -1.20 R |
+| ruptura | 1 | 100,0 % | — |
 | supertrend | 1 | 100,0 % | -1.10 R |
 
 ### Por franja horaria (hora de España)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 00-04 h | 35 | 68,6 % | -0.26 R |
-| 08-12 h | 29 | 55,2 % | -0.07 R |
+| 08-12 h | 30 | 56,7 % | -0.07 R |
 | 20-24 h | 19 | 47,4 % | -0.12 R |
 | 04-08 h | 18 | 38,9 % | -0.32 R |
 | 12-16 h | 12 | 50,0 % | -0.94 R |
@@ -316,13 +317,13 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | fuerte (≥25) | 57 | 45,6 % | -0.17 R |
-| lateral (<20) | 39 | 64,1 % | -0.32 R |
+| lateral (<20) | 40 | 65,0 % | -0.32 R |
 | débil (20-25) | 29 | 55,2 % | -0.42 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 71 | 52,1 % | -0.37 R |
+| normal | 72 | 52,8 % | -0.37 R |
 | alta | 32 | 50,0 % | -0.33 R |
 | baja | 22 | 63,6 % | +0.13 R |
 
@@ -330,20 +331,20 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | a favor | 45 | 57,8 % | -0.28 R |
-| sin tendencia | 44 | 59,1 % | -0.17 R |
+| sin tendencia | 45 | 60,0 % | -0.17 R |
 | en contra | 36 | 41,7 % | -0.40 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | a favor (barato al comprar / caro al vender) | 89 | 49,4 % | -0.36 R |
-| en contra | 36 | 63,9 % | -0.07 R |
+| en contra | 37 | 64,9 % | -0.07 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | en contra | 89 | 48,3 % | -0.33 R |
-| a favor | 36 | 66,7 % | -0.12 R |
+| a favor | 37 | 67,6 % | -0.12 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)
 | Fecha (España) | Mercado | Velas | Acción | Plazo | Estrategias | Movimiento |

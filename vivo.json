@@ -4064,7 +4064,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.041,
   "coste_r": 0.081,
-  "resultado_r": null,
+  "resultado_r": -1.081,
   "rasgos": {
    "adx": 25.6,
    "volatilidad_pct": 0.94,
@@ -4072,7 +4072,8 @@
    "estructura": -1,
    "rsi": 58.4,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 4.0
  },
  {
   "id": "EURGBP=X|15m|2026-11-24T11:15:00+00:00",
@@ -4682,8 +4683,8 @@
   "sl": 1690.83401962504,
   "tp": 1701.3489705624402,
   "precio_entrada": 1695.04,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 1705.34,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 1.5,
   "plan_esperanza": -0.039,

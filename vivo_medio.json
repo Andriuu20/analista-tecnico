@@ -1100,7 +1100,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.013,
   "coste_r": 0.036,
-  "resultado_r": null,
+  "resultado_r": -1.036,
   "rasgos": {
    "adx": 44.5,
    "volatilidad_pct": 0.71,
@@ -1108,7 +1108,8 @@
    "estructura": 1,
    "rsi": 71.6,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 12.0
  },
  {
   "id": "ETHUSDT|4h|2026-11-14T04:00:00+00:00",
@@ -1753,8 +1754,8 @@
   "sl": 76.2541109330198,
   "tp": 63.63766720094058,
   "precio_entrada": 73.1,
-  "precio_salida": null,
-  "resultado": "pendiente",
+  "precio_salida": 70.84,
+  "resultado": "acierto",
   "elegida": true,
   "plan_r": 3.0,
   "plan_esperanza": -0.059,

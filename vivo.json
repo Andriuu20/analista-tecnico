@@ -4653,7 +4653,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.093,
   "coste_r": 0.158,
-  "resultado_r": null,
+  "resultado_r": -0.054,
   "rasgos": {
    "adx": 13.6,
    "volatilidad_pct": 0.68,
@@ -4661,7 +4661,8 @@
    "estructura": 1,
    "rsi": 60.6,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 50.0
  },
  {
   "id": "ETHUSDT|5m|2026-11-26T10:55:00+00:00",
@@ -4689,7 +4690,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.039,
   "coste_r": 0.202,
-  "resultado_r": null,
+  "resultado_r": 1.298,
   "rasgos": {
    "adx": 27.9,
    "volatilidad_pct": 0.07,
@@ -4697,6 +4698,7 @@
    "estructura": -1,
    "rsi": 40.0,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 4.0
  }
 ]

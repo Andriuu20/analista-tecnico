@@ -1360,7 +1360,7 @@
   "plan_r": 1.5,
   "plan_esperanza": 0.036,
   "coste_r": 0.039,
-  "resultado_r": null,
+  "resultado_r": -1.039,
   "rasgos": {
    "adx": 46.1,
    "volatilidad_pct": 0.61,
@@ -1368,7 +1368,8 @@
    "estructura": 1,
    "rsi": 72.3,
    "tendencia": -1
-  }
+  },
+  "duracion_velas": 13.0
  },
  {
   "id": "SOLUSDT|4h|2026-11-18T08:00:00+00:00",
@@ -1397,7 +1398,7 @@
   "plan_r": 3.0,
   "plan_esperanza": -0.117,
   "coste_r": 0.021,
-  "resultado_r": null,
+  "resultado_r": 2.979,
   "rasgos": {
    "adx": 33.0,
    "volatilidad_pct": 0.51,
@@ -1405,7 +1406,8 @@
    "estructura": -1,
    "rsi": 50.2,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 16.0
  },
  {
   "id": "CHF=X|4h|2026-11-18T20:00:00+00:00",
@@ -1796,7 +1798,7 @@
   "plan_r": 1.0,
   "plan_esperanza": -0.151,
   "coste_r": 0.133,
-  "resultado_r": null,
+  "resultado_r": 0.867,
   "rasgos": {
    "adx": 18.8,
    "volatilidad_pct": 0.71,
@@ -1804,7 +1806,8 @@
    "estructura": 1,
    "rsi": 53.6,
    "tendencia": 0
-  }
+  },
+  "duracion_velas": 7.0
  },
  {
   "id": "EURGBP=X|1h|2026-11-25T10:00:00+00:00",

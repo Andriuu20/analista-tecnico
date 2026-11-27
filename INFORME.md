@@ -245,7 +245,7 @@ Generado automáticamente. Un patrón solo cuenta si aparece en la primera mitad
 | 13/05 10:00 | XRP/USDT | 4h | COMPRAR | 3600 min | fibonacci | -5.87 % |
 
 ## Laboratorio en directo — corto plazo (30 min a 4 h)
-**130 señales** del 28/10/2026 al 27/11/2026. Acierto (precio a favor al vencer): **53,1 %** · resultado medio con SL/TP tras costes: **-0.28 R** · no se distingue del azar todavía (z = 0.7).
+**130 señales** del 28/10/2026 al 27/11/2026. Acierto (precio a favor al vencer): **53,1 %** · resultado medio con SL/TP tras costes: **-0.29 R** · no se distingue del azar todavía (z = 0.7).
 
 ### Patrones (encontrados en la primera mitad y comprobados en la segunda)
 Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
@@ -254,7 +254,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | <52 % | 87 | 51,7 % | -0.44 R |
-| 52-55 % | 36 | 52,8 % | +0.01 R |
+| 52-55 % | 36 | 52,8 % | -0.02 R |
 | 55-58 % | 7 | 71,4 % | +0.13 R |
 
 ### Por mercado
@@ -263,7 +263,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | EUR/JPY | 31 | 41,9 % | -0.53 R |
 | USD/JPY | 29 | 69,0 % | -0.04 R |
 | BTC/USDT | 24 | 45,8 % | -0.30 R |
-| USD/CHF | 13 | 46,2 % | -0.17 R |
+| USD/CHF | 13 | 46,2 % | -0.24 R |
 | EUR/GBP | 7 | 57,1 % | -0.29 R |
 | ETH/USDT | 6 | 66,7 % | -0.31 R |
 | USD/CAD | 6 | 66,7 % | +0.00 R |
@@ -276,13 +276,13 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 5m | 73 | 61,6 % | -0.20 R |
-| 15m | 42 | 47,6 % | -0.29 R |
+| 15m | 42 | 47,6 % | -0.31 R |
 | 1h | 15 | 26,7 % | -0.67 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 1-2 h | 99 | 54,5 % | -0.17 R |
+| 1-2 h | 99 | 54,5 % | -0.18 R |
 | 30-59 min | 20 | 50,0 % | -0.71 R |
 | 2-4 h | 11 | 45,5 % | -0.49 R |
 
@@ -292,7 +292,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | soportes | 38 | 65,8 % | -0.22 R |
 | bollinger | 37 | 32,4 % | -0.50 R |
 | estocastico | 19 | 57,9 % | -0.23 R |
-| barrida | 14 | 42,9 % | -0.24 R |
+| barrida | 14 | 42,9 % | -0.31 R |
 | rsi | 11 | 54,5 % | -0.53 R |
 | fibonacci | 7 | 71,4 % | +0.21 R |
 | order_block | 4 | 75,0 % | +0.32 R |
@@ -304,7 +304,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 ### Por franja horaria (hora de España)
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| 00-04 h | 36 | 66,7 % | -0.28 R |
+| 00-04 h | 36 | 66,7 % | -0.31 R |
 | 08-12 h | 32 | 56,2 % | -0.09 R |
 | 20-24 h | 20 | 45,0 % | -0.18 R |
 | 04-08 h | 18 | 38,9 % | -0.32 R |
@@ -315,13 +315,13 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | fuerte (≥25) | 59 | 45,8 % | -0.18 R |
-| lateral (<20) | 41 | 63,4 % | -0.31 R |
+| lateral (<20) | 41 | 63,4 % | -0.33 R |
 | débil (20-25) | 30 | 53,3 % | -0.46 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| normal | 74 | 51,4 % | -0.39 R |
+| normal | 74 | 51,4 % | -0.40 R |
 | alta | 32 | 50,0 % | -0.36 R |
 | baja | 24 | 62,5 % | +0.13 R |
 
@@ -329,20 +329,20 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | a favor | 47 | 57,4 % | -0.26 R |
-| sin tendencia | 47 | 57,4 % | -0.19 R |
+| sin tendencia | 47 | 57,4 % | -0.21 R |
 | en contra | 36 | 41,7 % | -0.43 R |
 
 ### Zona premium/discount
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor (barato al comprar / caro al vender) | 92 | 48,9 % | -0.36 R |
+| a favor (barato al comprar / caro al vender) | 92 | 48,9 % | -0.37 R |
 | en contra | 38 | 63,2 % | -0.10 R |
 
 ### Estructura de mercado
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | en contra | 90 | 48,9 % | -0.33 R |
-| a favor | 40 | 62,5 % | -0.17 R |
+| a favor | 40 | 62,5 % | -0.20 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)
 | Fecha (España) | Mercado | Velas | Acción | Plazo | Estrategias | Movimiento |

@@ -269,7 +269,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | EUR/JPY | 31 | 41,9 % | -0.53 R |
 | USD/JPY | 29 | 69,0 % | -0.04 R |
-| BTC/USDT | 24 | 45,8 % | -0.34 R |
+| BTC/USDT | 24 | 45,8 % | -0.37 R |
 | USD/CHF | 13 | 46,2 % | -0.24 R |
 | EUR/GBP | 7 | 57,1 % | -0.29 R |
 | ETH/USDT | 6 | 66,7 % | -0.31 R |
@@ -284,20 +284,20 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | 5m | 73 | 61,6 % | -0.22 R |
 | 15m | 42 | 47,6 % | -0.31 R |
-| 1h | 15 | 26,7 % | -0.67 R |
+| 1h | 15 | 26,7 % | -0.70 R |
 
 ### Por plazo
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | 1-2 h | 99 | 54,5 % | -0.19 R |
 | 30-59 min | 20 | 50,0 % | -0.71 R |
-| 2-4 h | 11 | 45,5 % | -0.49 R |
+| 2-4 h | 11 | 45,5 % | -0.54 R |
 
 ### Por estrategia
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | soportes | 38 | 65,8 % | -0.22 R |
-| bollinger | 37 | 32,4 % | -0.50 R |
+| bollinger | 37 | 32,4 % | -0.52 R |
 | estocastico | 19 | 57,9 % | -0.23 R |
 | barrida | 14 | 42,9 % | -0.31 R |
 | rsi | 11 | 54,5 % | -0.53 R |
@@ -313,7 +313,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | 00-04 h | 36 | 66,7 % | -0.31 R |
 | 08-12 h | 32 | 56,2 % | -0.12 R |
-| 20-24 h | 20 | 45,0 % | -0.18 R |
+| 20-24 h | 20 | 45,0 % | -0.22 R |
 | 04-08 h | 18 | 38,9 % | -0.32 R |
 | 12-16 h | 12 | 50,0 % | -0.94 R |
 | 16-20 h | 12 | 41,7 % | -0.25 R |
@@ -323,19 +323,19 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 |---|---|---|---|
 | fuerte (≥25) | 59 | 45,8 % | -0.18 R |
 | lateral (<20) | 41 | 63,4 % | -0.33 R |
-| débil (20-25) | 30 | 53,3 % | -0.48 R |
+| débil (20-25) | 30 | 53,3 % | -0.50 R |
 
 ### Por volatilidad
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | normal | 74 | 51,4 % | -0.41 R |
-| alta | 32 | 50,0 % | -0.36 R |
+| alta | 32 | 50,0 % | -0.38 R |
 | baja | 24 | 62,5 % | +0.13 R |
 
 ### A favor o en contra de la tendencia del plazo mayor
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
-| a favor | 47 | 57,4 % | -0.28 R |
+| a favor | 47 | 57,4 % | -0.29 R |
 | sin tendencia | 47 | 57,4 % | -0.21 R |
 | en contra | 36 | 41,7 % | -0.43 R |
 
@@ -349,7 +349,7 @@ Ningún grupo se aparta claramente del 50 % todavía (o faltan casos).
 | Grupo | Casos | Acierto | Resultado medio SL/TP |
 |---|---|---|---|
 | en contra | 90 | 48,9 % | -0.33 R |
-| a favor | 40 | 62,5 % | -0.22 R |
+| a favor | 40 | 62,5 % | -0.24 R |
 
 ### Los 10 fallos más grandes (para revisar a mano en el gráfico)
 | Fecha (España) | Mercado | Velas | Acción | Plazo | Estrategias | Movimiento |

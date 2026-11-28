@@ -4619,7 +4619,7 @@
   "plan_r": 1.5,
   "plan_esperanza": -0.285,
   "coste_r": 0.058,
-  "resultado_r": null,
+  "resultado_r": -1.058,
   "rasgos": {
    "adx": 24.8,
    "volatilidad_pct": 0.81,
@@ -4627,7 +4627,8 @@
    "estructura": -1,
    "rsi": 60.6,
    "tendencia": 1
-  }
+  },
+  "duracion_velas": 3.0
  },
  {
   "id": "CAD=X|5m|2026-11-26T09:55:00+00:00",
